@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Codelab on ninjaduck</title>
+    <link>http://www.ninjaducks.in/tags/codelab/</link>
+    <description>Recent content in Codelab on ninjaduck</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 07 Oct 2015 13:35:54 +0530</lastBuildDate>
+    <atom:link href="http://www.ninjaducks.in/tags/codelab/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Codelab - HTML5 Canvas and Game development</title>
+      <link>http://www.ninjaducks.in/hacking/codelab/</link>
+      <pubDate>Wed, 07 Oct 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/codelab/</guid>
+      <description>
+
+&lt;h2 id=&#34;objective:4cc1e79f29e4e167992c218986e06770&#34;&gt;Objective&lt;/h2&gt;
+
+&lt;p&gt;This codelab will demonstrate how to build a game using HTML5 canvas. As an example, we will build a simple snake game.&lt;/p&gt;
+
+&lt;p&gt;We will walk you through the process of building the in a series of incremental steps. After each step you should have a working (not necessarily useful) version of the game. Each step is described in the form of a tag in the git repository.&lt;/p&gt;
+
+&lt;h2 id=&#34;requirements:4cc1e79f29e4e167992c218986e06770&#34;&gt;Requirements&lt;/h2&gt;
+
+&lt;p&gt;The requirements for this codelab are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Basic familiarity with HTML.&lt;/li&gt;
+&lt;li&gt;Basic familiarity with JavaScript.&lt;/li&gt;
+&lt;li&gt;Basic knowledge in git will be helpful.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;why-html5:4cc1e79f29e4e167992c218986e06770&#34;&gt;Why HTML5?&lt;/h2&gt;
+
+&lt;p&gt;The most obvious advantage for creating a HTML5 game is that it is cross platform. The same codebase can be packaged to run on browsers, Andorid, iOS, Windows Phone or any other modern device.&lt;/p&gt;
+
+&lt;p&gt;Another advantage the pervasiveness of javascript. It is everywhere and very easy to get started with. Most people are already familiar with Javascript and that all that is needed to develop a HTML5 game. The development process is fairly easy. No waiting for compilation, updates and debugging in real-time, and once the game is done, you can push out the update immediately.&lt;/p&gt;
+
+&lt;h2 id=&#34;step-0-getting-the-code:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 0: Getting the Code&lt;/h2&gt;
+
+&lt;p&gt;You can get the code from &lt;a href=&#34;https://github.com/shivanshuag/codelab-snake&#34;&gt;https://github.com/shivanshuag/codelab-snake&lt;/a&gt;
+Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/codelab-snake&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can check out each tag using &lt;code&gt;git checkout [tagname]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To run the code, simply open the &lt;code&gt;index.html&lt;/code&gt; file in the browser of your choice.&lt;/p&gt;
+
+&lt;h2 id=&#34;preliminaries:4cc1e79f29e4e167992c218986e06770&#34;&gt;Preliminaries&lt;/h2&gt;
+
+&lt;h3 id=&#34;step-1-the-canvas-tag:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 1: The Canvas Tag&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;git checkout step1&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; context &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.getContext(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;);
+  &lt;span style=&#34;color: #888888&#34;&gt;// do stuff here&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The canvas tag is similar to the &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;, or &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt; tag, with the exception that its contents are rendered with JavaScript. The &lt;code&gt;width&lt;/code&gt; and &lt;code&gt;height&lt;/code&gt; attributes are used to specify the dimensions of the canvas.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;document.getElementById(&#39;myCanvas&#39;)&lt;/code&gt; gives the reference to the canvas DOM object in the html document.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;canvas.getContext(&#39;2d&#39;)&lt;/code&gt; gives the canvas context which is an object with properties and methods that you can use to render graphics inside the canvas element.  The context can be 2d or webgl (3d).&lt;/p&gt;
+
+&lt;h3 id=&#34;step-2-drawing-a-line:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 2: Drawing A Line&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;git checkout step2&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; context &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.getContext(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;);
+
+  context.beginPath();
+  context.moveTo(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;100&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;150&lt;/span&gt;);
+  context.lineTo(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;450&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;50&lt;/span&gt;);
+  context.lineWidth &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;15&lt;/span&gt;;
+  context.strokeStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;#ff0000&amp;#39;&lt;/span&gt;;
+  context.lineCap &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;round&amp;#39;&lt;/span&gt;
+  context.stroke();
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;beginPath()&lt;/code&gt; - to declare that we are about to draw a new path&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;moveTo()&lt;/code&gt; - to position(coordinates) the context point (i.e. Starting point)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;lineTo()&lt;/code&gt; -  to draw a straight line from the starting position to a new position&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;lineWidth&lt;/code&gt; - Sets the width of the line&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;strokeStyle&lt;/code&gt; - color of the line&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;linecap&lt;/code&gt; - Can be round, square or butt&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;stroke()&lt;/code&gt; - to make the line visible i.e fill color in the line&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All the properties of the line should be set before calling the stroke function.&lt;/p&gt;
+
+&lt;h3 id=&#34;step-3-arc:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 3: Arc&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;git checkout step3&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; context &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.getContext(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;);
+
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; x &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.width &lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; y &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.height &lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; radius &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;75&lt;/span&gt;;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; startAngle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;1.1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;Math&lt;/span&gt;.PI;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; endAngle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;1.9&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;Math&lt;/span&gt;.PI;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; counterClockwise &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;false&lt;/span&gt;;
+  context.beginPath();
+  context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+  context.lineWidth &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;15&lt;/span&gt;;
+  context.strokeStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;black&amp;#39;&lt;/span&gt;;
+  context.stroke();
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Arcs are defined by a center point, a radius, a starting angle, an ending angle, and the drawing direction (either clockwise or anticlockwise).&lt;/li&gt;
+&lt;li&gt;Angle should be in radians.&lt;/li&gt;
+&lt;li&gt;Arcs can be styled with the lineWidth, strokeStyle, and lineCap properties&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;bonus-points:4cc1e79f29e4e167992c218986e06770&#34;&gt;Bonus Points&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Explore how to make Quadratic Curve and Bezier Curves and paths in the canvas.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;step-4-rectangle:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 4: Rectangle&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;git checkout step4&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; context &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.getContext(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;);
+
+  context.beginPath();
+  context.rect(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;188&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;50&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;200&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;100&lt;/span&gt;);
+  context.fillStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;yellow&amp;#39;&lt;/span&gt;;
+  context.fill();
+  context.lineWidth &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;7&lt;/span&gt;;
+  context.strokeStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;black&amp;#39;&lt;/span&gt;;
+  context.stroke();
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;context.fillStyle&lt;/code&gt; - Specifies the color to be filled inside the rectangle.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;context.fill()&lt;/code&gt; - Draws a solid shape by filling the path&amp;rsquo;s content area.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;context.stroke()&lt;/code&gt; - Draws the outline of the shape.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When setting both the fill and stroke for a shape, make sure that you use fill() before stroke().Otherwise, the fill will overlap half of the stroke.&lt;/p&gt;
+
+&lt;h3 id=&#34;step-5-images:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 5: Images&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;git checkout step5&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; context &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.getContext(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;);
+
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; imageObj &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;new&lt;/span&gt; Image();
+  imageObj.onload &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt;() {
+  	context.drawImage(imageObj, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;69&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;50&lt;/span&gt;);
+  };
+  imageObj.src &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg&amp;#39;&lt;/span&gt;;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;image.onload&lt;/code&gt; is a function which is called when the image has been fetched from its source.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;drwaImage&lt;/code&gt; function draws the image at the given coordinates.&lt;/li&gt;
+&lt;li&gt;To change the size of the image, add two additional arguments to the drawImage() method, width and height. &lt;code&gt;context.drawImage(imageObj, x, y, width, height);&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;bonus-point:4cc1e79f29e4e167992c218986e06770&#34;&gt;Bonus Point&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Explore how to crop an image and then draw it on canvas.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;step-6-text:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 6: Text&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;git checkout step6&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; context &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.getContext(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;);
+
+  context.font &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;italic 40pt Calibri&amp;#39;&lt;/span&gt;;
+  context.fillText(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;Hello World!&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;150&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;100&lt;/span&gt;);
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;To change set the &lt;code&gt;fillStyle&lt;/code&gt; abd &lt;code&gt;strokeStyle&lt;/code&gt; in same ways as for shapes.&lt;/li&gt;
+&lt;li&gt;To align text, use &lt;code&gt;context.textAlign = &amp;quot;center&amp;quot;&lt;/code&gt;. It can also be set to start, end, left, center, or right.&lt;/li&gt;
+&lt;li&gt;When it&amp;rsquo;s set to start and the document direction is ltr (left to right), or when it&amp;rsquo;s set to end and the document direction is rtl (right to left).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;snake-game:4cc1e79f29e4e167992c218986e06770&#34;&gt;Snake Game&lt;/h2&gt;
+
+&lt;p&gt;Now we will create a game using the tools we just learnt.&lt;/p&gt;
+
+&lt;h3 id=&#34;step-7-creating-arena-for-the-snake:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 7: Creating Arena for the Snake&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;git checkout step7&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;450&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;450&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; context &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.getContext(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;);
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; w &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.width
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; h &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.height
+
+  context.fillStyle&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;;
+  context.fillRect(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt; , &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;, w, h);
+  context.strokeStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;black&amp;quot;&lt;/span&gt;;
+  context.strokeRect(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;, w, h);
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;This will create a 450x450 canvas with a balck boundary.&lt;/p&gt;
+
+&lt;h3 id=&#34;step-8-creating-the-snake:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 8: Creating the Snake&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;git checkout step8&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; create_snake() {
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; length &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;5&lt;/span&gt;; &lt;span style=&#34;color: #888888&#34;&gt;//Length of the snake&lt;/span&gt;
+snake_array &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; []; &lt;span style=&#34;color: #888888&#34;&gt;//Empty array to start with&lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; i &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; length&lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;; i&lt;span style=&#34;color: #333333&#34;&gt;&amp;gt;=&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;; i&lt;span style=&#34;color: #333333&#34;&gt;--&lt;/span&gt;) {
+  &lt;span style=&#34;color: #888888&#34;&gt;//This will create a horizontal snake starting from the top left&lt;/span&gt;
+  snake_array.push({x&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt; i, y&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;});
+}
+}
+create_snake();   &lt;span style=&#34;color: #888888&#34;&gt;// calling the create_snake function&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Here, each element in the array represents a cell of the snake. Initially, the snake is made up of 5 cells. In a later step, we will write logic to increase the length of the snake when it eats food.&lt;/p&gt;
+
+&lt;h3 id=&#34;step-9-painting-the-snake:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 9: Painting the Snake&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;git checkout step9&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; cw &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;10&lt;/span&gt;;&lt;span style=&#34;color: #888888&#34;&gt;//cell width&lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; paint() {
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; i &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;; i &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt; snake_array.length; i&lt;span style=&#34;color: #333333&#34;&gt;++&lt;/span&gt;) {
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; c &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; snake_array[i];
+    context.fillStyle  &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;blue&amp;quot;&lt;/span&gt;;
+    &lt;span style=&#34;color: #888888&#34;&gt;//Lets paint 10px wide cells&lt;/span&gt;
+    context.fillRect(c.x&lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;cw, c.y&lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;cw, cw, cw);
+    context.strokeStyle  &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;;
+    context.strokeRect(c.x&lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;cw, c.y&lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;cw, cw, cw);
+  }
+}
+paint();
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;In the earlier step, we just created a array containing the coordinates of all the cells of the snake. In this step, we are painting all the cells on the canvas.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;context.fillRect&lt;/code&gt; fills a rectangle and &lt;code&gt;context.strokeRect&lt;/code&gt; creates its boundary.&lt;/p&gt;
+
+&lt;h3 id=&#34;step-10-moving-the-snake:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 10: Moving the snake&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;git checkout step10&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In this step, we will create the Game Loop. Game Loop contains the statements which will be called in every frame of the game. These instructions will be responsible for updating the state of the game (like the position of the snake, handling input).&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;game_loop &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; setInterval(paint, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;60&lt;/span&gt;);
+
+&lt;span style=&#34;color: #888888&#34;&gt;//Put the following lines inside the paint function&lt;/span&gt;
+  &lt;span style=&#34;color: #888888&#34;&gt;//Pop out the tail cell and place it infront of the head cell&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; nx &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; snake_array[&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;].x;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; ny &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; snake_array[&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;].y;
+  &lt;span style=&#34;color: #888888&#34;&gt;//These were the position of the head cell.&lt;/span&gt;
+  &lt;span style=&#34;color: #888888&#34;&gt;//We will increment it to get the new head position&lt;/span&gt;
+  nx&lt;span style=&#34;color: #333333&#34;&gt;++&lt;/span&gt;;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; tail &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; snake_array.pop(); &lt;span style=&#34;color: #888888&#34;&gt;//pops out the last cell&lt;/span&gt;
+  tail.x &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; nx;
+  tail.y &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; ny;
+  snake_array.unshift(tail); &lt;span style=&#34;color: #888888&#34;&gt;//puts back the tail as the first cell&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Game loop is a javascript setInterval timer. It calls the &lt;code&gt;paint&lt;/code&gt; function every 60 milliseconds.&lt;/p&gt;
+
+&lt;p&gt;We modify the paint function to include logic for moving the snake forward in the right direction by popping out its tail and pushing it ahead of the head in the &lt;code&gt;snake_array&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;After every 60 ms, paint() function will create new rectangle but will not delete the previous rectangles. This will leave a trail of the movement of the snake. So, we will first paint the background of the canvas white inside the paint() function.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #888888&#34;&gt;// Put the following lines at the start of the paint function&lt;/span&gt;
+context.fillStyle&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;;
+context.fillRect(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt; , &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;, w, h);
+context.strokeStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;;
+context.strokeRect(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;, w, h);
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;step-11-handling-user-input:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 11: Handling User Input&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;git checkout step11&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;First, we will add direction based movement to the snake. Instead of the line &lt;code&gt;nx++&lt;/code&gt; in the code, add the following snippet.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; d &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;right&amp;quot;&lt;/span&gt;; &lt;span style=&#34;color: #888888&#34;&gt;//default direction. Add this line outside the paint function&lt;/span&gt;
+
+&lt;span style=&#34;color: #888888&#34;&gt;//add the following lines in the paint function replacing &amp;#39;nx++&amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(d &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;right&amp;quot;&lt;/span&gt;) nx&lt;span style=&#34;color: #333333&#34;&gt;++&lt;/span&gt;;
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(d &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;left&amp;quot;&lt;/span&gt;) nx&lt;span style=&#34;color: #333333&#34;&gt;--&lt;/span&gt;;
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(d &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;up&amp;quot;&lt;/span&gt;) ny&lt;span style=&#34;color: #333333&#34;&gt;--&lt;/span&gt;;
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(d &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;down&amp;quot;&lt;/span&gt;) ny&lt;span style=&#34;color: #333333&#34;&gt;++&lt;/span&gt;;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Add a key listener and change the direction of the snake accordingly.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.onkeydown &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt;(e) {
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; key &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; e.which;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(key &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;37&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; d &lt;span style=&#34;color: #333333&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;right&amp;quot;&lt;/span&gt;) d &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;left&amp;quot;&lt;/span&gt;;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(key &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;38&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; d &lt;span style=&#34;color: #333333&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;down&amp;quot;&lt;/span&gt;) d&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;up&amp;quot;&lt;/span&gt;;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(key &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;39&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; d &lt;span style=&#34;color: #333333&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;left&amp;quot;&lt;/span&gt;) d&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;right&amp;quot;&lt;/span&gt;;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(key &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;40&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; d &lt;span style=&#34;color: #333333&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;up&amp;quot;&lt;/span&gt;) d&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;down&amp;quot;&lt;/span&gt;;
+};
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;onkeydown&lt;/code&gt; function is called when the user presses a key and &lt;code&gt;e.which&lt;/code&gt; contains the keycode of the key which the user has pressed. Refer to &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode&#34;&gt;https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode&lt;/a&gt; for a list of the keycodes.&lt;/p&gt;
+
+&lt;h3 id=&#34;step-12-creating-food:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 12: Creating Food&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;git checkout step12&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;First, we will make a function to paint cells. This function can be used while painting the cells of the snake too.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; paint_cell(x,y) {
+  context.fillStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;blue&amp;quot;&lt;/span&gt;;
+  context.fillRect(&lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;cw, &lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;cw, cw, cw);
+  context.strokeStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;;
+  context.strokeRect(&lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;cw, &lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;cw, cw, cw);
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Then, we create a function which gives the coordinates of a random cell which is to be used as food.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; food;  &lt;span style=&#34;color: #888888&#34;&gt;// global variable which contains food&lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; create_food() {
+  food &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; {
+    x&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;Math&lt;/span&gt;.floor(&lt;span style=&#34;color: #007020&#34;&gt;Math&lt;/span&gt;.random()&lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;(w&lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt;cw)&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;cw),
+    y&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;Math&lt;/span&gt;.floor(&lt;span style=&#34;color: #007020&#34;&gt;Math&lt;/span&gt;.random()&lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;(h&lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt;cw)&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;cw),
+  };
+  &lt;span style=&#34;color: #888888&#34;&gt;//This will create a cell with x and y between 0-44&lt;/span&gt;
+  &lt;span style=&#34;color: #888888&#34;&gt;//Because there are 45(450/10) positions accross the rows and columns&lt;/span&gt;
+}
+create_food();
+
+&lt;span style=&#34;color: #888888&#34;&gt;//Inside the paint function&lt;/span&gt;
+paint_cell(food.x, food.y);
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Math.random()&lt;/code&gt; gives a random value between 0 and 1.&lt;/p&gt;
+
+&lt;h3 id=&#34;step-13-eating-the-food:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 13: Eating the Food&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;git checkout step13&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #888888&#34;&gt;//Inside the paint function&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;//If the new head position matches with that of the food,&lt;/span&gt;
+&lt;span style=&#34;color: #888888&#34;&gt;//Create a new head instead of moving the tail&lt;/span&gt;
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(nx &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; food.x &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ny &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; food.y) {
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; tail &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; {x&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt; nx, y&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt; ny};
+  &lt;span style=&#34;color: #888888&#34;&gt;//Create new food&lt;/span&gt;
+  create_food();
+}
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;else&lt;/span&gt; {
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; tail &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; snake_array.pop(); &lt;span style=&#34;color: #888888&#34;&gt;//pops out the last cell&lt;/span&gt;
+  tail.x &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; nx; tail.y &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; ny;
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;step-14-game-over-condition:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 14: Game Over Condition&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;git checkout step14&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;First create an init function which will restore the game state to the initial state. Move the code used to set the initial state of the game to the init function and call it when the page loads.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; game_loop; &lt;span style=&#34;color: #888888&#34;&gt;// Make gameloop a global variable similar to d, food and snake_array.&lt;/span&gt;
+
+&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; init() {
+  d &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;right&amp;quot;&lt;/span&gt;; &lt;span style=&#34;color: #888888&#34;&gt;//default direction&lt;/span&gt;
+  create_snake();
+  create_food();
+  game_loop &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; setInterval(paint, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;60&lt;/span&gt;);
+}
+
+init(); &lt;span style=&#34;color: #888888&#34;&gt;// call init when the script loads.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Add the following condition inside the paint function to detect collision with the boundaries.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(nx&lt;span style=&#34;color: #333333&#34;&gt;==-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; nx&lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt;w&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;cw &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; ny&lt;span style=&#34;color: #333333&#34;&gt;==-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; ny&lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt;h&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;cw) {
+  &lt;span style=&#34;color: #888888&#34;&gt;// clear the game loop&lt;/span&gt;
+  clearInterval(game_loop);
+  init();
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt;;
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;clearInterval&lt;/code&gt; will clear the previous game_loop and the &lt;code&gt;init&lt;/code&gt; function will create a new one.&lt;/p&gt;
+
+&lt;h3 id=&#34;step-15-checking-body-collision:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 15: Checking Body Collision&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;git checkout step15&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Create the &lt;code&gt;check_collision&lt;/code&gt; function as follows.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; check_collision(x, y, array) {
+  &lt;span style=&#34;color: #888888&#34;&gt;//This function will check if the provided x/y coordinates exist&lt;/span&gt;
+  &lt;span style=&#34;color: #888888&#34;&gt;//in an array of cells or not, excluding the head&lt;/span&gt;
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; i &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;; i &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt; array.length; i&lt;span style=&#34;color: #333333&#34;&gt;++&lt;/span&gt;) {
+    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(array[i].x &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; x &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; array[i].y &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; y)
+      &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;true&lt;/span&gt;;
+  }
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;false&lt;/span&gt;;
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Modify the collision condition as follows&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(nx&lt;span style=&#34;color: #333333&#34;&gt;==-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; nx&lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt;w&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;cw &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; ny&lt;span style=&#34;color: #333333&#34;&gt;==-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; ny&lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt;h&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;cw &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; check_collision(nx, ny, snake_array)) {
+  &lt;span style=&#34;color: #888888&#34;&gt;// clear the game loop&lt;/span&gt;
+  clearInterval(game_loop);
+  init();
+  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt;;
+}
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;step-16-implement-scoring:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 16: Implement Scoring&lt;/h3&gt;
+
+&lt;p&gt;This is a DIY step!&lt;/p&gt;
+
+&lt;h2 id=&#34;where-to-go-from-here:4cc1e79f29e4e167992c218986e06770&#34;&gt;Where to go From Here?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Explore some awesome &lt;a href=&#34;https://html5gameengine.com/&#34;&gt;Game Development libraries for Javascript canvas&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Try making a more sophisticated game involving sprites, animations and sounds.&lt;/li&gt;
+&lt;li&gt;Look at &lt;code&gt;three.js&lt;/code&gt; for making 3d games.&lt;/li&gt;
+&lt;li&gt;Learn how to package your HTML5 game for &lt;a href=&#34;http://phonegap.com/&#34;&gt;Android&lt;/a&gt; and &lt;a href=&#34;https://www.youtube.com/watch?v=aNY4oZByTko&#34;&gt;Windows Phone&lt;/a&gt;.%&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
