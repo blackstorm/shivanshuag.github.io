@@ -92,14 +92,14 @@
     <h1 class="post-title">Multi-Factor Authentication In OpenVPN</h1>
     
 
-<p>
+
 <figure class="pull-right">
     
         <img src="http://www.ninjaducks.in/images/MWoS.png" />
     
     
 </figure>
-</p>
+
 
 <p>This project was done as a part of <a href="https://blog.mozilla.org/security/2014/05/15/introducing-mozilla-winter-of-security-2014/">Mozilla Winter of Security 2014</a> programme.
 The objective of this project is to implement native Multifactor Authentication Support for OpenVPN. The existing support for Multifactor Authentication in OpenVPN is through deferred C plugins and pythons scripts which has lots of limitations due to the nature they are implemented.</p>
@@ -133,22 +133,22 @@ The objective of this project is to implement native Multifactor Authentication 
 
 Here method type can be &lsquo;otp&rsquo;, &lsquo;push&rsquo;, &lsquo;user-pass&rsquo;. For example</p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">mfa-method otp auth.pl via-file
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">mfa-method otp auth.pl via-file
 </pre></div>
-</p>
+
 
 <p>The three methods differ in what credentials are asked from the user for authentication. In otp, only password is asked. In push, nothing is asked. This is meant for authentication by Push notification on mobile phones which can be handled by a deferred auth plugin on the server side. In user-pass, both username and password are asked from the user. If you want to use a plugin for authentication on the server, include the following lines in the config</p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">mfa-method method-type
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">mfa-method method-type
 plugin plugin_shared_object_file
 </pre></div>
-</p>
+
 
 <p>In the client config, put the following line</p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">mfa-method mfa-type
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">mfa-method mfa-type
 </pre></div>
-</p>
+
 
 <p>User can authenticate using one method only. Multiple mfa-method lines will give an error.</p>
 
@@ -160,17 +160,17 @@ plugin plugin_shared_object_file
 
 <p>The server needs to provide the following configuration option:</p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">mfa-session-expiration session-validity
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">mfa-session-expiration session-validity
 </pre></div>
-</p>
+
 
 <p><code>session-validity</code> is the duration (in hours) for which the session cookie is valid.</p>
 
 <p>The client needs to provide the following configuration option:</p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">mfa-session-file filename
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">mfa-session-file filename
 </pre></div>
-</p>
+
 
 <p><code>filename</code> is the path to the file in which session tokens will be stored. If the filename is not provided, then we warn the user and disable session-support.</p>
 

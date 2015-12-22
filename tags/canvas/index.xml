@@ -54,7 +54,7 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 
 &lt;p&gt;&lt;code&gt;git checkout step1&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
@@ -63,7 +63,7 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;The canvas tag is similar to the &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;, or &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt; tag, with the exception that its contents are rendered with JavaScript. The &lt;code&gt;width&lt;/code&gt; and &lt;code&gt;height&lt;/code&gt; attributes are used to specify the dimensions of the canvas.&lt;/p&gt;
 
@@ -75,7 +75,7 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 
 &lt;p&gt;&lt;code&gt;git checkout step2&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
@@ -91,7 +91,7 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;code&gt;beginPath()&lt;/code&gt; - to declare that we are about to draw a new path&lt;/p&gt;&lt;/li&gt;
@@ -115,7 +115,7 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 
 &lt;p&gt;&lt;code&gt;git checkout step3&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
@@ -135,7 +135,7 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;ul&gt;
 &lt;li&gt;Arcs are defined by a center point, a radius, a starting angle, an ending angle, and the drawing direction (either clockwise or anticlockwise).&lt;/li&gt;
@@ -153,7 +153,7 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 
 &lt;p&gt;&lt;code&gt;git checkout step4&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
@@ -169,7 +169,7 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;context.fillStyle&lt;/code&gt; - Specifies the color to be filled inside the rectangle.&lt;/li&gt;

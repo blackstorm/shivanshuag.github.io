@@ -35,13 +35,13 @@
 
 &lt;p&gt;For ubuntu,&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007020&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;deb http://debian.sur5r.net/i3/ &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;$(&lt;/span&gt;lsb_release -c -s&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt; universe&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; /etc/apt/sources.list
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007020&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;deb http://debian.sur5r.net/i3/ &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;$(&lt;/span&gt;lsb_release -c -s&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt; universe&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; /etc/apt/sources.list
 apt-get update
 apt-get --allow-unauthenticated install sur5r-keyring
 apt-get update
 apt-get install i3
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;h2 id=&#34;getting-used-to-i3:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Getting Used to i3&lt;/h2&gt;
 
@@ -72,10 +72,10 @@ apt-get install i3
 
 &lt;p&gt;There is no volume control panel by default in i3. You can bind your own shortcuts to volume control. Modify your config to include the following&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;bindsym XF86AudioLowerVolume &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; /usr/bin/pactl &lt;span style=&#34;color: #007020&#34;&gt;set&lt;/span&gt;-sink-volume &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0&lt;/span&gt; -- &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;-5%&amp;#39;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;bindsym XF86AudioLowerVolume &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; /usr/bin/pactl &lt;span style=&#34;color: #007020&#34;&gt;set&lt;/span&gt;-sink-volume &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0&lt;/span&gt; -- &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;-5%&amp;#39;&lt;/span&gt;
 bindsym XF86AudioRaiseVolume &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; /usr/bin/pactl &lt;span style=&#34;color: #007020&#34;&gt;set&lt;/span&gt;-sink-volume &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0&lt;/span&gt; -- &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;+5%&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;Here the XF86AudioLowerVolume and XF86AudioRaiseVolume are the multimedia keys on your keyboard for volume control. &lt;code&gt;bindsym&lt;/code&gt; is used to bind a key to a command. &lt;code&gt;exec /usr/bin/pactl set-sink-volume 0 -- &#39;-5%&#39;&lt;/code&gt; is to execute the &lt;code&gt;pactl&lt;/code&gt; command on keypress. &lt;code&gt;pactl&lt;/code&gt; command is for controlling a running pulseaudio server. So, above command only works when you have pulseaudio installed which is default in ubuntu.&lt;/p&gt;
 
@@ -85,9 +85,9 @@ bindsym XF86AudioRaiseVolume &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;
 
 &lt;p&gt;For screen lock, I use &lt;code&gt;gnome-screensaver&lt;/code&gt;. Gnome Screensaver locks the screen on  &lt;code&gt;gnome-screensaver-command -l&lt;/code&gt; command. I want my screen to lock automatically after 1 minute of inactivity. For this, I use &lt;code&gt;xautolock&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007020&#34;&gt;exec &lt;/span&gt;xautolock -time &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;1&lt;/span&gt; -locker screenlock
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007020&#34;&gt;exec &lt;/span&gt;xautolock -time &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;1&lt;/span&gt; -locker screenlock
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;The above line in my config starts &lt;code&gt;xautolock&lt;/code&gt; which executes the screenlock script after 1 minute of inactivity. Screenlock script contains the &lt;code&gt;gnome-screensaver-command -l&lt;/code&gt; command.&lt;/p&gt;
 

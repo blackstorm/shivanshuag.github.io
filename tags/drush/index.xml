@@ -36,7 +36,7 @@ This command will install all the dependencies (including PHPUnit) required for 
 
 &lt;p&gt;You can create a directory named &lt;code&gt;tests&lt;/code&gt; inside you drush extension to contain all the tests. PHPUnit looks inside *Test.php files inside a directory for tests. Drush follows Lower Camel Case for the naming of both the file and the class name. So all you file names should be in Lower Camel Case with a &lt;code&gt;Test&lt;/code&gt; suffix.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
 &lt;span style=&#34;color: #DD4422&#34;&gt;/**&lt;/span&gt;
 &lt;span style=&#34;color: #DD4422&#34;&gt; * @file&lt;/span&gt;
 &lt;span style=&#34;color: #DD4422&#34;&gt; * Contains /site_audit/tests/BestPracticesFast404Case.&lt;/span&gt;
@@ -57,13 +57,13 @@ This command will install all the dependencies (including PHPUnit) required for 
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;setUp&lt;/span&gt;() {
   }
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;First, we specify the namespace &lt;code&gt;Unish&lt;/code&gt; for the test. The &lt;code&gt;@group&lt;/code&gt; annotation in the doc comment is optional. You can read about its use &lt;a href=&#34;https://phpunit.de/manual/current/en/appendixes.annotations.html#appendixes.annotations.group&#34;&gt;here&lt;/a&gt;. Our class extends &lt;code&gt;CommandUnishTestCase&lt;/code&gt; which provides all the common functionality like setting up a drupal sandbox and running drush commands used in functional tests. Finally we have a &lt;code&gt;setUp()&lt;/code&gt; function which is invoked before a test method is run. In We set up the object we will test against in this method.&lt;/p&gt;
 
 &lt;h2 id=&#34;the-setup-function:906d2a8b4b326a75d9662f597e0ca1db&#34;&gt;The SetUp Function&lt;/h2&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
 
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;setUp&lt;/span&gt;() {
     &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; (UNISH_DRUPAL_MAJOR_VERSION &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;8&lt;/span&gt;) {
@@ -83,7 +83,7 @@ This command will install all the dependencies (including PHPUnit) required for 
     \symlink(&lt;span style=&#34;color: #996633&#34;&gt;$target&lt;/span&gt;, &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;webroot&lt;/span&gt;() &lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;/drush/site_audit&amp;#39;&lt;/span&gt;);
   }
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;In this function, we have used &lt;code&gt;UNISH_DRUPAL_MAJOR_VERSION&lt;/code&gt; which is provided by the PHPUnit settings variables we had set in phpunit.xml.dist . Since the version of site_audit where this test is written is for Drupal 8, we will skip the test if it is being run for Drupal 7.  The &lt;code&gt;setUpDrupal()&lt;/code&gt; is a function provided by &lt;code&gt;CommandUnishTestCase&lt;/code&gt; class and is used to create any number of drupal sanboxes which will be used for testing. Here, we are installing a single drupal 8 site with the standard profile.
 &lt;code&gt;$root&lt;/code&gt; variable has the path to the root directory of the website.&lt;/p&gt;
@@ -180,7 +180,7 @@ This command will install all the dependencies (including PHPUnit) required for 
 
 &lt;li&gt;&lt;p&gt;Alternatively, use drush make with the following make file and then do a drush site-install&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;  ;full documentation &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; drush make file at http://www.drush.org/en/master/make/
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;  ;full documentation &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; drush make file at http://www.drush.org/en/master/make/
   &lt;span style=&#34;color: #996633&#34;&gt;core&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; 7.x
   &lt;span style=&#34;color: #996633&#34;&gt;api&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; 2
   projects&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;drupal&lt;span style=&#34;color: #333333&#34;&gt;][&lt;/span&gt;version&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; 7.36
@@ -188,7 +188,7 @@ This command will install all the dependencies (including PHPUnit) required for 
   projects&lt;span style=&#34;color: #333333&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; coder
   
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/li&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;install-drupal-8-0-0-beta10-via-drush:734dafb44d9f3d82108b3875e36fb833&#34;&gt;Install drupal-8.0.0-beta10 via drush&lt;/h2&gt;

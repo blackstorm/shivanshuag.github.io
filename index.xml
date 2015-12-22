@@ -6,8 +6,102 @@
     <description>Recent content on ninjaduck</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Oct 2015 13:35:54 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 22 Dec 2015 13:35:54 +0530</lastBuildDate>
     <atom:link href="http://www.ninjaducks.in/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Production and Development set-up for Angular 2 with TypeScript using Webpack and Gulp</title>
+      <link>http://www.ninjaducks.in/hacking/angular-setup/</link>
+      <pubDate>Tue, 22 Dec 2015 13:35:54 +0530</pubDate>
+      
+      <guid>http://www.ninjaducks.in/hacking/angular-setup/</guid>
+      <description>
+
+&lt;p&gt;Building modular, better structured web applications is now easier with Angular 2, but this comes with a new set of challenges on developing, packaging and deploying these applications. When developing in typescript, it has to be transpiled to javascript in a way such that its modules can be loaded by the browser. For debugging, source maps need to be enabled and for production, javascript needs to be minified. Along with this, the HTML and CSS of each individual component in the application should be present at the right place. There are different choices available for each of the step and there is no fixed way to do anything.&lt;/p&gt;
+
+&lt;p&gt;All this can get very confusing when trying to start a new angular project. I explored various solutions and found the following set up using webpack to bundle javascript, gulp for running tasks, npm for package management to be the best. The full code for this setup is present at [&lt;a href=&#34;https://github.com/shivanshuag/angular2-seed&#34;&gt;https://github.com/shivanshuag/angular2-seed&lt;/a&gt;] . This setup is built upon the &lt;a href=&#34;https://github.com/angular/angular2-seed&#34;&gt;angular2-seed&lt;/a&gt; app.&lt;/p&gt;
+
+&lt;h2 id=&#34;directory-structure:91f302deb060a036b41938a0215c3017&#34;&gt;Directory Structure&lt;/h2&gt;
+
+&lt;p&gt;This is the directory structure I have. &lt;code&gt;app.ts&lt;/code&gt; bootstraps the angular app. &lt;code&gt;app/seed-app.ts&lt;/code&gt; has the main app component. Other components are inside the components directory with a separate directory for each component which contains its &lt;code&gt;html&lt;/code&gt; and &lt;code&gt;css&lt;/code&gt; files along with the typescript file. &lt;code&gt;vendor.ts&lt;/code&gt; imports all the third-party library the the app uses, which includes angular 2 in this case.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;maya
+├── CONTRIBUTE.md
+├── gulpfile.js
+├── maya.conf.nginx
+├── node_modules
+├── package.json
+├── README.md
+├── tsconfig.json
+├── webpack.config.js
+└── src
+    ├── app
+    │   ├── components
+    │   │   ├── about
+    │   │   │   ├── about.css
+    │   │   │   ├── about.html
+    │   │   │   └── about.ts
+    │   │   ├── home
+    │   │   │    ├── home.css
+    │   │   │    ├── home.html
+    │   │   │    └── home.ts
+    │   │   │
+    │   │   
+    │   ├── seed-app.html
+    │   ├── seed-app.ts
+    │   └── services
+    │       └── service.ts
+    ├── app.ts
+    ├── favicon.ico
+    ├── index.html
+    └── vendor.ts
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;installing-packages:91f302deb060a036b41938a0215c3017&#34;&gt;Installing Packages&lt;/h2&gt;
+
+&lt;p&gt;NPM is used for package mamagement. &lt;a href=&#34;https://github.com/shivanshuag/angular2-seed/blob/master/package.json&#34;&gt;&lt;code&gt;package.json&lt;/code&gt;&lt;/a&gt; contains all the required packages which include angular 2 and its dependecies, webpack , gulp, typescript etc.&lt;/p&gt;
+
+&lt;h2 id=&#34;typescript-and-webpack:91f302deb060a036b41938a0215c3017&#34;&gt;Typescript and Webpack&lt;/h2&gt;
+
+&lt;p&gt;Typescript compiler configuration is present in &lt;code&gt;tsconfig.json&lt;/code&gt;. It has &lt;code&gt;source maps&lt;/code&gt; enabled which helps in debugging. Webpack configuration is present in &lt;code&gt;webpack.config.json&lt;/code&gt;. It bundles all the third-party dependencies import in &lt;code&gt;vendor.ts&lt;/code&gt; into a file &lt;code&gt;vendor.bundle.js&lt;/code&gt;. All other code is bundles into a files named &lt;code&gt;bundle.js&lt;/code&gt;. &lt;code&gt;index.html&lt;/code&gt; just imports these two files.&lt;/p&gt;
+
+&lt;p&gt;For debugging, source maps are enabled in the bundles created for the development mode using gulp.&lt;/p&gt;
+
+&lt;h2 id=&#34;gulp-tasks:91f302deb060a036b41938a0215c3017&#34;&gt;Gulp Tasks&lt;/h2&gt;
+
+&lt;p&gt;For the application to work, along with the transpiled javascript, the html and css files for each of the components should be placed at the path given as the &lt;code&gt;templateUrl&lt;/code&gt; or &lt;code&gt;styleUrl&lt;/code&gt; in the typescript file for the component. Gulp tasks are defined in &lt;code&gt;gulpfile.js&lt;/code&gt; for these things, and for running webpack.&lt;/p&gt;
+
+&lt;p&gt;To create production package of the application, run&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;❯ gulp deploy
+
+# This will create minified javascript bundles and copy all the html, css file in the &#39;dist&#39; directory.
+# This directory can then be served by a web server
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To create development package of the application, run&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;❯ gulp dev
+
+# This will create javascript bundles with source maps and copy html, css file in the &#39;dist&#39; directory
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To run webpack-dev-server which serves the app for development purposes and supports live-reload, run&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;❯ gulp dev-server
+
+# Starts webpack-dev-server at port 8080 serving the app
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;issues:91f302deb060a036b41938a0215c3017&#34;&gt;Issues&lt;/h2&gt;
+
+&lt;p&gt;Currently, all the CSS and HTML files of the application are served separately, there is no way to bundle them in a single file. This was possible in Angularjs as there were no components, and whole CSS of the app could be placed in a single file. In angular 2, doing this can cause css selector conflicts. For HTML in Angularjs, there was template-cache, which could pick all the templates from a single html file.&lt;/p&gt;
+
+&lt;p&gt;Angular Dart had components, but it also had &lt;a href=&#34;https://github.com/angular/angular.dart/wiki/CSS-Shim&#34;&gt;transformers&lt;/a&gt; which namespaced the CSS selectors according to components and also transformed the url of css files in each component. For html, it had template-cache.&lt;/p&gt;
+
+&lt;p&gt;Still waiting for angular2-templatecache and transformers.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>A World Undone: The Story of The Great War</title>
@@ -17,14 +111,14 @@
       <guid>http://www.ninjaducks.in/books/world-undone</guid>
       <description>
 
-&lt;p&gt;
+
 &lt;figure class=&#34;pull-right&#34;&gt;
     
         &lt;img src=&#34;https://d.gr-assets.com/books/1171470414l/100834.jpg&#34; /&gt;
     
     
 &lt;/figure&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;I started with this book to satiate my curiosity about the World Wars, which was ignited after reading &lt;a href=&#34;https://www.goodreads.com/book/show/11366.The_Guns_of_August&#34;&gt;The Guns Of August&lt;/a&gt;. And I was not disappointed. This single volume history of the World War I provides detailed account of the great war along with all the relevant background details which are perfect for someone totally unfamiliar with the subject and reading about it for the first time. Even though this is a non-fiction, the experience of reading this is similar to reading an fiction because of highly dramatic events of the war, described in detail, unfolding one after the other.&lt;/p&gt;
 
@@ -99,7 +193,7 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 
 &lt;p&gt;&lt;code&gt;git checkout step1&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
@@ -108,7 +202,7 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;The canvas tag is similar to the &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;, or &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt; tag, with the exception that its contents are rendered with JavaScript. The &lt;code&gt;width&lt;/code&gt; and &lt;code&gt;height&lt;/code&gt; attributes are used to specify the dimensions of the canvas.&lt;/p&gt;
 
@@ -120,7 +214,7 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 
 &lt;p&gt;&lt;code&gt;git checkout step2&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
@@ -136,7 +230,7 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;code&gt;beginPath()&lt;/code&gt; - to declare that we are about to draw a new path&lt;/p&gt;&lt;/li&gt;
@@ -160,7 +254,7 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 
 &lt;p&gt;&lt;code&gt;git checkout step3&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
@@ -180,7 +274,7 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;ul&gt;
 &lt;li&gt;Arcs are defined by a center point, a radius, a starting angle, an ending angle, and the drawing direction (either clockwise or anticlockwise).&lt;/li&gt;
@@ -198,7 +292,7 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 
 &lt;p&gt;&lt;code&gt;git checkout step4&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
@@ -214,7 +308,7 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;context.fillStyle&lt;/code&gt; - Specifies the color to be filled inside the rectangle.&lt;/li&gt;
@@ -551,14 +645,14 @@ init(); &lt;span style=&#34;color: #888888&#34;&gt;// call init when the script 
       <guid>http://www.ninjaducks.in/openvpn-mfa/</guid>
       <description>
 
-&lt;p&gt;
+
 &lt;figure class=&#34;pull-right&#34;&gt;
     
         &lt;img src=&#34;http://www.ninjaducks.in/images/MWoS.png&#34; /&gt;
     
     
 &lt;/figure&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;This project was done as a part of &lt;a href=&#34;https://blog.mozilla.org/security/2014/05/15/introducing-mozilla-winter-of-security-2014/&#34;&gt;Mozilla Winter of Security 2014&lt;/a&gt; programme.
 The objective of this project is to implement native Multifactor Authentication Support for OpenVPN. The existing support for Multifactor Authentication in OpenVPN is through deferred C plugins and pythons scripts which has lots of limitations due to the nature they are implemented.&lt;/p&gt;
@@ -592,22 +686,22 @@ The objective of this project is to implement native Multifactor Authentication 
 
 Here method type can be &amp;lsquo;otp&amp;rsquo;, &amp;lsquo;push&amp;rsquo;, &amp;lsquo;user-pass&amp;rsquo;. For example&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-method otp auth.pl via-file
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-method otp auth.pl via-file
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;The three methods differ in what credentials are asked from the user for authentication. In otp, only password is asked. In push, nothing is asked. This is meant for authentication by Push notification on mobile phones which can be handled by a deferred auth plugin on the server side. In user-pass, both username and password are asked from the user. If you want to use a plugin for authentication on the server, include the following lines in the config&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-method method-type
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-method method-type
 plugin plugin_shared_object_file
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;In the client config, put the following line&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-method mfa-type
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-method mfa-type
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;User can authenticate using one method only. Multiple mfa-method lines will give an error.&lt;/p&gt;
 
@@ -619,17 +713,17 @@ plugin plugin_shared_object_file
 
 &lt;p&gt;The server needs to provide the following configuration option:&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-session-expiration session-validity
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-session-expiration session-validity
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;&lt;code&gt;session-validity&lt;/code&gt; is the duration (in hours) for which the session cookie is valid.&lt;/p&gt;
 
 &lt;p&gt;The client needs to provide the following configuration option:&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-session-file filename
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-session-file filename
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;&lt;code&gt;filename&lt;/code&gt; is the path to the file in which session tokens will be stored. If the filename is not provided, then we warn the user and disable session-support.&lt;/p&gt;
 
@@ -668,7 +762,7 @@ This command will install all the dependencies (including PHPUnit) required for 
 
 &lt;p&gt;You can create a directory named &lt;code&gt;tests&lt;/code&gt; inside you drush extension to contain all the tests. PHPUnit looks inside *Test.php files inside a directory for tests. Drush follows Lower Camel Case for the naming of both the file and the class name. So all you file names should be in Lower Camel Case with a &lt;code&gt;Test&lt;/code&gt; suffix.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
 &lt;span style=&#34;color: #DD4422&#34;&gt;/**&lt;/span&gt;
 &lt;span style=&#34;color: #DD4422&#34;&gt; * @file&lt;/span&gt;
 &lt;span style=&#34;color: #DD4422&#34;&gt; * Contains /site_audit/tests/BestPracticesFast404Case.&lt;/span&gt;
@@ -689,13 +783,13 @@ This command will install all the dependencies (including PHPUnit) required for 
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;setUp&lt;/span&gt;() {
   }
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;First, we specify the namespace &lt;code&gt;Unish&lt;/code&gt; for the test. The &lt;code&gt;@group&lt;/code&gt; annotation in the doc comment is optional. You can read about its use &lt;a href=&#34;https://phpunit.de/manual/current/en/appendixes.annotations.html#appendixes.annotations.group&#34;&gt;here&lt;/a&gt;. Our class extends &lt;code&gt;CommandUnishTestCase&lt;/code&gt; which provides all the common functionality like setting up a drupal sandbox and running drush commands used in functional tests. Finally we have a &lt;code&gt;setUp()&lt;/code&gt; function which is invoked before a test method is run. In We set up the object we will test against in this method.&lt;/p&gt;
 
 &lt;h2 id=&#34;the-setup-function:906d2a8b4b326a75d9662f597e0ca1db&#34;&gt;The SetUp Function&lt;/h2&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
 
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;setUp&lt;/span&gt;() {
     &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; (UNISH_DRUPAL_MAJOR_VERSION &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;8&lt;/span&gt;) {
@@ -715,7 +809,7 @@ This command will install all the dependencies (including PHPUnit) required for 
     \symlink(&lt;span style=&#34;color: #996633&#34;&gt;$target&lt;/span&gt;, &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;webroot&lt;/span&gt;() &lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;/drush/site_audit&amp;#39;&lt;/span&gt;);
   }
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;In this function, we have used &lt;code&gt;UNISH_DRUPAL_MAJOR_VERSION&lt;/code&gt; which is provided by the PHPUnit settings variables we had set in phpunit.xml.dist . Since the version of site_audit where this test is written is for Drupal 8, we will skip the test if it is being run for Drupal 7.  The &lt;code&gt;setUpDrupal()&lt;/code&gt; is a function provided by &lt;code&gt;CommandUnishTestCase&lt;/code&gt; class and is used to create any number of drupal sanboxes which will be used for testing. Here, we are installing a single drupal 8 site with the standard profile.
 &lt;code&gt;$root&lt;/code&gt; variable has the path to the root directory of the website.&lt;/p&gt;
@@ -900,7 +994,7 @@ This will download 7.x2.x version of coder to &lt;code&gt;.drush&lt;/code&gt; di
 
 &lt;li&gt;&lt;p&gt;Alternatively, use drush make with the following make file and then do a drush site-install&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;  ;full documentation &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; drush make file at http://www.drush.org/en/master/make/
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;  ;full documentation &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; drush make file at http://www.drush.org/en/master/make/
   &lt;span style=&#34;color: #996633&#34;&gt;core&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; 7.x
   &lt;span style=&#34;color: #996633&#34;&gt;api&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; 2
   projects&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;drupal&lt;span style=&#34;color: #333333&#34;&gt;][&lt;/span&gt;version&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; 7.36
@@ -908,7 +1002,7 @@ This will download 7.x2.x version of coder to &lt;code&gt;.drush&lt;/code&gt; di
   projects&lt;span style=&#34;color: #333333&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; coder
   
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/li&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;install-drupal-8-0-0-beta10-via-drush:734dafb44d9f3d82108b3875e36fb833&#34;&gt;Install drupal-8.0.0-beta10 via drush&lt;/h2&gt;
@@ -970,25 +1064,25 @@ This will download 7.x2.x version of coder to &lt;code&gt;.drush&lt;/code&gt; di
 
 &lt;p&gt;First problem was to get a list of words. Someone has uploaded all the words from Magoosh GRE flashcard and Barron&amp;rsquo;s GRE on quizlet.com &lt;a href=&#34;http://quizlet.com/45492734/magoosh-gre-flashcards-basic-common-advanced-all-1000-flash-cards/&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;http://quizlet.com/8997815/barrons-800-essential-words-for-the-gre-flash-cards/&#34;&gt;here&lt;/a&gt;. Now it was just a matter of scraping them and a simple python script was apt for the task. I scraped all the words and their meanings in a text file named &lt;code&gt;words&lt;/code&gt;, each word separated by a &amp;lsquo;%&amp;rsquo;. This &amp;lsquo;%&amp;rsquo; has a special significance. It is useful in creating a random access file for strings which is used by the fortune program.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;strfile words
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;strfile words
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;This generates a &lt;code&gt;words.dat&lt;/code&gt; file. I moved both - the &lt;code&gt;words.dat&lt;/code&gt; file and the &lt;code&gt;words&lt;/code&gt; file to the folder that contains the fortune database which in my case is &lt;code&gt;/usr/share/fortune&lt;/code&gt;. Now fortune also uses this file for selecting cookies. But I just want the words and not any other cookie. In &lt;code&gt;fortune&lt;/code&gt;, you can specify the name of the database from which you want it to randomly select a string. So, &lt;code&gt;fortune words&lt;/code&gt; did the task.&lt;/p&gt;
 
 &lt;p&gt;While exploring fortune, I also found that you can specify the probabilities with which it selects string from each database. This is helpful beacuse I want to to select words from Magoosh Basic and Magoosh Common list more frequently than Magoosh Advanced. For this, I need the words in separate files according to category. No probelm because I found the different lists on quizlet.com &lt;a href=&#34;http://quizlet.com/45473963/magoosh-gre-flashcards-basic-all-i-vii-flash-cards/&#34;&gt;here&lt;/a&gt;, &lt;a href=&#34;http://quizlet.com/45473977/magoosh-gre-flashcards-common-all-i-vi-flash-cards/&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;http://quizlet.com/45473953/magoosh-gre-flashcards-advanced-all-i-vii-flash-cards/&#34;&gt;here&lt;/a&gt;, scraped them into different files and followed the same procedure. The script used for scraping and the list of words is available in a github repository &lt;a href=&#34;https://github.com/shivanshuag/cowsay-gre&#34;&gt;here&lt;/a&gt;. So now my command is&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;fortune fortune 40% magoosh_basic 40% magoosh_common magoosh_adv
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;fortune fortune 40% magoosh_basic 40% magoosh_common magoosh_adv
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;This gives a word from Basic and Common list with a probability of 0.4 and from Advanced list with a probability of 0.2.&lt;/p&gt;
 
 &lt;p&gt;To make it more interesting, I piped the output to cowsay. In cowsay, you can specify different ASCII images as argument. There is a default set of images in the &lt;code&gt;/usr/share/cows&lt;/code&gt; folder.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;fortune -c 40% magoosh_basic 40% magoosh_common magoosh_adv | cowthink -f &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;$(&lt;/span&gt;find /usr/share/cows -type f | shuf -n 1&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;fortune -c 40% magoosh_basic 40% magoosh_common magoosh_adv | cowthink -f &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;$(&lt;/span&gt;find /usr/share/cows -type f | shuf -n 1&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;This command selects a random ASCII image from the set of images in &lt;code&gt;usr/share/cows&lt;/code&gt; folder for the cowsay application. I added this to my &lt;code&gt;.zshrc&lt;/code&gt; file. And the results were interesting!&lt;/p&gt;
 
@@ -1305,14 +1399,14 @@ If you have not developed a drupal 7 module before, the difference between disab
       <guid>http://www.ninjaducks.in/books/why-i-like-the-book-thief</guid>
       <description>&lt;p&gt;I had read The Book Thief book in November and have been trying to write a review ever since but I could never finds words enough to describe it. It was the greatest reading experience I have ever had. Set in the Nazi Germany and narrated by Death(the Grim Reaper), it is the story of the life of a young girl Liesel Meminger - the book thief. The book deftly highlights the themes of destruction and loss of life in war, the viciousness of the Nazi propaganda and the power of words.&lt;/p&gt;
 
-&lt;p&gt;
+
 &lt;figure class=&#34;pull-right&#34;&gt;
     
         &lt;img src=&#34;https://d202m5krfqbpi5.cloudfront.net/books/1390053681l/19063.jpg&#34; /&gt;
     
     
 &lt;/figure&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;A few chapters into the book, the narrator declares&lt;/p&gt;
 
@@ -1333,127 +1427,6 @@ If you have not developed a drupal 7 module before, the difference between disab
 &lt;/blockquote&gt;
 
 &lt;p&gt;Read it. You may or may not like it but it is definitely worth a try.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Gnome 3 to i3</title>
-      <link>http://www.ninjaducks.in/hacking/gnome-3-to-i-3/</link>
-      <pubDate>Mon, 27 Jan 2014 13:35:54 +0530</pubDate>
-      
-      <guid>http://www.ninjaducks.in/hacking/gnome-3-to-i-3/</guid>
-      <description>
-
-&lt;p&gt;I have been a linux user for more than two years now and the search for a perfect desktop environment is still on. I have tried many of the popular ones - Unity, Gnome 2 and 3, KDE, Cinnamon and MATE. Each of them have a different philosophy which is suitable for some type of users but all of them are either very heavy-weight or have a some very frustrating bugs. So, I decided to try a new window manager instead of a Desktop Environment and switched to &lt;a href=&#34;http://i3wm.org/&#34;&gt;i3&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;why-i-switched-to-i3:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Why I switched to i3&lt;/h2&gt;
-
-&lt;p&gt;i3 is a very light-weight tiling window manager. Since quite some time I had started feeling all the  panels, the system menus, the starters, the status applets, desktop background, drag-drop functionality, border decoration and animations which Desktop environments provide to be useless. These functionalities consumed a lot of resources and slowed down my system. Moreover, more the functionalities, more are the bugs. I could do away with all those functionalities. I just needed a Window Manager. &lt;a href=&#34;http://adereth.github.io/blog/2013/10/02/why-you-should-try-a-tiling-window-manager/&#34;&gt;This&lt;/a&gt; blog post on using a tiling wm also motivated me.&lt;/p&gt;
-
-&lt;p&gt;Tiling Window manager can increase your efficiency by providing a lot of keyboard shortcuts. They make you less dependent on mouse. It is hard to get used to at first but you get used to it eventually.&lt;/p&gt;
-
-&lt;p&gt;They are heavily customizable. To start with, you can provide your own keyboard shortcuts but essentially you can make your own environment using all the apis and addons available for the window manager.&lt;/p&gt;
-
-&lt;p&gt;There are many tiling wm available out there like &lt;a href=&#34;http://awesome.naquadah.org/&#34;&gt;awesome&lt;/a&gt;, &lt;a href=&#34;http://notion.sourceforge.net/&#34;&gt;notion&lt;/a&gt; but I chose i3 because of its popularity and because some of my friends use it.&lt;/p&gt;
-
-&lt;p&gt;Following is a breif tutorial on things I found necessary to learn being a newbie to tiling wm.&lt;/p&gt;
-
-&lt;h2 id=&#34;installing-i3:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Installing i3&lt;/h2&gt;
-
-&lt;p&gt;For ubuntu,&lt;/p&gt;
-
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007020&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;deb http://debian.sur5r.net/i3/ &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;$(&lt;/span&gt;lsb_release -c -s&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt; universe&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; /etc/apt/sources.list
-apt-get update
-apt-get --allow-unauthenticated install sur5r-keyring
-apt-get update
-apt-get install i3
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&#34;getting-used-to-i3:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Getting Used to i3&lt;/h2&gt;
-
-&lt;p&gt;A good place to start is &lt;a href=&#34;http://build.i3wm.org/docs/userguide.html&#34;&gt;i3 User&amp;rsquo;s Guide&lt;/a&gt;. But it contains a lot of information which can be overwhelming at times.&lt;/p&gt;
-
-&lt;p&gt;When you first start i3, it asks if you want to use the default config(default config file is located in &lt;code&gt;/etc/i3&lt;/code&gt;) or create a new config in &lt;code&gt;~/.i3&lt;/code&gt;. I chose new config and it created a new config file. To edit the default config, this file needs to be updated. Then it asks for a mod key giving Alt key and Window key options. I preferred Alt Key.&lt;/p&gt;
-
-&lt;h3 id=&#34;some-indispensable-shortcuts:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Some Indispensable Shortcuts&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Alt + Enter - open Terminal&lt;/li&gt;
-&lt;li&gt;Alt + D - menu to open applications(it lists only those apps which are in your path)&lt;/li&gt;
-&lt;li&gt;Alt + Shift + Q - Close a window&lt;/li&gt;
-&lt;li&gt;Ctrl + W - Close a window which has a cross on the top right to close it(generally browser tabs)&lt;/li&gt;
-&lt;li&gt;Alt + 2 - a new workspace(use any number instead of 2)&lt;/li&gt;
-&lt;li&gt;Alt + Shift + 2 - move the focused window to second workspace&lt;/li&gt;
-&lt;li&gt;Alt + Shift + C - reload config file&lt;/li&gt;
-&lt;li&gt;Alt + arrow keys - switch through windows in the same workspace&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;These are default shortcuts and can be changed by updating the config file.&lt;/p&gt;
-
-&lt;h3 id=&#34;tabbed-layout:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Tabbed Layout&lt;/h3&gt;
-
-&lt;p&gt;By default when you open a new window, the current window splits either horizontally or vertically to accommodate the new one. I prefer tabbed layout to horizontal/vertical or stacked layout. Use &lt;code&gt;Alt + W&lt;/code&gt; to switch to tabbed layout.&lt;/p&gt;
-
-&lt;h3 id=&#34;volume-control:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Volume Control&lt;/h3&gt;
-
-&lt;p&gt;There is no volume control panel by default in i3. You can bind your own shortcuts to volume control. Modify your config to include the following&lt;/p&gt;
-
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;bindsym XF86AudioLowerVolume &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; /usr/bin/pactl &lt;span style=&#34;color: #007020&#34;&gt;set&lt;/span&gt;-sink-volume &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0&lt;/span&gt; -- &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;-5%&amp;#39;&lt;/span&gt;
-bindsym XF86AudioRaiseVolume &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; /usr/bin/pactl &lt;span style=&#34;color: #007020&#34;&gt;set&lt;/span&gt;-sink-volume &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0&lt;/span&gt; -- &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;+5%&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;p&gt;Here the XF86AudioLowerVolume and XF86AudioRaiseVolume are the multimedia keys on your keyboard for volume control. &lt;code&gt;bindsym&lt;/code&gt; is used to bind a key to a command. &lt;code&gt;exec /usr/bin/pactl set-sink-volume 0 -- &#39;-5%&#39;&lt;/code&gt; is to execute the &lt;code&gt;pactl&lt;/code&gt; command on keypress. &lt;code&gt;pactl&lt;/code&gt; command is for controlling a running pulseaudio server. So, above command only works when you have pulseaudio installed which is default in ubuntu.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;To reload the config file after making changes, use Alt + Shift + C&lt;/em&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;screen-lock:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Screen Lock&lt;/h3&gt;
-
-&lt;p&gt;For screen lock, I use &lt;code&gt;gnome-screensaver&lt;/code&gt;. Gnome Screensaver locks the screen on  &lt;code&gt;gnome-screensaver-command -l&lt;/code&gt; command. I want my screen to lock automatically after 1 minute of inactivity. For this, I use &lt;code&gt;xautolock&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007020&#34;&gt;exec &lt;/span&gt;xautolock -time &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;1&lt;/span&gt; -locker screenlock
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;p&gt;The above line in my config starts &lt;code&gt;xautolock&lt;/code&gt; which executes the screenlock script after 1 minute of inactivity. Screenlock script contains the &lt;code&gt;gnome-screensaver-command -l&lt;/code&gt; command.&lt;/p&gt;
-
-&lt;p&gt;I also  to bind &lt;code&gt;Alt + Ctrl + l&lt;/code&gt; shortcut to lock the screen.
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;bindsym Control+Mod1+l &lt;span style=&#34;color: #007020&#34;&gt;exec &lt;/span&gt;gnome-screensaver-command -l
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;h3 id=&#34;reboot-suspend-and-shutdown:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Reboot, Suspend and Shutdown&lt;/h3&gt;
-
-&lt;p&gt;The commands for shutdown is &lt;code&gt;sudo shutdown -Ph now&lt;/code&gt;, for reboot is &lt;code&gt;sudo reboot&lt;/code&gt; and for suspend is &lt;code&gt;sudo pm-suspend&lt;/code&gt;.
-Since all these commands require root access and hence password, it will not be possible for i3 to bind them to keys normally. We need to create a script for each of these commands and add a no-password entry for them in sudoers file. Run &lt;code&gt;sudo visudo&lt;/code&gt; and add the following lines at the end of the file. Adding them at the end is important.&lt;/p&gt;
-
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;shivanshu &lt;span style=&#34;color: #996633&#34;&gt;ALL&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=(&lt;/span&gt;ALL&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; NOPASSWD: /home/shivanshu/.i3/shutdown
-shivanshu &lt;span style=&#34;color: #996633&#34;&gt;ALL&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=(&lt;/span&gt;ALL&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; NOPASSWD: /home/shivanshu/.i3/reboot
-shivanshu &lt;span style=&#34;color: #996633&#34;&gt;ALL&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=(&lt;/span&gt;ALL&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; NOPASSWD: /home/shivanshu/.i3/suspend
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;p&gt;Here, shutdown, reboot and suspend are scripts which contain the corresponding commands. Then, we can bind these scripts to keyboard shortcuts in the config file&lt;/p&gt;
-
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;bindsym Control+Mod1+s &lt;span style=&#34;color: #007020&#34;&gt;exec &lt;/span&gt;gnome-screensaver-command -l &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo /home/shivanshu/.i3/suspend
-bindsym Control+Mod1+x &lt;span style=&#34;color: #007020&#34;&gt;exec &lt;/span&gt;sudo /home/shivanshu/shutdown
-bindsym Control+Mod1+r &lt;span style=&#34;color: #007020&#34;&gt;exec &lt;/span&gt;sudo /home/shivanshu/reboot
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
-
-&lt;p&gt;Notice that I have also locked the screen before suspending the system so that it requires password on wakeup.&lt;/p&gt;
-
-&lt;h3 id=&#34;battery-low-warning:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Battery Low Warning&lt;/h3&gt;
-
-&lt;p&gt;I want a warning when my battery is low. For this, I have used a script I found on archlinux forum&amp;rsquo;s i3 thread. This script uses i3-nagbar to give warnings and needs acpi installed. It also need root permissions to run, so add a no-password entry for it in the sudoers file. Then add it in the config file.&lt;/p&gt;
-
-&lt;script src=&#34;https://gist.github.com/shivanshuag/8648921.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;I have added line 34 and 51 to the script to enable the power saving mode when my laptop is running on battery. You need &lt;code&gt;pm-utils&lt;/code&gt; for these commands.&lt;/p&gt;
-
-&lt;p&gt;You can find my config file &lt;a href=&#34;https://gist.github.com/shivanshuag/8614576&#34;&gt;here&lt;/a&gt;. I will keep on updating the changes I make to my config.
-I hope that i3 proves to be that perfect desktop environment I have been searching for although I think I can customize it to do whatever I want :D&lt;/p&gt;
 </description>
     </item>
     

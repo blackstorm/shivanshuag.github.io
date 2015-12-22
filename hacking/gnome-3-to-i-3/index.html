@@ -141,13 +141,13 @@
 
 <p>For ubuntu,</p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #007020">echo</span> <span style="background-color: #fff0f0">&quot;deb http://debian.sur5r.net/i3/ </span><span style="color: #008800; font-weight: bold">$(</span>lsb_release -c -s<span style="color: #008800; font-weight: bold">)</span><span style="background-color: #fff0f0"> universe&quot;</span> &gt;&gt; /etc/apt/sources.list
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #007020">echo</span> <span style="background-color: #fff0f0">&quot;deb http://debian.sur5r.net/i3/ </span><span style="color: #008800; font-weight: bold">$(</span>lsb_release -c -s<span style="color: #008800; font-weight: bold">)</span><span style="background-color: #fff0f0"> universe&quot;</span> &gt;&gt; /etc/apt/sources.list
 apt-get update
 apt-get --allow-unauthenticated install sur5r-keyring
 apt-get update
 apt-get install i3
 </pre></div>
-</p>
+
 
 <h2 id="getting-used-to-i3:a425d0e5ba2e3e04b9c1aa69db283406">Getting Used to i3</h2>
 
@@ -178,10 +178,10 @@ apt-get install i3
 
 <p>There is no volume control panel by default in i3. You can bind your own shortcuts to volume control. Modify your config to include the following</p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">bindsym XF86AudioLowerVolume <span style="color: #007020">exec</span> /usr/bin/pactl <span style="color: #007020">set</span>-sink-volume <span style="color: #6600EE; font-weight: bold">0</span> -- <span style="background-color: #fff0f0">&#39;-5%&#39;</span>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">bindsym XF86AudioLowerVolume <span style="color: #007020">exec</span> /usr/bin/pactl <span style="color: #007020">set</span>-sink-volume <span style="color: #6600EE; font-weight: bold">0</span> -- <span style="background-color: #fff0f0">&#39;-5%&#39;</span>
 bindsym XF86AudioRaiseVolume <span style="color: #007020">exec</span> /usr/bin/pactl <span style="color: #007020">set</span>-sink-volume <span style="color: #6600EE; font-weight: bold">0</span> -- <span style="background-color: #fff0f0">&#39;+5%&#39;</span>
 </pre></div>
-</p>
+
 
 <p>Here the XF86AudioLowerVolume and XF86AudioRaiseVolume are the multimedia keys on your keyboard for volume control. <code>bindsym</code> is used to bind a key to a command. <code>exec /usr/bin/pactl set-sink-volume 0 -- '-5%'</code> is to execute the <code>pactl</code> command on keypress. <code>pactl</code> command is for controlling a running pulseaudio server. So, above command only works when you have pulseaudio installed which is default in ubuntu.</p>
 
@@ -191,9 +191,9 @@ bindsym XF86AudioRaiseVolume <span style="color: #007020">exec</span> /usr/bin/p
 
 <p>For screen lock, I use <code>gnome-screensaver</code>. Gnome Screensaver locks the screen on  <code>gnome-screensaver-command -l</code> command. I want my screen to lock automatically after 1 minute of inactivity. For this, I use <code>xautolock</code>.</p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #007020">exec </span>xautolock -time <span style="color: #6600EE; font-weight: bold">1</span> -locker screenlock
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span style="color: #007020">exec </span>xautolock -time <span style="color: #6600EE; font-weight: bold">1</span> -locker screenlock
 </pre></div>
-</p>
+
 
 <p>The above line in my config starts <code>xautolock</code> which executes the screenlock script after 1 minute of inactivity. Screenlock script contains the <code>gnome-screensaver-command -l</code> command.</p>
 
