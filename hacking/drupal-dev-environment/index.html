@@ -143,7 +143,7 @@
 <li><p>Download drupal 7.36 using <code>drush dl drupal --drupal-project-rename=drupal7</code></p></li>
 
 <li><p>Install it by running the following command inside the <code>drupal7</code> director
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">  drush site-install standard <span style="color: #666666; font-weight: bold; background-color: #fff0f0">\</span>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>  drush site-install standard <span style="color: #666666; font-weight: bold; background-color: #fff0f0">\</span>
   --db-url<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;mysql://[username]:[password]@localhost/[database-name]&#39;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\</span>
   --site-name<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;[site name]&#39;</span> --account-name<span style="color: #333333">=[</span>admin-username<span style="color: #333333">]</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\</span>
   --account-pass<span style="color: #333333">=[</span>admin-password<span style="color: #333333">]</span>
@@ -155,7 +155,7 @@
 
 <li><p>Alternatively, use drush make with the following make file and then do a drush site-install</p>
 
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">  ;full documentation <span style="color: #008800; font-weight: bold">for</span> drush make file at http://www.drush.org/en/master/make/
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>  ;full documentation <span style="color: #008800; font-weight: bold">for</span> drush make file at http://www.drush.org/en/master/make/
   <span style="color: #996633">core</span> <span style="color: #333333">=</span> 7.x
   <span style="color: #996633">api</span> <span style="color: #333333">=</span> 2
   projects<span style="color: #333333">[</span>drupal<span style="color: #333333">][</span>version<span style="color: #333333">]</span> <span style="color: #333333">=</span> 7.36
@@ -181,7 +181,7 @@
 <ul>
 <li><p>In the .drush directory in the home folder, put a file named <code>[sitename].aliases.drushrc.php</code> with the following content</p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%">    #Example aliases file at https://github.com/drush-ops/drush/blob/master/examples/example.aliases.drushrc.php
+<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>    #Example aliases file at https://github.com/drush-ops/drush/blob/master/examples/example.aliases.drushrc.php
     <span style="color: #557799">&lt;?php</span>
     <span style="color: #996633">$aliases</span>[<span style="background-color: #fff0f0">&quot;d8&quot;</span>] <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">array</span> (
       <span style="background-color: #fff0f0">&#39;root&#39;</span> <span style="color: #333333">=&gt;</span> <span style="background-color: #fff0f0">&#39;/home/shivanshu/webapps/drupal8&#39;</span>,

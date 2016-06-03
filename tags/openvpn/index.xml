@@ -53,25 +53,25 @@ The objective of this project is to implement native Multifactor Authentication 
 
 &lt;p&gt;In the server config, put the supported authentication methods as follows&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-method method-type &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;script_file via-env|via-file&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mfa-method method-type &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;script_file via-env|via-file&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 Here method type can be &amp;lsquo;otp&amp;rsquo;, &amp;lsquo;push&amp;rsquo;, &amp;lsquo;user-pass&amp;rsquo;. For example&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-method otp auth.pl via-file
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mfa-method otp auth.pl via-file
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;The three methods differ in what credentials are asked from the user for authentication. In otp, only password is asked. In push, nothing is asked. This is meant for authentication by Push notification on mobile phones which can be handled by a deferred auth plugin on the server side. In user-pass, both username and password are asked from the user. If you want to use a plugin for authentication on the server, include the following lines in the config&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-method method-type
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mfa-method method-type
 plugin plugin_shared_object_file
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;In the client config, put the following line&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-method mfa-type
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mfa-method mfa-type
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -85,7 +85,7 @@ plugin plugin_shared_object_file
 
 &lt;p&gt;The server needs to provide the following configuration option:&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-session-expiration session-validity
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mfa-session-expiration session-validity
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -93,9 +93,9 @@ plugin plugin_shared_object_file
 
 &lt;p&gt;The client needs to provide the following configuration option:&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;mfa-session-file filename
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mfa-session-file filename
 &lt;/pre&gt;&lt;/div&gt;
-
+&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;filename&lt;/code&gt; is the path to the file in which session tokens will be stored. If the filename is not provided, then we warn the user and disable session-support.&lt;/p&gt;
 

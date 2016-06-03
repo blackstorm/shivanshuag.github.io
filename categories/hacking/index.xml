@@ -148,14 +148,14 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 
 &lt;p&gt;&lt;code&gt;git checkout step1&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; context &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.getContext(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;);
   &lt;span style=&#34;color: #888888&#34;&gt;// do stuff here&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -169,9 +169,9 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 
 &lt;p&gt;&lt;code&gt;git checkout step2&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; context &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.getContext(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;);
 
@@ -182,8 +182,8 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
   context.strokeStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;#ff0000&amp;#39;&lt;/span&gt;;
   context.lineCap &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;round&amp;#39;&lt;/span&gt;
   context.stroke();
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -209,9 +209,9 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 
 &lt;p&gt;&lt;code&gt;git checkout step3&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; context &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.getContext(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;);
 
@@ -226,8 +226,8 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
   context.lineWidth &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;15&lt;/span&gt;;
   context.strokeStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;black&amp;#39;&lt;/span&gt;;
   context.stroke();
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -247,9 +247,9 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 
 &lt;p&gt;&lt;code&gt;git checkout step4&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; context &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.getContext(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;);
 
@@ -260,8 +260,8 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
   context.lineWidth &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;7&lt;/span&gt;;
   context.strokeStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;black&amp;#39;&lt;/span&gt;;
   context.stroke();
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -277,9 +277,9 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 
 &lt;p&gt;&lt;code&gt;git checkout step5&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; context &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.getContext(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;);
 
@@ -288,8 +288,8 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
   	context.drawImage(imageObj, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;69&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;50&lt;/span&gt;);
   };
   imageObj.src &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg&amp;#39;&lt;/span&gt;;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
 
@@ -309,16 +309,16 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 
 &lt;p&gt;&lt;code&gt;git checkout step6&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; context &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.getContext(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;);
 
   context.font &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;italic 40pt Calibri&amp;#39;&lt;/span&gt;;
   context.fillText(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;Hello World!&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;150&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;100&lt;/span&gt;);
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
 
@@ -336,9 +336,9 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 
 &lt;p&gt;&lt;code&gt;git checkout step7&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;450&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;450&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #007700&#34;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;450&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;450&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; context &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.getContext(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;);
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; w &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.width
@@ -348,8 +348,8 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
   context.fillRect(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt; , &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;, w, h);
   context.strokeStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;black&amp;quot;&lt;/span&gt;;
   context.strokeRect(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;, w, h);
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color: #007700&#34;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
 
@@ -359,7 +359,7 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 
 &lt;p&gt;&lt;code&gt;git checkout step8&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; create_snake() {
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; create_snake() {
 &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; length &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;5&lt;/span&gt;; &lt;span style=&#34;color: #888888&#34;&gt;//Length of the snake&lt;/span&gt;
 snake_array &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; []; &lt;span style=&#34;color: #888888&#34;&gt;//Empty array to start with&lt;/span&gt;
 &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; i &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; length&lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;; i&lt;span style=&#34;color: #333333&#34;&gt;&amp;gt;=&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;; i&lt;span style=&#34;color: #333333&#34;&gt;--&lt;/span&gt;) {
@@ -377,7 +377,7 @@ create_snake();   &lt;span style=&#34;color: #888888&#34;&gt;// calling the crea
 
 &lt;p&gt;&lt;code&gt;git checkout step9&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; cw &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;10&lt;/span&gt;;&lt;span style=&#34;color: #888888&#34;&gt;//cell width&lt;/span&gt;
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; cw &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;10&lt;/span&gt;;&lt;span style=&#34;color: #888888&#34;&gt;//cell width&lt;/span&gt;
 &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; paint() {
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; i &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;; i &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt; snake_array.length; i&lt;span style=&#34;color: #333333&#34;&gt;++&lt;/span&gt;) {
     &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; c &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; snake_array[i];
@@ -402,7 +402,7 @@ paint();
 
 &lt;p&gt;In this step, we will create the Game Loop. Game Loop contains the statements which will be called in every frame of the game. These instructions will be responsible for updating the state of the game (like the position of the snake, handling input).&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;game_loop &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; setInterval(paint, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;60&lt;/span&gt;);
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;game_loop &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; setInterval(paint, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;60&lt;/span&gt;);
 
 &lt;span style=&#34;color: #888888&#34;&gt;//Put the following lines inside the paint function&lt;/span&gt;
   &lt;span style=&#34;color: #888888&#34;&gt;//Pop out the tail cell and place it infront of the head cell&lt;/span&gt;
@@ -424,7 +424,7 @@ paint();
 
 &lt;p&gt;After every 60 ms, paint() function will create new rectangle but will not delete the previous rectangles. This will leave a trail of the movement of the snake. So, we will first paint the background of the canvas white inside the paint() function.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #888888&#34;&gt;// Put the following lines at the start of the paint function&lt;/span&gt;
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #888888&#34;&gt;// Put the following lines at the start of the paint function&lt;/span&gt;
 context.fillStyle&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;;
 context.fillRect(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt; , &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;, w, h);
 context.strokeStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;;
@@ -438,7 +438,7 @@ context.strokeRect(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt
 
 &lt;p&gt;First, we will add direction based movement to the snake. Instead of the line &lt;code&gt;nx++&lt;/code&gt; in the code, add the following snippet.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; d &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;right&amp;quot;&lt;/span&gt;; &lt;span style=&#34;color: #888888&#34;&gt;//default direction. Add this line outside the paint function&lt;/span&gt;
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; d &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;right&amp;quot;&lt;/span&gt;; &lt;span style=&#34;color: #888888&#34;&gt;//default direction. Add this line outside the paint function&lt;/span&gt;
 
 &lt;span style=&#34;color: #888888&#34;&gt;//add the following lines in the paint function replacing &amp;#39;nx++&amp;#39;&lt;/span&gt;
 &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(d &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;right&amp;quot;&lt;/span&gt;) nx&lt;span style=&#34;color: #333333&#34;&gt;++&lt;/span&gt;;
@@ -450,7 +450,7 @@ context.strokeRect(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt
 
 &lt;p&gt;Add a key listener and change the direction of the snake accordingly.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.onkeydown &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt;(e) {
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.onkeydown &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt;(e) {
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; key &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; e.which;
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(key &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;37&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; d &lt;span style=&#34;color: #333333&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;right&amp;quot;&lt;/span&gt;) d &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;left&amp;quot;&lt;/span&gt;;
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(key &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;38&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; d &lt;span style=&#34;color: #333333&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;down&amp;quot;&lt;/span&gt;) d&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;up&amp;quot;&lt;/span&gt;;
@@ -468,7 +468,7 @@ context.strokeRect(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt
 
 &lt;p&gt;First, we will make a function to paint cells. This function can be used while painting the cells of the snake too.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; paint_cell(x,y) {
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; paint_cell(x,y) {
   context.fillStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;blue&amp;quot;&lt;/span&gt;;
   context.fillRect(&lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;cw, &lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;cw, cw, cw);
   context.strokeStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;;
@@ -479,7 +479,7 @@ context.strokeRect(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt
 
 &lt;p&gt;Then, we create a function which gives the coordinates of a random cell which is to be used as food.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; food;  &lt;span style=&#34;color: #888888&#34;&gt;// global variable which contains food&lt;/span&gt;
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; food;  &lt;span style=&#34;color: #888888&#34;&gt;// global variable which contains food&lt;/span&gt;
 &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; create_food() {
   food &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; {
     x&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;Math&lt;/span&gt;.floor(&lt;span style=&#34;color: #007020&#34;&gt;Math&lt;/span&gt;.random()&lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;(w&lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt;cw)&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;cw),
@@ -501,7 +501,7 @@ paint_cell(food.x, food.y);
 
 &lt;p&gt;&lt;code&gt;git checkout step13&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #888888&#34;&gt;//Inside the paint function&lt;/span&gt;
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #888888&#34;&gt;//Inside the paint function&lt;/span&gt;
 &lt;span style=&#34;color: #888888&#34;&gt;//If the new head position matches with that of the food,&lt;/span&gt;
 &lt;span style=&#34;color: #888888&#34;&gt;//Create a new head instead of moving the tail&lt;/span&gt;
 &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(nx &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; food.x &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ny &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; food.y) {
@@ -522,7 +522,7 @@ paint_cell(food.x, food.y);
 
 &lt;p&gt;First create an init function which will restore the game state to the initial state. Move the code used to set the initial state of the game to the init function and call it when the page loads.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; game_loop; &lt;span style=&#34;color: #888888&#34;&gt;// Make gameloop a global variable similar to d, food and snake_array.&lt;/span&gt;
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; game_loop; &lt;span style=&#34;color: #888888&#34;&gt;// Make gameloop a global variable similar to d, food and snake_array.&lt;/span&gt;
 
 &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; init() {
   d &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;right&amp;quot;&lt;/span&gt;; &lt;span style=&#34;color: #888888&#34;&gt;//default direction&lt;/span&gt;
@@ -537,7 +537,7 @@ init(); &lt;span style=&#34;color: #888888&#34;&gt;// call init when the script 
 
 &lt;p&gt;Add the following condition inside the paint function to detect collision with the boundaries.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(nx&lt;span style=&#34;color: #333333&#34;&gt;==-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; nx&lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt;w&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;cw &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; ny&lt;span style=&#34;color: #333333&#34;&gt;==-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; ny&lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt;h&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;cw) {
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(nx&lt;span style=&#34;color: #333333&#34;&gt;==-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; nx&lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt;w&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;cw &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; ny&lt;span style=&#34;color: #333333&#34;&gt;==-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; ny&lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt;h&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;cw) {
   &lt;span style=&#34;color: #888888&#34;&gt;// clear the game loop&lt;/span&gt;
   clearInterval(game_loop);
   init();
@@ -554,7 +554,7 @@ init(); &lt;span style=&#34;color: #888888&#34;&gt;// call init when the script 
 
 &lt;p&gt;Create the &lt;code&gt;check_collision&lt;/code&gt; function as follows.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; check_collision(x, y, array) {
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; check_collision(x, y, array) {
   &lt;span style=&#34;color: #888888&#34;&gt;//This function will check if the provided x/y coordinates exist&lt;/span&gt;
   &lt;span style=&#34;color: #888888&#34;&gt;//in an array of cells or not, excluding the head&lt;/span&gt;
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; i &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;; i &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt; array.length; i&lt;span style=&#34;color: #333333&#34;&gt;++&lt;/span&gt;) {
@@ -568,7 +568,7 @@ init(); &lt;span style=&#34;color: #888888&#34;&gt;// call init when the script 
 
 &lt;p&gt;Modify the collision condition as follows&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(nx&lt;span style=&#34;color: #333333&#34;&gt;==-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; nx&lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt;w&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;cw &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; ny&lt;span style=&#34;color: #333333&#34;&gt;==-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; ny&lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt;h&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;cw &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; check_collision(nx, ny, snake_array)) {
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(nx&lt;span style=&#34;color: #333333&#34;&gt;==-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; nx&lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt;w&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;cw &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; ny&lt;span style=&#34;color: #333333&#34;&gt;==-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; ny&lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt;h&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;cw &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; check_collision(nx, ny, snake_array)) {
   &lt;span style=&#34;color: #888888&#34;&gt;// clear the game loop&lt;/span&gt;
   clearInterval(game_loop);
   init();
@@ -610,7 +610,7 @@ init(); &lt;span style=&#34;color: #888888&#34;&gt;// call init when the script 
 in the &lt;a href=&#34;https://github.com/drush-ops/drush/blob/master/tests/phpunit.xml.dist&#34;&gt;phpunit.xml.dist&lt;/a&gt; directory. If you look inside this file, there are some commented lines that contain environment requried for the tests to run. You can either uncomment these and provide appropriate values or set these variables as bash environment variables where you run the test.&lt;/p&gt;
 
 &lt;p&gt;To run the tests on your local machine, first go the the drush root directory (directory where drush is installed) and run
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;composer install
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;composer install
 &lt;/pre&gt;&lt;/div&gt;
 
 This command will install all the dependencies (including PHPUnit) required for running the tests inside a directory named &lt;code&gt;vendor&lt;/code&gt;. Then run the &lt;code&gt;unish.sh&lt;/code&gt; script from the drush root directory.&lt;/p&gt;
@@ -619,7 +619,7 @@ This command will install all the dependencies (including PHPUnit) required for 
 
 &lt;p&gt;You can create a directory named &lt;code&gt;tests&lt;/code&gt; inside you drush extension to contain all the tests. PHPUnit looks inside *Test.php files inside a directory for tests. Drush follows Lower Camel Case for the naming of both the file and the class name. So all you file names should be in Lower Camel Case with a &lt;code&gt;Test&lt;/code&gt; suffix.&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
 &lt;span style=&#34;color: #DD4422&#34;&gt;/**&lt;/span&gt;
 &lt;span style=&#34;color: #DD4422&#34;&gt; * @file&lt;/span&gt;
 &lt;span style=&#34;color: #DD4422&#34;&gt; * Contains /site_audit/tests/BestPracticesFast404Case.&lt;/span&gt;
@@ -646,7 +646,7 @@ This command will install all the dependencies (including PHPUnit) required for 
 
 &lt;h2 id=&#34;the-setup-function:906d2a8b4b326a75d9662f597e0ca1db&#34;&gt;The SetUp Function&lt;/h2&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
 
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;setUp&lt;/span&gt;() {
     &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; (UNISH_DRUPAL_MAJOR_VERSION &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;8&lt;/span&gt;) {
@@ -675,7 +675,7 @@ This command will install all the dependencies (including PHPUnit) required for 
 
 &lt;h2 id=&#34;the-test-function:906d2a8b4b326a75d9662f597e0ca1db&#34;&gt;The Test Function&lt;/h2&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
 
   &lt;span style=&#34;color: #DD4422&#34;&gt;/**&lt;/span&gt;
 &lt;span style=&#34;color: #DD4422&#34;&gt;   * If fast_404 is enabled and fast_404 paths are empty, check should warn.&lt;/span&gt;
@@ -705,12 +705,12 @@ This command will install all the dependencies (including PHPUnit) required for 
 
 &lt;p&gt;To run the tests, you have to run PHPUnit pointing to the phpunit.xml.dist inside the drush tests directory. So running the following command from &lt;strong&gt;inside the root of you drush extension&lt;/strong&gt; should run the tests.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;phpunit --configuration &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;path to drush tests directiory&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;path to your tests directory&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;phpunit --configuration &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;path to drush tests directiory&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;path to your tests directory&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
 
 &lt;p&gt;In our case, the path to our tests directory is tests. If you install drush using composer, it will be inside .composer/vendor/drush directory . In this case, following command will work.
- &lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt; phpunit --configuration .composer/vendor/drush/drush/tests tests
+ &lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; phpunit --configuration .composer/vendor/drush/drush/tests tests
  
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
@@ -738,7 +738,7 @@ This command will install all the dependencies (including PHPUnit) required for 
 &lt;h2 id=&#34;installing-codesniffer:050cc04f629b6df59628e0ab0907bdd2&#34;&gt;Installing CodeSniffer&lt;/h2&gt;
 
 &lt;p&gt;CodeSniffer can be installed using composer by the following command
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;composer global require squizlabs/PHP_CodeSniffer:&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;2
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;composer global require squizlabs/PHP_CodeSniffer:&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;2
 
 &lt;span style=&#34;color: #888888&#34;&gt;#make phpcs command globally availabe&lt;/span&gt;
 sudo ln -s ~/.composer/vendor/bin/phpcs /usr/local/bin
@@ -749,7 +749,7 @@ sudo ln -s ~/.composer/vendor/bin/phpcs /usr/local/bin
 
 &lt;p&gt;Coder provides the set of sniffs for CodeSniffer. We need two copies of this, one for Drupal 7 and other for Drupal 8.
 Install the first copy using Composer
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;composer global require drupal/coder
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;composer global require drupal/coder
 &lt;/pre&gt;&lt;/div&gt;
 
 This will install 8.x-2.x version of coder which provides standards for Drupal 8. Composer puts the code module inside &lt;code&gt;$HOME/.composer/vendor/drupal/&lt;/code&gt; directory.&lt;/p&gt;
@@ -757,7 +757,7 @@ This will install 8.x-2.x version of coder which provides standards for Drupal 8
 &lt;h2 id=&#34;installing-coder-for-drupal-7:050cc04f629b6df59628e0ab0907bdd2&#34;&gt;Installing Coder for Drupal 7&lt;/h2&gt;
 
 &lt;p&gt;Install the second copy using drush
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;drush dl coder-7.x --destination&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #996633&#34;&gt;$HOME&lt;/span&gt;/.drush
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;drush dl coder-7.x --destination&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #996633&#34;&gt;$HOME&lt;/span&gt;/.drush
 &lt;/pre&gt;&lt;/div&gt;
 
 This will download 7.x2.x version of coder to &lt;code&gt;.drush&lt;/code&gt; directory inside your home folder.&lt;/p&gt;
@@ -765,11 +765,11 @@ This will download 7.x2.x version of coder to &lt;code&gt;.drush&lt;/code&gt; di
 &lt;h2 id=&#34;creating-aliases-for-usage:050cc04f629b6df59628e0ab0907bdd2&#34;&gt;Creating Aliases for usage&lt;/h2&gt;
 
 &lt;p&gt;Different aliases can be created for CodeSniffer with Drupal 7 standards and CodeSniffer with Drupal 8 standards. To create aliases, add the following into your &lt;code&gt;.bashrc&lt;/code&gt; or &lt;code&gt;.zshrc&lt;/code&gt; file
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #888888&#34;&gt;#drupalcs8 alias for testing Drupal 8 coding standards&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;alias &lt;/span&gt;&lt;span style=&#34;color: #996633&#34;&gt;drupalcs8&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #996633&#34;&gt;$HOME&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;/.composer/vendor/squizlabs/php_codesniffer/scripts/phpcs --standard=~/.composer/vendor/drupal/coder/coder_sniffer/Drupal --extensions=&amp;#39;php,module,inc,install,test,profile,theme,js,css,info,txt&amp;#39;&amp;quot;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #888888&#34;&gt;#drupalcs8 alias for testing Drupal 8 coding standards&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;alias&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;drupalcs8&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #996633&#34;&gt;$HOME&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;/.composer/vendor/squizlabs/php_codesniffer/scripts/phpcs --standard=~/.composer/vendor/drupal/coder/coder_sniffer/Drupal --extensions=&amp;#39;php,module,inc,install,test,profile,theme,js,css,info,txt&amp;#39;&amp;quot;&lt;/span&gt;
 
 &lt;span style=&#34;color: #888888&#34;&gt;#drupalcs7 for testing Drupal 7 coding standards&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;alias &lt;/span&gt;&lt;span style=&#34;color: #996633&#34;&gt;drupalcs7&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;phpcs --standard=~/.drush/coder/coder_sniffer/Drupal --extensions=&amp;#39;php,module,inc,install,test,profile,theme,js,css,info,txt&amp;#39;&amp;quot;&lt;/span&gt;
+&lt;span style=&#34;color: #007020&#34;&gt;alias&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;drupalcs7&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;phpcs --standard=~/.drush/coder/coder_sniffer/Drupal --extensions=&amp;#39;php,module,inc,install,test,profile,theme,js,css,info,txt&amp;#39;&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
 
@@ -839,7 +839,7 @@ This will download 7.x2.x version of coder to &lt;code&gt;.drush&lt;/code&gt; di
 &lt;li&gt;&lt;p&gt;Download drupal 7.36 using &lt;code&gt;drush dl drupal --drupal-project-rename=drupal7&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Install it by running the following command inside the &lt;code&gt;drupal7&lt;/code&gt; director
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;  drush site-install standard &lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;  drush site-install standard &lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\&lt;/span&gt;
   --db-url&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;mysql://[username]:[password]@localhost/[database-name]&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\&lt;/span&gt;
   --site-name&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;[site name]&amp;#39;&lt;/span&gt; --account-name&lt;span style=&#34;color: #333333&#34;&gt;=[&lt;/span&gt;admin-username&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\&lt;/span&gt;
   --account-pass&lt;span style=&#34;color: #333333&#34;&gt;=[&lt;/span&gt;admin-password&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
@@ -851,7 +851,7 @@ This will download 7.x2.x version of coder to &lt;code&gt;.drush&lt;/code&gt; di
 
 &lt;li&gt;&lt;p&gt;Alternatively, use drush make with the following make file and then do a drush site-install&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;  ;full documentation &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; drush make file at http://www.drush.org/en/master/make/
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;  ;full documentation &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; drush make file at http://www.drush.org/en/master/make/
   &lt;span style=&#34;color: #996633&#34;&gt;core&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; 7.x
   &lt;span style=&#34;color: #996633&#34;&gt;api&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; 2
   projects&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;drupal&lt;span style=&#34;color: #333333&#34;&gt;][&lt;/span&gt;version&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; 7.36
@@ -877,7 +877,7 @@ This will download 7.x2.x version of coder to &lt;code&gt;.drush&lt;/code&gt; di
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;In the .drush directory in the home folder, put a file named &lt;code&gt;[sitename].aliases.drushrc.php&lt;/code&gt; with the following content&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;    #Example aliases file at https://github.com/drush-ops/drush/blob/master/examples/example.aliases.drushrc.php
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;    #Example aliases file at https://github.com/drush-ops/drush/blob/master/examples/example.aliases.drushrc.php
     &lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
     &lt;span style=&#34;color: #996633&#34;&gt;$aliases&lt;/span&gt;[&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;d8&amp;quot;&lt;/span&gt;] &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;array&lt;/span&gt; (
       &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;root&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;/home/shivanshu/webapps/drupal8&amp;#39;&lt;/span&gt;,
@@ -921,7 +921,7 @@ This will download 7.x2.x version of coder to &lt;code&gt;.drush&lt;/code&gt; di
 
 &lt;p&gt;First problem was to get a list of words. Someone has uploaded all the words from Magoosh GRE flashcard and Barron&amp;rsquo;s GRE on quizlet.com &lt;a href=&#34;http://quizlet.com/45492734/magoosh-gre-flashcards-basic-common-advanced-all-1000-flash-cards/&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;http://quizlet.com/8997815/barrons-800-essential-words-for-the-gre-flash-cards/&#34;&gt;here&lt;/a&gt;. Now it was just a matter of scraping them and a simple python script was apt for the task. I scraped all the words and their meanings in a text file named &lt;code&gt;words&lt;/code&gt;, each word separated by a &amp;lsquo;%&amp;rsquo;. This &amp;lsquo;%&amp;rsquo; has a special significance. It is useful in creating a random access file for strings which is used by the fortune program.&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;strfile words
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;strfile words
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -929,7 +929,7 @@ This will download 7.x2.x version of coder to &lt;code&gt;.drush&lt;/code&gt; di
 
 &lt;p&gt;While exploring fortune, I also found that you can specify the probabilities with which it selects string from each database. This is helpful beacuse I want to to select words from Magoosh Basic and Magoosh Common list more frequently than Magoosh Advanced. For this, I need the words in separate files according to category. No probelm because I found the different lists on quizlet.com &lt;a href=&#34;http://quizlet.com/45473963/magoosh-gre-flashcards-basic-all-i-vii-flash-cards/&#34;&gt;here&lt;/a&gt;, &lt;a href=&#34;http://quizlet.com/45473977/magoosh-gre-flashcards-common-all-i-vi-flash-cards/&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;http://quizlet.com/45473953/magoosh-gre-flashcards-advanced-all-i-vii-flash-cards/&#34;&gt;here&lt;/a&gt;, scraped them into different files and followed the same procedure. The script used for scraping and the list of words is available in a github repository &lt;a href=&#34;https://github.com/shivanshuag/cowsay-gre&#34;&gt;here&lt;/a&gt;. So now my command is&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;fortune fortune 40% magoosh_basic 40% magoosh_common magoosh_adv
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;fortune fortune 40% magoosh_basic 40% magoosh_common magoosh_adv
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -937,7 +937,7 @@ This will download 7.x2.x version of coder to &lt;code&gt;.drush&lt;/code&gt; di
 
 &lt;p&gt;To make it more interesting, I piped the output to cowsay. In cowsay, you can specify different ASCII images as argument. There is a default set of images in the &lt;code&gt;/usr/share/cows&lt;/code&gt; folder.&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;fortune -c 40% magoosh_basic 40% magoosh_common magoosh_adv | cowthink -f &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;$(&lt;/span&gt;find /usr/share/cows -type f | shuf -n 1&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;fortune -c 40% magoosh_basic 40% magoosh_common magoosh_adv | cowthink -f &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;$(&lt;/span&gt;find /usr/share/cows -type f | shuf -n 1&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1198,7 +1198,7 @@ If you have not developed a drupal 7 module before, the difference between disab
 
 &lt;p&gt;For ubuntu,&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007020&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;deb http://debian.sur5r.net/i3/ &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;$(&lt;/span&gt;lsb_release -c -s&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt; universe&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; /etc/apt/sources.list
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;deb http://debian.sur5r.net/i3/ &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;$(&lt;/span&gt;lsb_release -c -s&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt; universe&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; /etc/apt/sources.list
 apt-get update
 apt-get --allow-unauthenticated install sur5r-keyring
 apt-get update
@@ -1235,8 +1235,8 @@ apt-get install i3
 
 &lt;p&gt;There is no volume control panel by default in i3. You can bind your own shortcuts to volume control. Modify your config to include the following&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;bindsym XF86AudioLowerVolume &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; /usr/bin/pactl &lt;span style=&#34;color: #007020&#34;&gt;set&lt;/span&gt;-sink-volume &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0&lt;/span&gt; -- &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;-5%&amp;#39;&lt;/span&gt;
-bindsym XF86AudioRaiseVolume &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; /usr/bin/pactl &lt;span style=&#34;color: #007020&#34;&gt;set&lt;/span&gt;-sink-volume &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0&lt;/span&gt; -- &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;+5%&amp;#39;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;bindsym XF86AudioLowerVolume &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; /usr/bin/pactl set-sink-volume &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0&lt;/span&gt; -- &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;-5%&amp;#39;&lt;/span&gt;
+bindsym XF86AudioRaiseVolume &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; /usr/bin/pactl set-sink-volume &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0&lt;/span&gt; -- &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;+5%&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1248,14 +1248,14 @@ bindsym XF86AudioRaiseVolume &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;
 
 &lt;p&gt;For screen lock, I use &lt;code&gt;gnome-screensaver&lt;/code&gt;. Gnome Screensaver locks the screen on  &lt;code&gt;gnome-screensaver-command -l&lt;/code&gt; command. I want my screen to lock automatically after 1 minute of inactivity. For this, I use &lt;code&gt;xautolock&lt;/code&gt;.&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #007020&#34;&gt;exec &lt;/span&gt;xautolock -time &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;1&lt;/span&gt; -locker screenlock
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; xautolock -time &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;1&lt;/span&gt; -locker screenlock
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;The above line in my config starts &lt;code&gt;xautolock&lt;/code&gt; which executes the screenlock script after 1 minute of inactivity. Screenlock script contains the &lt;code&gt;gnome-screensaver-command -l&lt;/code&gt; command.&lt;/p&gt;
 
 &lt;p&gt;I also  to bind &lt;code&gt;Alt + Ctrl + l&lt;/code&gt; shortcut to lock the screen.
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;bindsym Control+Mod1+l &lt;span style=&#34;color: #007020&#34;&gt;exec &lt;/span&gt;gnome-screensaver-command -l
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;bindsym Control+Mod1+l &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; gnome-screensaver-command -l
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
 
@@ -1264,7 +1264,7 @@ bindsym XF86AudioRaiseVolume &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;
 &lt;p&gt;The commands for shutdown is &lt;code&gt;sudo shutdown -Ph now&lt;/code&gt;, for reboot is &lt;code&gt;sudo reboot&lt;/code&gt; and for suspend is &lt;code&gt;sudo pm-suspend&lt;/code&gt;.
 Since all these commands require root access and hence password, it will not be possible for i3 to bind them to keys normally. We need to create a script for each of these commands and add a no-password entry for them in sudoers file. Run &lt;code&gt;sudo visudo&lt;/code&gt; and add the following lines at the end of the file. Adding them at the end is important.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;shivanshu &lt;span style=&#34;color: #996633&#34;&gt;ALL&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=(&lt;/span&gt;ALL&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; NOPASSWD: /home/shivanshu/.i3/shutdown
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;shivanshu &lt;span style=&#34;color: #996633&#34;&gt;ALL&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=(&lt;/span&gt;ALL&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; NOPASSWD: /home/shivanshu/.i3/shutdown
 shivanshu &lt;span style=&#34;color: #996633&#34;&gt;ALL&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=(&lt;/span&gt;ALL&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; NOPASSWD: /home/shivanshu/.i3/reboot
 shivanshu &lt;span style=&#34;color: #996633&#34;&gt;ALL&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=(&lt;/span&gt;ALL&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; NOPASSWD: /home/shivanshu/.i3/suspend
 &lt;/pre&gt;&lt;/div&gt;
@@ -1272,9 +1272,9 @@ shivanshu &lt;span style=&#34;color: #996633&#34;&gt;ALL&lt;/span&gt;&lt;span st
 
 &lt;p&gt;Here, shutdown, reboot and suspend are scripts which contain the corresponding commands. Then, we can bind these scripts to keyboard shortcuts in the config file&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;bindsym Control+Mod1+s &lt;span style=&#34;color: #007020&#34;&gt;exec &lt;/span&gt;gnome-screensaver-command -l &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo /home/shivanshu/.i3/suspend
-bindsym Control+Mod1+x &lt;span style=&#34;color: #007020&#34;&gt;exec &lt;/span&gt;sudo /home/shivanshu/shutdown
-bindsym Control+Mod1+r &lt;span style=&#34;color: #007020&#34;&gt;exec &lt;/span&gt;sudo /home/shivanshu/reboot
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;bindsym Control+Mod1+s &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; gnome-screensaver-command -l &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo /home/shivanshu/.i3/suspend
+bindsym Control+Mod1+x &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; sudo /home/shivanshu/shutdown
+bindsym Control+Mod1+r &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; sudo /home/shivanshu/reboot
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
 

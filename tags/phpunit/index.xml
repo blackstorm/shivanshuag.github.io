@@ -27,7 +27,7 @@
 in the &lt;a href=&#34;https://github.com/drush-ops/drush/blob/master/tests/phpunit.xml.dist&#34;&gt;phpunit.xml.dist&lt;/a&gt; directory. If you look inside this file, there are some commented lines that contain environment requried for the tests to run. You can either uncomment these and provide appropriate values or set these variables as bash environment variables where you run the test.&lt;/p&gt;
 
 &lt;p&gt;To run the tests on your local machine, first go the the drush root directory (directory where drush is installed) and run
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;composer install
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;composer install
 &lt;/pre&gt;&lt;/div&gt;
 
 This command will install all the dependencies (including PHPUnit) required for running the tests inside a directory named &lt;code&gt;vendor&lt;/code&gt;. Then run the &lt;code&gt;unish.sh&lt;/code&gt; script from the drush root directory.&lt;/p&gt;
@@ -36,7 +36,7 @@ This command will install all the dependencies (including PHPUnit) required for 
 
 &lt;p&gt;You can create a directory named &lt;code&gt;tests&lt;/code&gt; inside you drush extension to contain all the tests. PHPUnit looks inside *Test.php files inside a directory for tests. Drush follows Lower Camel Case for the naming of both the file and the class name. So all you file names should be in Lower Camel Case with a &lt;code&gt;Test&lt;/code&gt; suffix.&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
 &lt;span style=&#34;color: #DD4422&#34;&gt;/**&lt;/span&gt;
 &lt;span style=&#34;color: #DD4422&#34;&gt; * @file&lt;/span&gt;
 &lt;span style=&#34;color: #DD4422&#34;&gt; * Contains /site_audit/tests/BestPracticesFast404Case.&lt;/span&gt;
@@ -63,7 +63,7 @@ This command will install all the dependencies (including PHPUnit) required for 
 
 &lt;h2 id=&#34;the-setup-function:906d2a8b4b326a75d9662f597e0ca1db&#34;&gt;The SetUp Function&lt;/h2&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
 
   &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;setUp&lt;/span&gt;() {
     &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; (UNISH_DRUPAL_MAJOR_VERSION &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;8&lt;/span&gt;) {
@@ -92,7 +92,7 @@ This command will install all the dependencies (including PHPUnit) required for 
 
 &lt;h2 id=&#34;the-test-function:906d2a8b4b326a75d9662f597e0ca1db&#34;&gt;The Test Function&lt;/h2&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
 
   &lt;span style=&#34;color: #DD4422&#34;&gt;/**&lt;/span&gt;
 &lt;span style=&#34;color: #DD4422&#34;&gt;   * If fast_404 is enabled and fast_404 paths are empty, check should warn.&lt;/span&gt;
@@ -122,12 +122,12 @@ This command will install all the dependencies (including PHPUnit) required for 
 
 &lt;p&gt;To run the tests, you have to run PHPUnit pointing to the phpunit.xml.dist inside the drush tests directory. So running the following command from &lt;strong&gt;inside the root of you drush extension&lt;/strong&gt; should run the tests.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;phpunit --configuration &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;path to drush tests directiory&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;path to your tests directory&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;phpunit --configuration &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;path to drush tests directiory&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;path to your tests directory&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
 
 &lt;p&gt;In our case, the path to our tests directory is tests. If you install drush using composer, it will be inside .composer/vendor/drush directory . In this case, following command will work.
- &lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt; phpunit --configuration .composer/vendor/drush/drush/tests tests
+ &lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; phpunit --configuration .composer/vendor/drush/drush/tests tests
  
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
