@@ -19,7 +19,7 @@
 
 &lt;p&gt;I have been a linux user for more than two years now and the search for a perfect desktop environment is still on. I have tried many of the popular ones - Unity, Gnome 2 and 3, KDE, Cinnamon and MATE. Each of them have a different philosophy which is suitable for some type of users but all of them are either very heavy-weight or have a some very frustrating bugs. So, I decided to try a new window manager instead of a Desktop Environment and switched to &lt;a href=&#34;http://i3wm.org/&#34;&gt;i3&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;why-i-switched-to-i3:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Why I switched to i3&lt;/h2&gt;
+&lt;h2 id=&#34;why-i-switched-to-i3&#34;&gt;Why I switched to i3&lt;/h2&gt;
 
 &lt;p&gt;i3 is a very light-weight tiling window manager. Since quite some time I had started feeling all the  panels, the system menus, the starters, the status applets, desktop background, drag-drop functionality, border decoration and animations which Desktop environments provide to be useless. These functionalities consumed a lot of resources and slowed down my system. Moreover, more the functionalities, more are the bugs. I could do away with all those functionalities. I just needed a Window Manager. &lt;a href=&#34;http://adereth.github.io/blog/2013/10/02/why-you-should-try-a-tiling-window-manager/&#34;&gt;This&lt;/a&gt; blog post on using a tiling wm also motivated me.&lt;/p&gt;
 
@@ -31,25 +31,25 @@
 
 &lt;p&gt;Following is a breif tutorial on things I found necessary to learn being a newbie to tiling wm.&lt;/p&gt;
 
-&lt;h2 id=&#34;installing-i3:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Installing i3&lt;/h2&gt;
+&lt;h2 id=&#34;installing-i3&#34;&gt;Installing i3&lt;/h2&gt;
 
 &lt;p&gt;For ubuntu,&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;deb http://debian.sur5r.net/i3/ &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;$(&lt;/span&gt;lsb_release -c -s&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt; universe&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; /etc/apt/sources.list
+
+echo &#34;deb http://debian.sur5r.net/i3/ $(lsb_release -c -s) universe&#34; &gt;&gt; /etc/apt/sources.list
 apt-get update
 apt-get --allow-unauthenticated install sur5r-keyring
 apt-get update
 apt-get install i3
-&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2 id=&#34;getting-used-to-i3:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Getting Used to i3&lt;/h2&gt;
+&lt;h2 id=&#34;getting-used-to-i3&#34;&gt;Getting Used to i3&lt;/h2&gt;
 
 &lt;p&gt;A good place to start is &lt;a href=&#34;http://build.i3wm.org/docs/userguide.html&#34;&gt;i3 User&amp;rsquo;s Guide&lt;/a&gt;. But it contains a lot of information which can be overwhelming at times.&lt;/p&gt;
 
 &lt;p&gt;When you first start i3, it asks if you want to use the default config(default config file is located in &lt;code&gt;/etc/i3&lt;/code&gt;) or create a new config in &lt;code&gt;~/.i3&lt;/code&gt;. I chose new config and it created a new config file. To edit the default config, this file needs to be updated. Then it asks for a mod key giving Alt key and Window key options. I preferred Alt Key.&lt;/p&gt;
 
-&lt;h3 id=&#34;some-indispensable-shortcuts:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Some Indispensable Shortcuts&lt;/h3&gt;
+&lt;h3 id=&#34;some-indispensable-shortcuts&#34;&gt;Some Indispensable Shortcuts&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Alt + Enter - open Terminal&lt;/li&gt;
@@ -64,60 +64,60 @@ apt-get install i3
 
 &lt;p&gt;These are default shortcuts and can be changed by updating the config file.&lt;/p&gt;
 
-&lt;h3 id=&#34;tabbed-layout:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Tabbed Layout&lt;/h3&gt;
+&lt;h3 id=&#34;tabbed-layout&#34;&gt;Tabbed Layout&lt;/h3&gt;
 
 &lt;p&gt;By default when you open a new window, the current window splits either horizontally or vertically to accommodate the new one. I prefer tabbed layout to horizontal/vertical or stacked layout. Use &lt;code&gt;Alt + W&lt;/code&gt; to switch to tabbed layout.&lt;/p&gt;
 
-&lt;h3 id=&#34;volume-control:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Volume Control&lt;/h3&gt;
+&lt;h3 id=&#34;volume-control&#34;&gt;Volume Control&lt;/h3&gt;
 
 &lt;p&gt;There is no volume control panel by default in i3. You can bind your own shortcuts to volume control. Modify your config to include the following&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;bindsym XF86AudioLowerVolume &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; /usr/bin/pactl set-sink-volume &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0&lt;/span&gt; -- &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;-5%&amp;#39;&lt;/span&gt;
-bindsym XF86AudioRaiseVolume &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; /usr/bin/pactl set-sink-volume &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0&lt;/span&gt; -- &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;+5%&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+
+bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume 0 -- &#39;-5%&#39;
+bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume 0 -- &#39;+5%&#39;
 
 
 &lt;p&gt;Here the XF86AudioLowerVolume and XF86AudioRaiseVolume are the multimedia keys on your keyboard for volume control. &lt;code&gt;bindsym&lt;/code&gt; is used to bind a key to a command. &lt;code&gt;exec /usr/bin/pactl set-sink-volume 0 -- &#39;-5%&#39;&lt;/code&gt; is to execute the &lt;code&gt;pactl&lt;/code&gt; command on keypress. &lt;code&gt;pactl&lt;/code&gt; command is for controlling a running pulseaudio server. So, above command only works when you have pulseaudio installed which is default in ubuntu.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;To reload the config file after making changes, use Alt + Shift + C&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;screen-lock:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Screen Lock&lt;/h3&gt;
+&lt;h3 id=&#34;screen-lock&#34;&gt;Screen Lock&lt;/h3&gt;
 
 &lt;p&gt;For screen lock, I use &lt;code&gt;gnome-screensaver&lt;/code&gt;. Gnome Screensaver locks the screen on  &lt;code&gt;gnome-screensaver-command -l&lt;/code&gt; command. I want my screen to lock automatically after 1 minute of inactivity. For this, I use &lt;code&gt;xautolock&lt;/code&gt;.&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; xautolock -time &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;1&lt;/span&gt; -locker screenlock
-&lt;/pre&gt;&lt;/div&gt;
+
+exec xautolock -time 1 -locker screenlock
 
 
 &lt;p&gt;The above line in my config starts &lt;code&gt;xautolock&lt;/code&gt; which executes the screenlock script after 1 minute of inactivity. Screenlock script contains the &lt;code&gt;gnome-screensaver-command -l&lt;/code&gt; command.&lt;/p&gt;
 
 &lt;p&gt;I also  to bind &lt;code&gt;Alt + Ctrl + l&lt;/code&gt; shortcut to lock the screen.
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;bindsym Control+Mod1+l &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; gnome-screensaver-command -l
-&lt;/pre&gt;&lt;/div&gt;
+
+bindsym Control+Mod1+l exec gnome-screensaver-command -l
 &lt;/p&gt;
 
-&lt;h3 id=&#34;reboot-suspend-and-shutdown:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Reboot, Suspend and Shutdown&lt;/h3&gt;
+&lt;h3 id=&#34;reboot-suspend-and-shutdown&#34;&gt;Reboot, Suspend and Shutdown&lt;/h3&gt;
 
 &lt;p&gt;The commands for shutdown is &lt;code&gt;sudo shutdown -Ph now&lt;/code&gt;, for reboot is &lt;code&gt;sudo reboot&lt;/code&gt; and for suspend is &lt;code&gt;sudo pm-suspend&lt;/code&gt;.
 Since all these commands require root access and hence password, it will not be possible for i3 to bind them to keys normally. We need to create a script for each of these commands and add a no-password entry for them in sudoers file. Run &lt;code&gt;sudo visudo&lt;/code&gt; and add the following lines at the end of the file. Adding them at the end is important.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;shivanshu &lt;span style=&#34;color: #996633&#34;&gt;ALL&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=(&lt;/span&gt;ALL&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; NOPASSWD: /home/shivanshu/.i3/shutdown
-shivanshu &lt;span style=&#34;color: #996633&#34;&gt;ALL&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=(&lt;/span&gt;ALL&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; NOPASSWD: /home/shivanshu/.i3/reboot
-shivanshu &lt;span style=&#34;color: #996633&#34;&gt;ALL&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=(&lt;/span&gt;ALL&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; NOPASSWD: /home/shivanshu/.i3/suspend
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
+shivanshu ALL=(ALL) NOPASSWD: /home/shivanshu/.i3/shutdown
+shivanshu ALL=(ALL) NOPASSWD: /home/shivanshu/.i3/reboot
+shivanshu ALL=(ALL) NOPASSWD: /home/shivanshu/.i3/suspend
+
 
 &lt;p&gt;Here, shutdown, reboot and suspend are scripts which contain the corresponding commands. Then, we can bind these scripts to keyboard shortcuts in the config file&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;bindsym Control+Mod1+s &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; gnome-screensaver-command -l &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo /home/shivanshu/.i3/suspend
-bindsym Control+Mod1+x &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; sudo /home/shivanshu/shutdown
-bindsym Control+Mod1+r &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; sudo /home/shivanshu/reboot
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
+bindsym Control+Mod1+s exec gnome-screensaver-command -l &amp;&amp; sudo /home/shivanshu/.i3/suspend
+bindsym Control+Mod1+x exec sudo /home/shivanshu/shutdown
+bindsym Control+Mod1+r exec sudo /home/shivanshu/reboot
+
 
 &lt;p&gt;Notice that I have also locked the screen before suspending the system so that it requires password on wakeup.&lt;/p&gt;
 
-&lt;h3 id=&#34;battery-low-warning:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Battery Low Warning&lt;/h3&gt;
+&lt;h3 id=&#34;battery-low-warning&#34;&gt;Battery Low Warning&lt;/h3&gt;
 
 &lt;p&gt;I want a warning when my battery is low. For this, I have used a script I found on archlinux forum&amp;rsquo;s i3 thread. This script uses i3-nagbar to give warnings and needs acpi installed. It also need root permissions to run, so add a no-password entry for it in the sudoers file. Then add it in the config file.&lt;/p&gt;
 

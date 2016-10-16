@@ -21,7 +21,7 @@
 
 &lt;p&gt;All this can get very confusing when trying to start a new angular project. I explored various solutions and found the following set up using webpack to bundle javascript, gulp for running tasks, npm for package management to be the best. The full code for this setup is present at [&lt;a href=&#34;https://github.com/shivanshuag/angular2-seed&#34;&gt;https://github.com/shivanshuag/angular2-seed&lt;/a&gt;] . This setup is built upon the &lt;a href=&#34;https://github.com/angular/angular2-seed&#34;&gt;angular2-seed&lt;/a&gt; app.&lt;/p&gt;
 
-&lt;h2 id=&#34;directory-structure:91f302deb060a036b41938a0215c3017&#34;&gt;Directory Structure&lt;/h2&gt;
+&lt;h2 id=&#34;directory-structure&#34;&gt;Directory Structure&lt;/h2&gt;
 
 &lt;p&gt;This is the directory structure I have. &lt;code&gt;app.ts&lt;/code&gt; bootstraps the angular app. &lt;code&gt;app/seed-app.ts&lt;/code&gt; has the main app component. Other components are inside the components directory with a separate directory for each component which contains its &lt;code&gt;html&lt;/code&gt; and &lt;code&gt;css&lt;/code&gt; files along with the typescript file. &lt;code&gt;vendor.ts&lt;/code&gt; imports all the third-party library the the app uses, which includes angular 2 in this case.&lt;/p&gt;
 
@@ -57,17 +57,17 @@
     └── vendor.ts
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;installing-packages:91f302deb060a036b41938a0215c3017&#34;&gt;Installing Packages&lt;/h2&gt;
+&lt;h2 id=&#34;installing-packages&#34;&gt;Installing Packages&lt;/h2&gt;
 
 &lt;p&gt;NPM is used for package mamagement. &lt;a href=&#34;https://github.com/shivanshuag/angular2-seed/blob/master/package.json&#34;&gt;&lt;code&gt;package.json&lt;/code&gt;&lt;/a&gt; contains all the required packages which include angular 2 and its dependecies, webpack , gulp, typescript etc.&lt;/p&gt;
 
-&lt;h2 id=&#34;typescript-and-webpack:91f302deb060a036b41938a0215c3017&#34;&gt;Typescript and Webpack&lt;/h2&gt;
+&lt;h2 id=&#34;typescript-and-webpack&#34;&gt;Typescript and Webpack&lt;/h2&gt;
 
 &lt;p&gt;Typescript compiler configuration is present in &lt;code&gt;tsconfig.json&lt;/code&gt;. It has &lt;code&gt;source maps&lt;/code&gt; enabled which helps in debugging. Webpack configuration is present in &lt;code&gt;webpack.config.json&lt;/code&gt;. It bundles all the third-party dependencies import in &lt;code&gt;vendor.ts&lt;/code&gt; into a file &lt;code&gt;vendor.bundle.js&lt;/code&gt;. All other code is bundles into a files named &lt;code&gt;bundle.js&lt;/code&gt;. &lt;code&gt;index.html&lt;/code&gt; just imports these two files.&lt;/p&gt;
 
 &lt;p&gt;For debugging, source maps are enabled in the bundles created for the development mode using gulp.&lt;/p&gt;
 
-&lt;h2 id=&#34;gulp-tasks:91f302deb060a036b41938a0215c3017&#34;&gt;Gulp Tasks&lt;/h2&gt;
+&lt;h2 id=&#34;gulp-tasks&#34;&gt;Gulp Tasks&lt;/h2&gt;
 
 &lt;p&gt;For the application to work, along with the transpiled javascript, the html and css files for each of the components should be placed at the path given as the &lt;code&gt;templateUrl&lt;/code&gt; or &lt;code&gt;styleUrl&lt;/code&gt; in the typescript file for the component. Gulp tasks are defined in &lt;code&gt;gulpfile.js&lt;/code&gt; for these things, and for running webpack.&lt;/p&gt;
 
@@ -93,7 +93,7 @@
 # Starts webpack-dev-server at port 8080 serving the app
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;issues:91f302deb060a036b41938a0215c3017&#34;&gt;Issues&lt;/h2&gt;
+&lt;h2 id=&#34;issues&#34;&gt;Issues&lt;/h2&gt;
 
 &lt;p&gt;Currently, all the CSS and HTML files of the application are served separately, there is no way to bundle them in a single file. This was possible in Angularjs as there were no components, and whole CSS of the app could be placed in a single file. In angular 2, doing this can cause css selector conflicts. For HTML in Angularjs, there was template-cache, which could pick all the templates from a single html file.&lt;/p&gt;
 
@@ -111,13 +111,13 @@
       <guid>http://www.ninjaducks.in/hacking/codelab/</guid>
       <description>
 
-&lt;h2 id=&#34;objective:4cc1e79f29e4e167992c218986e06770&#34;&gt;Objective&lt;/h2&gt;
+&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;
 
 &lt;p&gt;This codelab will demonstrate how to build a game using HTML5 canvas. As an example, we will build a simple snake game.&lt;/p&gt;
 
 &lt;p&gt;We will walk you through the process of building the in a series of incremental steps. After each step you should have a working (not necessarily useful) version of the game. Each step is described in the form of a tag in the git repository.&lt;/p&gt;
 
-&lt;h2 id=&#34;requirements:4cc1e79f29e4e167992c218986e06770&#34;&gt;Requirements&lt;/h2&gt;
+&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;/h2&gt;
 
 &lt;p&gt;The requirements for this codelab are:&lt;/p&gt;
 
@@ -127,13 +127,13 @@
 &lt;li&gt;Basic knowledge in git will be helpful.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;why-html5:4cc1e79f29e4e167992c218986e06770&#34;&gt;Why HTML5?&lt;/h2&gt;
+&lt;h2 id=&#34;why-html5&#34;&gt;Why HTML5?&lt;/h2&gt;
 
 &lt;p&gt;The most obvious advantage for creating a HTML5 game is that it is cross platform. The same codebase can be packaged to run on browsers, Andorid, iOS, Windows Phone or any other modern device.&lt;/p&gt;
 
 &lt;p&gt;Another advantage the pervasiveness of javascript. It is everywhere and very easy to get started with. Most people are already familiar with Javascript and that all that is needed to develop a HTML5 game. The development process is fairly easy. No waiting for compilation, updates and debugging in real-time, and once the game is done, you can push out the update immediately.&lt;/p&gt;
 
-&lt;h2 id=&#34;step-0-getting-the-code:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 0: Getting the Code&lt;/h2&gt;
+&lt;h2 id=&#34;step-0-getting-the-code&#34;&gt;Step 0: Getting the Code&lt;/h2&gt;
 
 &lt;p&gt;You can get the code from &lt;a href=&#34;https://github.com/shivanshuag/codelab-snake&#34;&gt;https://github.com/shivanshuag/codelab-snake&lt;/a&gt;
 Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/codelab-snake&lt;/code&gt;.&lt;/p&gt;
@@ -142,21 +142,21 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 
 &lt;p&gt;To run the code, simply open the &lt;code&gt;index.html&lt;/code&gt; file in the browser of your choice.&lt;/p&gt;
 
-&lt;h2 id=&#34;preliminaries:4cc1e79f29e4e167992c218986e06770&#34;&gt;Preliminaries&lt;/h2&gt;
+&lt;h2 id=&#34;preliminaries&#34;&gt;Preliminaries&lt;/h2&gt;
 
-&lt;h3 id=&#34;step-1-the-canvas-tag:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 1: The Canvas Tag&lt;/h3&gt;
+&lt;h3 id=&#34;step-1-the-canvas-tag&#34;&gt;Step 1: The Canvas Tag&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;git checkout step1&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
-&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt;&amp;gt;
-&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; context &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.getContext(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;);
-  &lt;span style=&#34;color: #888888&#34;&gt;// do stuff here&lt;/span&gt;
-&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
-&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;body&gt;
+&lt;canvas id=&#34;myCanvas&#34; width=&#34;578&#34; height=&#34;200&#34;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+  var canvas = document.getElementById(&#39;myCanvas&#39;);
+  var context = canvas.getContext(&#39;2d&#39;);
+  // do stuff here
+&lt;/script&gt;
+&lt;/body&gt;
 
 
 &lt;p&gt;The canvas tag is similar to the &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt;, or &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt; tag, with the exception that its contents are rendered with JavaScript. The &lt;code&gt;width&lt;/code&gt; and &lt;code&gt;height&lt;/code&gt; attributes are used to specify the dimensions of the canvas.&lt;/p&gt;
@@ -165,26 +165,26 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 
 &lt;p&gt;&lt;code&gt;canvas.getContext(&#39;2d&#39;)&lt;/code&gt; gives the canvas context which is an object with properties and methods that you can use to render graphics inside the canvas element.  The context can be 2d or webgl (3d).&lt;/p&gt;
 
-&lt;h3 id=&#34;step-2-drawing-a-line:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 2: Drawing A Line&lt;/h3&gt;
+&lt;h3 id=&#34;step-2-drawing-a-line&#34;&gt;Step 2: Drawing A Line&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;git checkout step2&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
-&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt;&amp;gt;
-&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; context &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.getContext(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;);
+
+&lt;body&gt;
+&lt;canvas id=&#34;myCanvas&#34; width=&#34;578&#34; height=&#34;200&#34;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+  var canvas = document.getElementById(&#39;myCanvas&#39;);
+  var context = canvas.getContext(&#39;2d&#39;);
 
   context.beginPath();
-  context.moveTo(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;100&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;150&lt;/span&gt;);
-  context.lineTo(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;450&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;50&lt;/span&gt;);
-  context.lineWidth &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;15&lt;/span&gt;;
-  context.strokeStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;#ff0000&amp;#39;&lt;/span&gt;;
-  context.lineCap &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;round&amp;#39;&lt;/span&gt;
+  context.moveTo(100, 150);
+  context.lineTo(450, 50);
+  context.lineWidth = 15;
+  context.strokeStyle = &#39;#ff0000&#39;;
+  context.lineCap = &#39;round&#39;
   context.stroke();
-&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
-&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/script&gt;
+&lt;/body&gt;
 
 
 &lt;ul&gt;
@@ -205,30 +205,30 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 
 &lt;p&gt;All the properties of the line should be set before calling the stroke function.&lt;/p&gt;
 
-&lt;h3 id=&#34;step-3-arc:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 3: Arc&lt;/h3&gt;
+&lt;h3 id=&#34;step-3-arc&#34;&gt;Step 3: Arc&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;git checkout step3&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
-&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt;&amp;gt;
-&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; context &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.getContext(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;);
 
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; x &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.width &lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; y &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.height &lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;2&lt;/span&gt;;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; radius &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;75&lt;/span&gt;;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; startAngle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;1.1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;Math&lt;/span&gt;.PI;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; endAngle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;1.9&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;Math&lt;/span&gt;.PI;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; counterClockwise &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;false&lt;/span&gt;;
+&lt;body&gt;
+&lt;canvas id=&#34;myCanvas&#34; width=&#34;578&#34; height=&#34;200&#34;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+  var canvas = document.getElementById(&#39;myCanvas&#39;);
+  var context = canvas.getContext(&#39;2d&#39;);
+
+  var x = canvas.width / 2;
+  var y = canvas.height / 2;
+  var radius = 75;
+  var startAngle = 1.1 * Math.PI;
+  var endAngle = 1.9 * Math.PI;
+  var counterClockwise = false;
   context.beginPath();
   context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
-  context.lineWidth &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;15&lt;/span&gt;;
-  context.strokeStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;black&amp;#39;&lt;/span&gt;;
+  context.lineWidth = 15;
+  context.strokeStyle = &#39;black&#39;;
   context.stroke();
-&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
-&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/script&gt;
+&lt;/body&gt;
 
 
 &lt;ul&gt;
@@ -237,32 +237,32 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 &lt;li&gt;Arcs can be styled with the lineWidth, strokeStyle, and lineCap properties&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;bonus-points:4cc1e79f29e4e167992c218986e06770&#34;&gt;Bonus Points&lt;/h4&gt;
+&lt;h4 id=&#34;bonus-points&#34;&gt;Bonus Points&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Explore how to make Quadratic Curve and Bezier Curves and paths in the canvas.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;step-4-rectangle:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 4: Rectangle&lt;/h3&gt;
+&lt;h3 id=&#34;step-4-rectangle&#34;&gt;Step 4: Rectangle&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;git checkout step4&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
-&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt;&amp;gt;
-&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; context &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.getContext(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;);
+
+&lt;body&gt;
+&lt;canvas id=&#34;myCanvas&#34; width=&#34;578&#34; height=&#34;200&#34;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+  var canvas = document.getElementById(&#39;myCanvas&#39;);
+  var context = canvas.getContext(&#39;2d&#39;);
 
   context.beginPath();
-  context.rect(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;188&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;50&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;200&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;100&lt;/span&gt;);
-  context.fillStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;yellow&amp;#39;&lt;/span&gt;;
+  context.rect(188, 50, 200, 100);
+  context.fillStyle = &#39;yellow&#39;;
   context.fill();
-  context.lineWidth &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;7&lt;/span&gt;;
-  context.strokeStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;black&amp;#39;&lt;/span&gt;;
+  context.lineWidth = 7;
+  context.strokeStyle = &#39;black&#39;;
   context.stroke();
-&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
-&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/script&gt;
+&lt;/body&gt;
 
 
 &lt;ul&gt;
@@ -273,25 +273,25 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 
 &lt;p&gt;When setting both the fill and stroke for a shape, make sure that you use fill() before stroke().Otherwise, the fill will overlap half of the stroke.&lt;/p&gt;
 
-&lt;h3 id=&#34;step-5-images:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 5: Images&lt;/h3&gt;
+&lt;h3 id=&#34;step-5-images&#34;&gt;Step 5: Images&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;git checkout step5&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
-&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt;&amp;gt;
-&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; context &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.getContext(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;);
 
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; imageObj &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;new&lt;/span&gt; Image();
-  imageObj.onload &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt;() {
-  	context.drawImage(imageObj, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;69&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;50&lt;/span&gt;);
+&lt;body&gt;
+&lt;canvas id=&#34;myCanvas&#34; width=&#34;578&#34; height=&#34;200&#34;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+  var canvas = document.getElementById(&#39;myCanvas&#39;);
+  var context = canvas.getContext(&#39;2d&#39;);
+
+  var imageObj = new Image();
+  imageObj.onload = function() {
+  	context.drawImage(imageObj, 69, 50);
   };
-  imageObj.src &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg&amp;#39;&lt;/span&gt;;
-&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
-&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+  imageObj.src = &#39;http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg&#39;;
+&lt;/script&gt;
+&lt;/body&gt;
+
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;image.onload&lt;/code&gt; is a function which is called when the image has been fetched from its source.&lt;/li&gt;
@@ -299,28 +299,28 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 &lt;li&gt;To change the size of the image, add two additional arguments to the drawImage() method, width and height. &lt;code&gt;context.drawImage(imageObj, x, y, width, height);&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;bonus-point:4cc1e79f29e4e167992c218986e06770&#34;&gt;Bonus Point&lt;/h4&gt;
+&lt;h4 id=&#34;bonus-point&#34;&gt;Bonus Point&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Explore how to crop an image and then draw it on canvas.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;step-6-text:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 6: Text&lt;/h3&gt;
+&lt;h3 id=&#34;step-6-text&#34;&gt;Step 6: Text&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;git checkout step6&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
-&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;578&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt;&amp;gt;
-&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; context &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.getContext(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;);
 
-  context.font &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;italic 40pt Calibri&amp;#39;&lt;/span&gt;;
-  context.fillText(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;Hello World!&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;150&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;100&lt;/span&gt;);
-&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
-&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+&lt;body&gt;
+&lt;canvas id=&#34;myCanvas&#34; width=&#34;578&#34; height=&#34;200&#34;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+  var canvas = document.getElementById(&#39;myCanvas&#39;);
+  var context = canvas.getContext(&#39;2d&#39;);
+
+  context.font = &#39;italic 40pt Calibri&#39;;
+  context.fillText(&#39;Hello World!&#39;, 150, 100);
+&lt;/script&gt;
+&lt;/body&gt;
+
 
 &lt;ul&gt;
 &lt;li&gt;To change set the &lt;code&gt;fillStyle&lt;/code&gt; abd &lt;code&gt;strokeStyle&lt;/code&gt; in same ways as for shapes.&lt;/li&gt;
@@ -328,95 +328,95 @@ Clone the repository using &lt;code&gt;git clone https://github.com/shivanshuag/
 &lt;li&gt;When it&amp;rsquo;s set to start and the document direction is ltr (left to right), or when it&amp;rsquo;s set to end and the document direction is rtl (right to left).&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;snake-game:4cc1e79f29e4e167992c218986e06770&#34;&gt;Snake Game&lt;/h2&gt;
+&lt;h2 id=&#34;snake-game&#34;&gt;Snake Game&lt;/h2&gt;
 
 &lt;p&gt;Now we will create a game using the tools we just learnt.&lt;/p&gt;
 
-&lt;h3 id=&#34;step-7-creating-arena-for-the-snake:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 7: Creating Arena for the Snake&lt;/h3&gt;
+&lt;h3 id=&#34;step-7-creating-arena-for-the-snake&#34;&gt;Step 7: Creating Arena for the Snake&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;git checkout step7&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
-&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;myCanvas&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;450&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #0000CC&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;450&amp;quot;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;canvas&lt;/span&gt;&amp;gt;
-&amp;lt;&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; canvas &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.getElementById(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;myCanvas&amp;#39;&lt;/span&gt;);
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; context &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.getContext(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;2d&amp;#39;&lt;/span&gt;);
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; w &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.width
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; h &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; canvas.height
 
-  context.fillStyle&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;;
-  context.fillRect(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt; , &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;, w, h);
-  context.strokeStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;black&amp;quot;&lt;/span&gt;;
-  context.strokeRect(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;, w, h);
-&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;script&lt;/span&gt;&amp;gt;
-&amp;lt;/&lt;span style=&#34;color: #007700&#34;&gt;body&lt;/span&gt;&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+&lt;body&gt;
+&lt;canvas id=&#34;myCanvas&#34; width=&#34;450&#34; height=&#34;450&#34;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+  var canvas = document.getElementById(&#39;myCanvas&#39;);
+  var context = canvas.getContext(&#39;2d&#39;);
+  var w = canvas.width
+  var h = canvas.height
+
+  context.fillStyle= &#34;white&#34;;
+  context.fillRect(0 , 0, w, h);
+  context.strokeStyle = &#34;black&#34;;
+  context.strokeRect(0, 0, w, h);
+&lt;/script&gt;
+&lt;/body&gt;
+
 
 &lt;p&gt;This will create a 450x450 canvas with a balck boundary.&lt;/p&gt;
 
-&lt;h3 id=&#34;step-8-creating-the-snake:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 8: Creating the Snake&lt;/h3&gt;
+&lt;h3 id=&#34;step-8-creating-the-snake&#34;&gt;Step 8: Creating the Snake&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;git checkout step8&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; create_snake() {
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; length &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;5&lt;/span&gt;; &lt;span style=&#34;color: #888888&#34;&gt;//Length of the snake&lt;/span&gt;
-snake_array &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; []; &lt;span style=&#34;color: #888888&#34;&gt;//Empty array to start with&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; i &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; length&lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;; i&lt;span style=&#34;color: #333333&#34;&gt;&amp;gt;=&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;; i&lt;span style=&#34;color: #333333&#34;&gt;--&lt;/span&gt;) {
-  &lt;span style=&#34;color: #888888&#34;&gt;//This will create a horizontal snake starting from the top left&lt;/span&gt;
-  snake_array.push({x&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt; i, y&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;});
+
+function create_snake() {
+var length = 5; //Length of the snake
+snake_array = []; //Empty array to start with
+for(var i = length-1; i&gt;=0; i--) {
+  //This will create a horizontal snake starting from the top left
+  snake_array.push({x: i, y:0});
 }
 }
-create_snake();   &lt;span style=&#34;color: #888888&#34;&gt;// calling the create_snake function&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+create_snake();   // calling the create_snake function
+
 
 &lt;p&gt;Here, each element in the array represents a cell of the snake. Initially, the snake is made up of 5 cells. In a later step, we will write logic to increase the length of the snake when it eats food.&lt;/p&gt;
 
-&lt;h3 id=&#34;step-9-painting-the-snake:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 9: Painting the Snake&lt;/h3&gt;
+&lt;h3 id=&#34;step-9-painting-the-snake&#34;&gt;Step 9: Painting the Snake&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;git checkout step9&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; cw &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;10&lt;/span&gt;;&lt;span style=&#34;color: #888888&#34;&gt;//cell width&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; paint() {
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; i &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;; i &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt; snake_array.length; i&lt;span style=&#34;color: #333333&#34;&gt;++&lt;/span&gt;) {
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; c &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; snake_array[i];
-    context.fillStyle  &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;blue&amp;quot;&lt;/span&gt;;
-    &lt;span style=&#34;color: #888888&#34;&gt;//Lets paint 10px wide cells&lt;/span&gt;
-    context.fillRect(c.x&lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;cw, c.y&lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;cw, cw, cw);
-    context.strokeStyle  &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;;
-    context.strokeRect(c.x&lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;cw, c.y&lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;cw, cw, cw);
+
+var cw = 10;//cell width
+function paint() {
+  for(var i = 0; i &lt; snake_array.length; i++) {
+    var c = snake_array[i];
+    context.fillStyle  = &#34;blue&#34;;
+    //Lets paint 10px wide cells
+    context.fillRect(c.x*cw, c.y*cw, cw, cw);
+    context.strokeStyle  = &#34;white&#34;;
+    context.strokeRect(c.x*cw, c.y*cw, cw, cw);
   }
 }
 paint();
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;In the earlier step, we just created a array containing the coordinates of all the cells of the snake. In this step, we are painting all the cells on the canvas.&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;context.fillRect&lt;/code&gt; fills a rectangle and &lt;code&gt;context.strokeRect&lt;/code&gt; creates its boundary.&lt;/p&gt;
 
-&lt;h3 id=&#34;step-10-moving-the-snake:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 10: Moving the snake&lt;/h3&gt;
+&lt;h3 id=&#34;step-10-moving-the-snake&#34;&gt;Step 10: Moving the snake&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;git checkout step10&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;In this step, we will create the Game Loop. Game Loop contains the statements which will be called in every frame of the game. These instructions will be responsible for updating the state of the game (like the position of the snake, handling input).&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;game_loop &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; setInterval(paint, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;60&lt;/span&gt;);
 
-&lt;span style=&#34;color: #888888&#34;&gt;//Put the following lines inside the paint function&lt;/span&gt;
-  &lt;span style=&#34;color: #888888&#34;&gt;//Pop out the tail cell and place it infront of the head cell&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; nx &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; snake_array[&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;].x;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; ny &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; snake_array[&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;].y;
-  &lt;span style=&#34;color: #888888&#34;&gt;//These were the position of the head cell.&lt;/span&gt;
-  &lt;span style=&#34;color: #888888&#34;&gt;//We will increment it to get the new head position&lt;/span&gt;
-  nx&lt;span style=&#34;color: #333333&#34;&gt;++&lt;/span&gt;;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; tail &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; snake_array.pop(); &lt;span style=&#34;color: #888888&#34;&gt;//pops out the last cell&lt;/span&gt;
-  tail.x &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; nx;
-  tail.y &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; ny;
-  snake_array.unshift(tail); &lt;span style=&#34;color: #888888&#34;&gt;//puts back the tail as the first cell&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+game_loop = setInterval(paint, 60);
+
+//Put the following lines inside the paint function
+  //Pop out the tail cell and place it infront of the head cell
+  var nx = snake_array[0].x;
+  var ny = snake_array[0].y;
+  //These were the position of the head cell.
+  //We will increment it to get the new head position
+  nx++;
+  var tail = snake_array.pop(); //pops out the last cell
+  tail.x = nx;
+  tail.y = ny;
+  snake_array.unshift(tail); //puts back the tail as the first cell
+
 
 &lt;p&gt;Game loop is a javascript setInterval timer. It calls the &lt;code&gt;paint&lt;/code&gt; function every 60 milliseconds.&lt;/p&gt;
 
@@ -424,164 +424,166 @@ paint();
 
 &lt;p&gt;After every 60 ms, paint() function will create new rectangle but will not delete the previous rectangles. This will leave a trail of the movement of the snake. So, we will first paint the background of the canvas white inside the paint() function.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #888888&#34;&gt;// Put the following lines at the start of the paint function&lt;/span&gt;
-context.fillStyle&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;;
-context.fillRect(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt; , &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;, w, h);
-context.strokeStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;;
-context.strokeRect(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;0&lt;/span&gt;, w, h);
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
 
-&lt;h3 id=&#34;step-11-handling-user-input:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 11: Handling User Input&lt;/h3&gt;
+// Put the following lines at the start of the paint function
+context.fillStyle= &#34;white&#34;;
+context.fillRect(0 , 0, w, h);
+context.strokeStyle = &#34;white&#34;;
+context.strokeRect(0, 0, w, h);
+
+
+&lt;h3 id=&#34;step-11-handling-user-input&#34;&gt;Step 11: Handling User Input&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;git checkout step11&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;First, we will add direction based movement to the snake. Instead of the line &lt;code&gt;nx++&lt;/code&gt; in the code, add the following snippet.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; d &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;right&amp;quot;&lt;/span&gt;; &lt;span style=&#34;color: #888888&#34;&gt;//default direction. Add this line outside the paint function&lt;/span&gt;
 
-&lt;span style=&#34;color: #888888&#34;&gt;//add the following lines in the paint function replacing &amp;#39;nx++&amp;#39;&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(d &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;right&amp;quot;&lt;/span&gt;) nx&lt;span style=&#34;color: #333333&#34;&gt;++&lt;/span&gt;;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(d &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;left&amp;quot;&lt;/span&gt;) nx&lt;span style=&#34;color: #333333&#34;&gt;--&lt;/span&gt;;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(d &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;up&amp;quot;&lt;/span&gt;) ny&lt;span style=&#34;color: #333333&#34;&gt;--&lt;/span&gt;;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(d &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;down&amp;quot;&lt;/span&gt;) ny&lt;span style=&#34;color: #333333&#34;&gt;++&lt;/span&gt;;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+var d = &#34;right&#34;; //default direction. Add this line outside the paint function
+
+//add the following lines in the paint function replacing &#39;nx++&#39;
+if(d == &#34;right&#34;) nx++;
+else if(d == &#34;left&#34;) nx--;
+else if(d == &#34;up&#34;) ny--;
+else if(d == &#34;down&#34;) ny++;
+
+
 
 &lt;p&gt;Add a key listener and change the direction of the snake accordingly.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;document&lt;/span&gt;.onkeydown &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt;(e) {
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; key &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; e.which;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(key &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;37&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; d &lt;span style=&#34;color: #333333&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;right&amp;quot;&lt;/span&gt;) d &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;left&amp;quot;&lt;/span&gt;;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(key &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;38&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; d &lt;span style=&#34;color: #333333&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;down&amp;quot;&lt;/span&gt;) d&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;up&amp;quot;&lt;/span&gt;;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(key &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;39&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; d &lt;span style=&#34;color: #333333&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;left&amp;quot;&lt;/span&gt;) d&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;right&amp;quot;&lt;/span&gt;;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(key &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;40&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; d &lt;span style=&#34;color: #333333&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;up&amp;quot;&lt;/span&gt;) d&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;down&amp;quot;&lt;/span&gt;;
+
+document.onkeydown = function(e) {
+  var key = e.which;
+  if(key == &#34;37&#34; &amp;&amp; d != &#34;right&#34;) d = &#34;left&#34;;
+  else if(key == &#34;38&#34; &amp;&amp; d != &#34;down&#34;) d= &#34;up&#34;;
+  else if(key == &#34;39&#34; &amp;&amp; d != &#34;left&#34;) d= &#34;right&#34;;
+  else if(key == &#34;40&#34; &amp;&amp; d != &#34;up&#34;) d= &#34;down&#34;;
 };
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;&lt;code&gt;onkeydown&lt;/code&gt; function is called when the user presses a key and &lt;code&gt;e.which&lt;/code&gt; contains the keycode of the key which the user has pressed. Refer to &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode&#34;&gt;https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode&lt;/a&gt; for a list of the keycodes.&lt;/p&gt;
 
-&lt;h3 id=&#34;step-12-creating-food:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 12: Creating Food&lt;/h3&gt;
+&lt;h3 id=&#34;step-12-creating-food&#34;&gt;Step 12: Creating Food&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;git checkout step12&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;First, we will make a function to paint cells. This function can be used while painting the cells of the snake too.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; paint_cell(x,y) {
-  context.fillStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;blue&amp;quot;&lt;/span&gt;;
-  context.fillRect(&lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;cw, &lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;cw, cw, cw);
-  context.strokeStyle &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;white&amp;quot;&lt;/span&gt;;
-  context.strokeRect(&lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;cw, &lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;cw, cw, cw);
+
+function paint_cell(x,y) {
+  context.fillStyle = &#34;blue&#34;;
+  context.fillRect(*cw, *cw, cw, cw);
+  context.strokeStyle = &#34;white&#34;;
+  context.strokeRect(*cw, *cw, cw, cw);
 }
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;Then, we create a function which gives the coordinates of a random cell which is to be used as food.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; food;  &lt;span style=&#34;color: #888888&#34;&gt;// global variable which contains food&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; create_food() {
-  food &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; {
-    x&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;Math&lt;/span&gt;.floor(&lt;span style=&#34;color: #007020&#34;&gt;Math&lt;/span&gt;.random()&lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;(w&lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt;cw)&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;cw),
-    y&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;Math&lt;/span&gt;.floor(&lt;span style=&#34;color: #007020&#34;&gt;Math&lt;/span&gt;.random()&lt;span style=&#34;color: #333333&#34;&gt;*&lt;/span&gt;(h&lt;span style=&#34;color: #333333&#34;&gt;-&lt;/span&gt;cw)&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;cw),
+
+var food;  // global variable which contains food
+function create_food() {
+  food = {
+    x: Math.floor(Math.random()*(w-cw)/cw),
+    y: Math.floor(Math.random()*(h-cw)/cw),
   };
-  &lt;span style=&#34;color: #888888&#34;&gt;//This will create a cell with x and y between 0-44&lt;/span&gt;
-  &lt;span style=&#34;color: #888888&#34;&gt;//Because there are 45(450/10) positions accross the rows and columns&lt;/span&gt;
+  //This will create a cell with x and y between 0-44
+  //Because there are 45(450/10) positions accross the rows and columns
 }
 create_food();
 
-&lt;span style=&#34;color: #888888&#34;&gt;//Inside the paint function&lt;/span&gt;
+//Inside the paint function
 paint_cell(food.x, food.y);
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;&lt;code&gt;Math.random()&lt;/code&gt; gives a random value between 0 and 1.&lt;/p&gt;
 
-&lt;h3 id=&#34;step-13-eating-the-food:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 13: Eating the Food&lt;/h3&gt;
+&lt;h3 id=&#34;step-13-eating-the-food&#34;&gt;Step 13: Eating the Food&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;git checkout step13&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #888888&#34;&gt;//Inside the paint function&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;//If the new head position matches with that of the food,&lt;/span&gt;
-&lt;span style=&#34;color: #888888&#34;&gt;//Create a new head instead of moving the tail&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(nx &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; food.x &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ny &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; food.y) {
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; tail &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; {x&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt; nx, y&lt;span style=&#34;color: #333333&#34;&gt;:&lt;/span&gt; ny};
-  &lt;span style=&#34;color: #888888&#34;&gt;//Create new food&lt;/span&gt;
+
+//Inside the paint function
+//If the new head position matches with that of the food,
+//Create a new head instead of moving the tail
+if(nx == food.x &amp;&amp; ny == food.y) {
+  var tail = {x: nx, y: ny};
+  //Create new food
   create_food();
 }
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;else&lt;/span&gt; {
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; tail &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; snake_array.pop(); &lt;span style=&#34;color: #888888&#34;&gt;//pops out the last cell&lt;/span&gt;
-  tail.x &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; nx; tail.y &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; ny;
+else {
+  var tail = snake_array.pop(); //pops out the last cell
+  tail.x = nx; tail.y = ny;
 }
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
 
-&lt;h3 id=&#34;step-14-game-over-condition:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 14: Game Over Condition&lt;/h3&gt;
+
+&lt;h3 id=&#34;step-14-game-over-condition&#34;&gt;Step 14: Game Over Condition&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;git checkout step14&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;First create an init function which will restore the game state to the initial state. Move the code used to set the initial state of the game to the init function and call it when the page loads.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; game_loop; &lt;span style=&#34;color: #888888&#34;&gt;// Make gameloop a global variable similar to d, food and snake_array.&lt;/span&gt;
 
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; init() {
-  d &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;right&amp;quot;&lt;/span&gt;; &lt;span style=&#34;color: #888888&#34;&gt;//default direction&lt;/span&gt;
+var game_loop; // Make gameloop a global variable similar to d, food and snake_array.
+
+function init() {
+  d = &#34;right&#34;; //default direction
   create_snake();
   create_food();
-  game_loop &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; setInterval(paint, &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;60&lt;/span&gt;);
+  game_loop = setInterval(paint, 60);
 }
 
-init(); &lt;span style=&#34;color: #888888&#34;&gt;// call init when the script loads.&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+init(); // call init when the script loads.
+
 
 &lt;p&gt;Add the following condition inside the paint function to detect collision with the boundaries.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(nx&lt;span style=&#34;color: #333333&#34;&gt;==-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; nx&lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt;w&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;cw &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; ny&lt;span style=&#34;color: #333333&#34;&gt;==-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; ny&lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt;h&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;cw) {
-  &lt;span style=&#34;color: #888888&#34;&gt;// clear the game loop&lt;/span&gt;
+
+if(nx==-1 || nx==w/cw || ny==-1 || ny==h/cw) {
+  // clear the game loop
   clearInterval(game_loop);
   init();
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt;;
+  return;
 }
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;&lt;code&gt;clearInterval&lt;/code&gt; will clear the previous game_loop and the &lt;code&gt;init&lt;/code&gt; function will create a new one.&lt;/p&gt;
 
-&lt;h3 id=&#34;step-15-checking-body-collision:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 15: Checking Body Collision&lt;/h3&gt;
+&lt;h3 id=&#34;step-15-checking-body-collision&#34;&gt;Step 15: Checking Body Collision&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;git checkout step15&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Create the &lt;code&gt;check_collision&lt;/code&gt; function as follows.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; check_collision(x, y, array) {
-  &lt;span style=&#34;color: #888888&#34;&gt;//This function will check if the provided x/y coordinates exist&lt;/span&gt;
-  &lt;span style=&#34;color: #888888&#34;&gt;//in an array of cells or not, excluding the head&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;var&lt;/span&gt; i &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;; i &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt; array.length; i&lt;span style=&#34;color: #333333&#34;&gt;++&lt;/span&gt;) {
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(array[i].x &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; x &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; array[i].y &lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt; y)
-      &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;true&lt;/span&gt;;
+
+function check_collision(x, y, array) {
+  //This function will check if the provided x/y coordinates exist
+  //in an array of cells or not, excluding the head
+  for(var i = 1; i &lt; array.length; i++) {
+    if(array[i].x == x &amp;&amp; array[i].y == y)
+      return true;
   }
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;false&lt;/span&gt;;
+  return false;
 }
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
+
 
 &lt;p&gt;Modify the collision condition as follows&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt;(nx&lt;span style=&#34;color: #333333&#34;&gt;==-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; nx&lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt;w&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;cw &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; ny&lt;span style=&#34;color: #333333&#34;&gt;==-&lt;/span&gt;&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; ny&lt;span style=&#34;color: #333333&#34;&gt;==&lt;/span&gt;h&lt;span style=&#34;color: #333333&#34;&gt;/&lt;/span&gt;cw &lt;span style=&#34;color: #333333&#34;&gt;||&lt;/span&gt; check_collision(nx, ny, snake_array)) {
-  &lt;span style=&#34;color: #888888&#34;&gt;// clear the game loop&lt;/span&gt;
+
+if(nx==-1 || nx==w/cw || ny==-1 || ny==h/cw || check_collision(nx, ny, snake_array)) {
+  // clear the game loop
   clearInterval(game_loop);
   init();
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;return&lt;/span&gt;;
+  return;
 }
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
 
-&lt;h3 id=&#34;step-16-implement-scoring:4cc1e79f29e4e167992c218986e06770&#34;&gt;Step 16: Implement Scoring&lt;/h3&gt;
+
+&lt;h3 id=&#34;step-16-implement-scoring&#34;&gt;Step 16: Implement Scoring&lt;/h3&gt;
 
 &lt;p&gt;This is a DIY step!&lt;/p&gt;
 
-&lt;h2 id=&#34;where-to-go-from-here:4cc1e79f29e4e167992c218986e06770&#34;&gt;Where to go From Here?&lt;/h2&gt;
+&lt;h2 id=&#34;where-to-go-from-here&#34;&gt;Where to go From Here?&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Explore some awesome &lt;a href=&#34;https://html5gameengine.com/&#34;&gt;Game Development libraries for Javascript canvas&lt;/a&gt;.&lt;/li&gt;
@@ -602,7 +604,7 @@ init(); &lt;span style=&#34;color: #888888&#34;&gt;// call init when the script 
 
 &lt;p&gt;As a part of my GSoC project, I have been recently writing functional tests for &lt;a href=&#34;https://drupal.org/site_audit&#34;&gt;site_audit&lt;/a&gt; &amp;ndash; a Drush extension that provides drush commands for static analysis of a Drupal site. The process seemed painful at first due to lack of good documentation and gaps in my knowledge of Drush and PHPUnit. But, after a few hiccups intially, I was successfully able to write tests for Site Audit.&lt;/p&gt;
 
-&lt;h2 id=&#34;background:906d2a8b4b326a75d9662f597e0ca1db&#34;&gt;Background&lt;/h2&gt;
+&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
 
 &lt;p&gt;Drush uses &lt;a href=&#34;https://phpunit.de/&#34;&gt;PHPUnit&lt;/a&gt; testing framework for testing its core commands. All the tests are namespaced under the name &lt;code&gt;Unish&lt;/code&gt;. Drush test suites provides some base classes which, amongst other functionality, have primitves for setting up a drupal sandbox to provide an environment for testing drush commands.&lt;/p&gt;
 
@@ -610,62 +612,62 @@ init(); &lt;span style=&#34;color: #888888&#34;&gt;// call init when the script 
 in the &lt;a href=&#34;https://github.com/drush-ops/drush/blob/master/tests/phpunit.xml.dist&#34;&gt;phpunit.xml.dist&lt;/a&gt; directory. If you look inside this file, there are some commented lines that contain environment requried for the tests to run. You can either uncomment these and provide appropriate values or set these variables as bash environment variables where you run the test.&lt;/p&gt;
 
 &lt;p&gt;To run the tests on your local machine, first go the the drush root directory (directory where drush is installed) and run
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;composer install
-&lt;/pre&gt;&lt;/div&gt;
+
+composer install
 
 This command will install all the dependencies (including PHPUnit) required for running the tests inside a directory named &lt;code&gt;vendor&lt;/code&gt;. Then run the &lt;code&gt;unish.sh&lt;/code&gt; script from the drush root directory.&lt;/p&gt;
 
-&lt;h2 id=&#34;creating-your-own-test:906d2a8b4b326a75d9662f597e0ca1db&#34;&gt;Creating your own Test&lt;/h2&gt;
+&lt;h2 id=&#34;creating-your-own-test&#34;&gt;Creating your own Test&lt;/h2&gt;
 
 &lt;p&gt;You can create a directory named &lt;code&gt;tests&lt;/code&gt; inside you drush extension to contain all the tests. PHPUnit looks inside *Test.php files inside a directory for tests. Drush follows Lower Camel Case for the naming of both the file and the class name. So all you file names should be in Lower Camel Case with a &lt;code&gt;Test&lt;/code&gt; suffix.&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
-&lt;span style=&#34;color: #DD4422&#34;&gt;/**&lt;/span&gt;
-&lt;span style=&#34;color: #DD4422&#34;&gt; * @file&lt;/span&gt;
-&lt;span style=&#34;color: #DD4422&#34;&gt; * Contains /site_audit/tests/BestPracticesFast404Case.&lt;/span&gt;
-&lt;span style=&#34;color: #DD4422&#34;&gt; */&lt;/span&gt;
 
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;namespace&lt;/span&gt; Unish;
+&lt;?php
+/**
+ * @file
+ * Contains /site_audit/tests/BestPracticesFast404Case.
+ */
 
-&lt;span style=&#34;color: #DD4422&#34;&gt;/**&lt;/span&gt;
-&lt;span style=&#34;color: #DD4422&#34;&gt; * Class BestPracticesFast404Case.&lt;/span&gt;
-&lt;span style=&#34;color: #DD4422&#34;&gt; *&lt;/span&gt;
-&lt;span style=&#34;color: #DD4422&#34;&gt; * @group commands&lt;/span&gt;
-&lt;span style=&#34;color: #DD4422&#34;&gt; */&lt;/span&gt;
-&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #BB0066; font-weight: bold&#34;&gt;BestPracticesFast404Case&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;extends&lt;/span&gt; CommandUnishTestCase {
+namespace Unish;
 
-  &lt;span style=&#34;color: #DD4422&#34;&gt;/**&lt;/span&gt;
-&lt;span style=&#34;color: #DD4422&#34;&gt;   * Sets up the environment for this test.&lt;/span&gt;
-&lt;span style=&#34;color: #DD4422&#34;&gt;   */&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;setUp&lt;/span&gt;() {
+/**
+ * Class BestPracticesFast404Case.
+ *
+ * @group commands
+ */
+class BestPracticesFast404Case extends CommandUnishTestCase {
+
+  /**
+   * Sets up the environment for this test.
+   */
+  public function setUp() {
   }
-&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;First, we specify the namespace &lt;code&gt;Unish&lt;/code&gt; for the test. The &lt;code&gt;@group&lt;/code&gt; annotation in the doc comment is optional. You can read about its use &lt;a href=&#34;https://phpunit.de/manual/current/en/appendixes.annotations.html#appendixes.annotations.group&#34;&gt;here&lt;/a&gt;. Our class extends &lt;code&gt;CommandUnishTestCase&lt;/code&gt; which provides all the common functionality like setting up a drupal sandbox and running drush commands used in functional tests. Finally we have a &lt;code&gt;setUp()&lt;/code&gt; function which is invoked before a test method is run. In We set up the object we will test against in this method.&lt;/p&gt;
 
-&lt;h2 id=&#34;the-setup-function:906d2a8b4b326a75d9662f597e0ca1db&#34;&gt;The SetUp Function&lt;/h2&gt;
+&lt;h2 id=&#34;the-setup-function&#34;&gt;The SetUp Function&lt;/h2&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
 
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;setUp&lt;/span&gt;() {
-    &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;if&lt;/span&gt; (UNISH_DRUPAL_MAJOR_VERSION &lt;span style=&#34;color: #333333&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;8&lt;/span&gt;) {
-      &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;markTestSkipped&lt;/span&gt;(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;This version of Site Audit is for D8&amp;#39;&lt;/span&gt;);
+&lt;?php
+
+  public function setUp() {
+    if (UNISH_DRUPAL_MAJOR_VERSION &lt; 8) {
+      $this-&gt;markTestSkipped(&#39;This version of Site Audit is for D8&#39;);
     }
-    &lt;span style=&#34;color: #996633&#34;&gt;$site&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;setUpDrupal&lt;/span&gt;(&lt;span style=&#34;color: #0000DD; font-weight: bold&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;TRUE&lt;/span&gt;, UNISH_DRUPAL_MAJOR_VERSION, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;standard&amp;#39;&lt;/span&gt;);
-    &lt;span style=&#34;color: #996633&#34;&gt;$root&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;webroot&lt;/span&gt;();
-    &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;options&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;array&lt;/span&gt;(
-      &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;yes&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;NULL&lt;/span&gt;,
-      &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;root&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;$root&lt;/span&gt;,
-      &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;uri&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;key&lt;/span&gt;(&lt;span style=&#34;color: #996633&#34;&gt;$site&lt;/span&gt;),
+    $site = $this-&gt;setUpDrupal(1, TRUE, UNISH_DRUPAL_MAJOR_VERSION, &#39;standard&#39;);
+    $root = $this-&gt;webroot();
+    $this-&gt;options = array(
+      &#39;yes&#39; =&gt; NULL,
+      &#39;root&#39; =&gt; $root,
+      &#39;uri&#39; =&gt; key($site),
     );
-    &lt;span style=&#34;color: #888888&#34;&gt;// Symlink site_audit inside the site being tested, so that it is available&lt;/span&gt;
-    &lt;span style=&#34;color: #888888&#34;&gt;// as a drush command.&lt;/span&gt;
-    &lt;span style=&#34;color: #996633&#34;&gt;$target&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;dirname&lt;/span&gt;(__DIR__);
-    \mkdir(&lt;span style=&#34;color: #996633&#34;&gt;$root&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;/drush&amp;#39;&lt;/span&gt;);
-    \symlink(&lt;span style=&#34;color: #996633&#34;&gt;$target&lt;/span&gt;, &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;webroot&lt;/span&gt;() &lt;span style=&#34;color: #333333&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;/drush/site_audit&amp;#39;&lt;/span&gt;);
+    // Symlink site_audit inside the site being tested, so that it is available
+    // as a drush command.
+    $target = dirname(__DIR__);
+    \mkdir($root . &#39;/drush&#39;);
+    \symlink($target, $this-&gt;webroot() . &#39;/drush/site_audit&#39;);
   }
-&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;In this function, we have used &lt;code&gt;UNISH_DRUPAL_MAJOR_VERSION&lt;/code&gt; which is provided by the PHPUnit settings variables we had set in phpunit.xml.dist . Since the version of site_audit where this test is written is for Drupal 8, we will skip the test if it is being run for Drupal 7.  The &lt;code&gt;setUpDrupal()&lt;/code&gt; is a function provided by &lt;code&gt;CommandUnishTestCase&lt;/code&gt; class and is used to create any number of drupal sanboxes which will be used for testing. Here, we are installing a single drupal 8 site with the standard profile.
@@ -673,27 +675,28 @@ This command will install all the dependencies (including PHPUnit) required for 
 
 &lt;p&gt;Since the drush commands will be run in the context of the sandbox we have just installed, it will not be able to discover the commands defined by the extensions. So, we will have to symlink our extension inside the drush directory inside the webroot using the &lt;code&gt;symlink()&lt;/code&gt; function. Since the drush directory does not exist by default, it has to be created first using the &lt;code&gt;mkdir()&lt;/code&gt; function.&lt;/p&gt;
 
-&lt;h2 id=&#34;the-test-function:906d2a8b4b326a75d9662f597e0ca1db&#34;&gt;The Test Function&lt;/h2&gt;
+&lt;h2 id=&#34;the-test-function&#34;&gt;The Test Function&lt;/h2&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
 
-  &lt;span style=&#34;color: #DD4422&#34;&gt;/**&lt;/span&gt;
-&lt;span style=&#34;color: #DD4422&#34;&gt;   * If fast_404 is enabled and fast_404 paths are empty, check should warn.&lt;/span&gt;
-&lt;span style=&#34;color: #DD4422&#34;&gt;   */&lt;/span&gt;
-  &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color: #0066BB; font-weight: bold&#34;&gt;testFast404&lt;/span&gt;() {
-    &lt;span style=&#34;color: #888888&#34;&gt;// Enable fast_404 and make fast_404 paths empty.&lt;/span&gt;
-    &lt;span style=&#34;color: #996633&#34;&gt;$eval1&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\$&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;config = &lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;Drupal::configFactory()-&amp;gt;getEditable(&amp;#39;system.performance&amp;#39;); &lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\$&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;config-&amp;gt;set(&amp;#39;fast_404.enabled&amp;#39;, TRUE); &lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\$&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;config-&amp;gt;save();&amp;quot;&lt;/span&gt;;
-    &lt;span style=&#34;color: #996633&#34;&gt;$eval2&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\$&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;config = &lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;Drupal::configFactory()-&amp;gt;getEditable(&amp;#39;system.performance&amp;#39;); &lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\$&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;config-&amp;gt;set(&amp;#39;fast_404.paths&amp;#39;, &amp;#39;&amp;#39;); &lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\$&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;config-&amp;gt;save();&amp;quot;&lt;/span&gt;;
-    &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;drush&lt;/span&gt;(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;php-eval&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;array&lt;/span&gt;(&lt;span style=&#34;color: #996633&#34;&gt;$eval1&lt;/span&gt;), &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;options&lt;/span&gt;);
-    &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;drush&lt;/span&gt;(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;php-eval&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;array&lt;/span&gt;(&lt;span style=&#34;color: #996633&#34;&gt;$eval2&lt;/span&gt;), &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;options&lt;/span&gt;);
+&lt;?php
 
-    &lt;span style=&#34;color: #888888&#34;&gt;// Execute the best-practices command and get output.&lt;/span&gt;
-    &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;drush&lt;/span&gt;(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;audit-best-practices&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;array&lt;/span&gt;(), &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;options&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;array&lt;/span&gt;(&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;detail&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;NULL&lt;/span&gt;, &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;json&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;NULL&lt;/span&gt;));
-    &lt;span style=&#34;color: #996633&#34;&gt;$output&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #007020&#34;&gt;json_decode&lt;/span&gt;(&lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;getOutput&lt;/span&gt;());
-    &lt;span style=&#34;color: #996633&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;assertEquals&lt;/span&gt;(\SiteAuditCheckAbstract&lt;span style=&#34;color: #333333&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;AUDIT_CHECK_SCORE_WARN&lt;/span&gt;, &lt;span style=&#34;color: #996633&#34;&gt;$output&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;checks&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;SiteAuditCheckBestPracticesFast404&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #0000CC&#34;&gt;score&lt;/span&gt;);
+  /**
+   * If fast_404 is enabled and fast_404 paths are empty, check should warn.
+   */
+  public function testFast404() {
+    // Enable fast_404 and make fast_404 paths empty.
+    $eval1 = &#34;\$config = \\Drupal::configFactory()-&gt;getEditable(&#39;system.performance&#39;); \$config-&gt;set(&#39;fast_404.enabled&#39;, TRUE); \$config-&gt;save();&#34;;
+    $eval2 = &#34;\$config = \\Drupal::configFactory()-&gt;getEditable(&#39;system.performance&#39;); \$config-&gt;set(&#39;fast_404.paths&#39;, &#39;&#39;); \$config-&gt;save();&#34;;
+    $this-&gt;drush(&#39;php-eval&#39;, array($eval1), $this-&gt;options);
+    $this-&gt;drush(&#39;php-eval&#39;, array($eval2), $this-&gt;options);
+
+    // Execute the best-practices command and get output.
+    $this-&gt;drush(&#39;audit-best-practices&#39;, array(), $this-&gt;options + array(&#39;detail&#39; =&gt; NULL, &#39;json&#39; =&gt; NULL));
+    $output = json_decode($this-&gt;getOutput());
+    $this-&gt;assertEquals(\SiteAuditCheckAbstract::AUDIT_CHECK_SCORE_WARN, $output-&gt;checks-&gt;SiteAuditCheckBestPracticesFast404-&gt;score);
   }
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
+
 
 &lt;p&gt;The test has to edit some config variables of the drupal site. This is accomplished by the &lt;code&gt;php-eval&lt;/code&gt; command provided by drush. The &lt;code&gt;php-eval&lt;/code&gt; command evaluate arbitrary php code after bootstrapping Drupal. &lt;code&gt;CommandUnishTestCase&lt;/code&gt; provides the &lt;code&gt;drush()&lt;/code&gt; function which can be used to execute drush commands. The second argument of the function takes in the arguments to the drush command and the third argument takes the options. Note that it is necessary to provide the options we had defined in the &lt;code&gt;setUp()&lt;/code&gt; function so that it executes the drush command on the proper test site (the one which we created in the setUp function).&lt;/p&gt;
 
@@ -701,21 +704,20 @@ This command will install all the dependencies (including PHPUnit) required for 
 
 &lt;p&gt;After all the tests in a class are finished, the drupal sandbox created for tests is automatically removed. All the tests in a class share the same sandbox. Any test in the middle of the class can remove the existing sandbox and create a new one using the &lt;code&gt;setUpFreshSandBox()&lt;/code&gt; function. The &lt;code&gt;setUpDrupal()&lt;/code&gt; will have to be called again to install drupal for testing after this.&lt;/p&gt;
 
-&lt;h2 id=&#34;running-the-tests:906d2a8b4b326a75d9662f597e0ca1db&#34;&gt;Running the tests&lt;/h2&gt;
+&lt;h2 id=&#34;running-the-tests&#34;&gt;Running the tests&lt;/h2&gt;
 
 &lt;p&gt;To run the tests, you have to run PHPUnit pointing to the phpunit.xml.dist inside the drush tests directory. So running the following command from &lt;strong&gt;inside the root of you drush extension&lt;/strong&gt; should run the tests.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;phpunit --configuration &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;path to drush tests directiory&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;path to your tests directory&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
+phpunit --configuration [path to drush tests directiory] [path to your tests directory]
+
 
 &lt;p&gt;In our case, the path to our tests directory is tests. If you install drush using composer, it will be inside .composer/vendor/drush directory . In this case, following command will work.
- &lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt; phpunit --configuration .composer/vendor/drush/drush/tests tests
  
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+ phpunit --configuration .composer/vendor/drush/drush/tests tests
+ &lt;/p&gt;
 
-&lt;h2 id=&#34;conclusion:906d2a8b4b326a75d9662f597e0ca1db&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;There are other functions provided by the test classes in Unish. You can look them up inside the drush codebase. The best resource to learn about testing drush commands is to look at the existing tests written for the drush core commands. The tests I am writing can be found in the Site Audit github repository &lt;a href=&#34;https://github.com/shivanshuag/site_audit/tree/unit-tests/tests&#34;&gt;here&lt;/a&gt; and these will eventually be merged to the main github repository of Site Audit &lt;a href=&#34;https://github.com/fluxsauce/site_audit&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
@@ -735,42 +737,42 @@ This command will install all the dependencies (including PHPUnit) required for 
 
 &lt;p&gt;My GSoC project requires me to work on both - Drupal 7 and 8 version of &lt;a href=&#34;https://drupal.org/project/site_audit&#34;&gt;site_audit&lt;/a&gt;. So, I had to set up PHP_CodeSniffer such that it can work with both the versions of Drupal. The Coder standards are different for Drupal 7 and Drupal 8. This post deals with how to set up CodeSniffer in such a suituation. This will require installing coder module twice, once for Drupal 7 standards and other for Drupal 8 standards.&lt;/p&gt;
 
-&lt;h2 id=&#34;installing-codesniffer:050cc04f629b6df59628e0ab0907bdd2&#34;&gt;Installing CodeSniffer&lt;/h2&gt;
+&lt;h2 id=&#34;installing-codesniffer&#34;&gt;Installing CodeSniffer&lt;/h2&gt;
 
 &lt;p&gt;CodeSniffer can be installed using composer by the following command
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;composer global require squizlabs/PHP_CodeSniffer:&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;2
 
-&lt;span style=&#34;color: #888888&#34;&gt;#make phpcs command globally availabe&lt;/span&gt;
+composer global require squizlabs/PHP_CodeSniffer:\&gt;=2
+
+#make phpcs command globally availabe
 sudo ln -s ~/.composer/vendor/bin/phpcs /usr/local/bin
-&lt;/pre&gt;&lt;/div&gt;
 &lt;/p&gt;
 
-&lt;h2 id=&#34;installing-coder-for-drupal-8:050cc04f629b6df59628e0ab0907bdd2&#34;&gt;Installing Coder for Drupal 8&lt;/h2&gt;
+&lt;h2 id=&#34;installing-coder-for-drupal-8&#34;&gt;Installing Coder for Drupal 8&lt;/h2&gt;
 
 &lt;p&gt;Coder provides the set of sniffs for CodeSniffer. We need two copies of this, one for Drupal 7 and other for Drupal 8.
 Install the first copy using Composer
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;composer global require drupal/coder
-&lt;/pre&gt;&lt;/div&gt;
+
+composer global require drupal/coder
 
 This will install 8.x-2.x version of coder which provides standards for Drupal 8. Composer puts the code module inside &lt;code&gt;$HOME/.composer/vendor/drupal/&lt;/code&gt; directory.&lt;/p&gt;
 
-&lt;h2 id=&#34;installing-coder-for-drupal-7:050cc04f629b6df59628e0ab0907bdd2&#34;&gt;Installing Coder for Drupal 7&lt;/h2&gt;
+&lt;h2 id=&#34;installing-coder-for-drupal-7&#34;&gt;Installing Coder for Drupal 7&lt;/h2&gt;
 
 &lt;p&gt;Install the second copy using drush
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;drush dl coder-7.x --destination&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #996633&#34;&gt;$HOME&lt;/span&gt;/.drush
-&lt;/pre&gt;&lt;/div&gt;
+
+drush dl coder-7.x --destination=$HOME/.drush
 
 This will download 7.x2.x version of coder to &lt;code&gt;.drush&lt;/code&gt; directory inside your home folder.&lt;/p&gt;
 
-&lt;h2 id=&#34;creating-aliases-for-usage:050cc04f629b6df59628e0ab0907bdd2&#34;&gt;Creating Aliases for usage&lt;/h2&gt;
+&lt;h2 id=&#34;creating-aliases-for-usage&#34;&gt;Creating Aliases for usage&lt;/h2&gt;
 
 &lt;p&gt;Different aliases can be created for CodeSniffer with Drupal 7 standards and CodeSniffer with Drupal 8 standards. To create aliases, add the following into your &lt;code&gt;.bashrc&lt;/code&gt; or &lt;code&gt;.zshrc&lt;/code&gt; file
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #888888&#34;&gt;#drupalcs8 alias for testing Drupal 8 coding standards&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;alias&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;drupalcs8&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #996633&#34;&gt;$HOME&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;/.composer/vendor/squizlabs/php_codesniffer/scripts/phpcs --standard=~/.composer/vendor/drupal/coder/coder_sniffer/Drupal --extensions=&amp;#39;php,module,inc,install,test,profile,theme,js,css,info,txt&amp;#39;&amp;quot;&lt;/span&gt;
 
-&lt;span style=&#34;color: #888888&#34;&gt;#drupalcs7 for testing Drupal 7 coding standards&lt;/span&gt;
-&lt;span style=&#34;color: #007020&#34;&gt;alias&lt;/span&gt; &lt;span style=&#34;color: #996633&#34;&gt;drupalcs7&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;phpcs --standard=~/.drush/coder/coder_sniffer/Drupal --extensions=&amp;#39;php,module,inc,install,test,profile,theme,js,css,info,txt&amp;#39;&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+#drupalcs8 alias for testing Drupal 8 coding standards
+alias drupalcs8=&#34;$HOME/.composer/vendor/squizlabs/php_codesniffer/scripts/phpcs --standard=~/.composer/vendor/drupal/coder/coder_sniffer/Drupal --extensions=&#39;php,module,inc,install,test,profile,theme,js,css,info,txt&#39;&#34;
+
+#drupalcs7 for testing Drupal 7 coding standards
+alias drupalcs7=&#34;phpcs --standard=~/.drush/coder/coder_sniffer/Drupal --extensions=&#39;php,module,inc,install,test,profile,theme,js,css,info,txt&#39;&#34;
 &lt;/p&gt;
 
 &lt;p&gt;To test some code for Drupal 8 coding standards, run &lt;code&gt;drupalcs8 [path to file/folder to check]&lt;/code&gt;. Similarly, &lt;code&gt;drupalcs7&lt;/code&gt; can be used to test for Drupal 7 coding standards.&lt;/p&gt;
@@ -789,11 +791,11 @@ This will download 7.x2.x version of coder to &lt;code&gt;.drush&lt;/code&gt; di
 
 &lt;p&gt;If you go and have a look at the &lt;code&gt;/admin/config/development/performance&lt;/code&gt; page of a Drupal 8 site, you will find most of the caching options which were there in Drupal 7 missing. There is no option for enabling Page Caching, Block caching etc. on the page. Where did they all go?&lt;/p&gt;
 
-&lt;h2 id=&#34;cache-api-in-drupal-8:c1b3e93566ce6c80b37474580bd8c4b9&#34;&gt;Cache API in Drupal 8&lt;/h2&gt;
+&lt;h2 id=&#34;cache-api-in-drupal-8&#34;&gt;Cache API in Drupal 8&lt;/h2&gt;
 
 &lt;p&gt;A good place to start is having a look at &lt;a href=&#34;https://api.drupal.org/api/drupal/core!modules!system!core.api.php/group/cache/8&#34;&gt;Cache API documentation&lt;/a&gt; for Drupal 8. It gives a basic idea of Cache Bins, Cache Tags, Cache Backends and how to use those. The idea of Cache Bins and Cache backends is similar to that of Drupal 7 but Cache Tags is a new concept which helps in cache invalidation (more on this later)&lt;/p&gt;
 
-&lt;h2 id=&#34;render-caching:c1b3e93566ce6c80b37474580bd8c4b9&#34;&gt;Render Caching&lt;/h2&gt;
+&lt;h2 id=&#34;render-caching&#34;&gt;Render Caching&lt;/h2&gt;
 
 &lt;p&gt;But what about page caching and block caching? It is enabled by default! And it is faster than Drupal 7 caching. Caching for all entities in Drupal 8 is done using a new technique called render caching. More informaiton on this can be found at - &lt;a href=&#34;https://www.acquia.com/blog/drupal-8-performance-render-caching&#34;&gt;Drupal 8 performance: render caching&lt;/a&gt;. This article also provides a good overview of how cache tags are used in cache invalidation and how it makes Drupal 8 cache faster than Drupal 7 chance.&lt;/p&gt;
 
@@ -801,7 +803,7 @@ This will download 7.x2.x version of coder to &lt;code&gt;.drush&lt;/code&gt; di
 
 &lt;p&gt;More details about Cache Contexts can be found at - &lt;a href=&#34;https://www.drupal.org/developing/api/8/cache/contexts&#34;&gt;Cache Context&lt;/a&gt;. I am still exploring how these are useful but I think different contexts are used to assign different Cache Ids to the same entity.&lt;/p&gt;
 
-&lt;h2 id=&#34;more-resources-to-understand-drupal-8-caching:c1b3e93566ce6c80b37474580bd8c4b9&#34;&gt;More Resources to Understand Drupal 8 Caching&lt;/h2&gt;
+&lt;h2 id=&#34;more-resources-to-understand-drupal-8-caching&#34;&gt;More Resources to Understand Drupal 8 Caching&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://wimleers.com/talk-render-caching-drupal-7-and-8/#/5&#34;&gt;Talk on Render Caching by Wim Leers&lt;/a&gt;&lt;/li&gt;
@@ -823,46 +825,44 @@ This will download 7.x2.x version of coder to &lt;code&gt;.drush&lt;/code&gt; di
 
 &lt;p&gt;Weeks before the coding period started, the first challenge was to set up a developemnt environment such that both me and my mentor can test the work I do in a consistent way. Following are some of the things I did and learned in the process.&lt;/p&gt;
 
-&lt;h2 id=&#34;installing-composer:734dafb44d9f3d82108b3875e36fb833&#34;&gt;Installing Composer&lt;/h2&gt;
+&lt;h2 id=&#34;installing-composer&#34;&gt;Installing Composer&lt;/h2&gt;
 
 &lt;p&gt;Composer is a package manager for PHP. Pcakage manager for most of the linux distros have &lt;code&gt;composer&lt;/code&gt; in their official repositories. So, intalling it is simple. In my case, I used
 &lt;code&gt;sudo pacman -S php-composer&lt;/code&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;installing-drush:734dafb44d9f3d82108b3875e36fb833&#34;&gt;Installing drush&lt;/h2&gt;
+&lt;h2 id=&#34;installing-drush&#34;&gt;Installing drush&lt;/h2&gt;
 
 &lt;p&gt;Drush is a command line shell for Drupal. Drupal 8 requires version 7 of Drush. To install drush 7 from the latest HEAD using composer, run the following command
 &lt;code&gt;composer global require drush/drush:dev-master&lt;/code&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;install-drupal-7-36-via-drush:734dafb44d9f3d82108b3875e36fb833&#34;&gt;Install drupal 7.36 via drush&lt;/h2&gt;
+&lt;h2 id=&#34;install-drupal-7-36-via-drush&#34;&gt;Install drupal 7.36 via drush&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Download drupal 7.36 using &lt;code&gt;drush dl drupal --drupal-project-rename=drupal7&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Install it by running the following command inside the &lt;code&gt;drupal7&lt;/code&gt; director
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;  drush site-install standard &lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\&lt;/span&gt;
-  --db-url&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;mysql://[username]:[password]@localhost/[database-name]&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\&lt;/span&gt;
-  --site-name&lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;[site name]&amp;#39;&lt;/span&gt; --account-name&lt;span style=&#34;color: #333333&#34;&gt;=[&lt;/span&gt;admin-username&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #666666; font-weight: bold; background-color: #fff0f0&#34;&gt;\&lt;/span&gt;
-  --account-pass&lt;span style=&#34;color: #333333&#34;&gt;=[&lt;/span&gt;admin-password&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt;
-  
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/li&gt;
+
+  drush site-install standard \
+  --db-url=&#39;mysql://[username]:[password]@localhost/[database-name]&#39;\
+  --site-name=&#39;[site name]&#39; --account-name=[admin-username]\
+  --account-pass=[admin-password]
+  &lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Use &lt;code&gt;drush en [module-name]&lt;/code&gt; command to install all the required modules&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Alternatively, use drush make with the following make file and then do a drush site-install&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;  ;full documentation &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;for&lt;/span&gt; drush make file at http://www.drush.org/en/master/make/
-  &lt;span style=&#34;color: #996633&#34;&gt;core&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; 7.x
-  &lt;span style=&#34;color: #996633&#34;&gt;api&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; 2
-  projects&lt;span style=&#34;color: #333333&#34;&gt;[&lt;/span&gt;drupal&lt;span style=&#34;color: #333333&#34;&gt;][&lt;/span&gt;version&lt;span style=&#34;color: #333333&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; 7.36
-  projects&lt;span style=&#34;color: #333333&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; views
-  projects&lt;span style=&#34;color: #333333&#34;&gt;[]&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; coder
-  
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
+
+  ;full documentation for drush make file at http://www.drush.org/en/master/make/
+  core = 7.x
+  api = 2
+  projects[drupal][version] = 7.36
+  projects[] = views
+  projects[] = coder
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;install-drupal-8-0-0-beta10-via-drush:734dafb44d9f3d82108b3875e36fb833&#34;&gt;Install drupal-8.0.0-beta10 via drush&lt;/h2&gt;
+&lt;h2 id=&#34;install-drupal-8-0-0-beta10-via-drush&#34;&gt;Install drupal-8.0.0-beta10 via drush&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Download the specified version of drupal using &lt;code&gt;drush dl drupal-8.0.0-beta10 --drupal-project-rename=drupal8&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
@@ -870,28 +870,27 @@ This will download 7.x2.x version of coder to &lt;code&gt;.drush&lt;/code&gt; di
 &lt;li&gt;&lt;p&gt;Install it in a manner similar to drupal 7&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;setting-up-drush-aliases:734dafb44d9f3d82108b3875e36fb833&#34;&gt;Setting up drush aliases&lt;/h2&gt;
+&lt;h2 id=&#34;setting-up-drush-aliases&#34;&gt;Setting up drush aliases&lt;/h2&gt;
 
 &lt;p&gt;Drush aliases provide a way to run drush commands on a drupal site from any directory.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;In the .drush directory in the home folder, put a file named &lt;code&gt;[sitename].aliases.drushrc.php&lt;/code&gt; with the following content&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;    #Example aliases file at https://github.com/drush-ops/drush/blob/master/examples/example.aliases.drushrc.php
-    &lt;span style=&#34;color: #557799&#34;&gt;&amp;lt;?php&lt;/span&gt;
-    &lt;span style=&#34;color: #996633&#34;&gt;$aliases&lt;/span&gt;[&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;d8&amp;quot;&lt;/span&gt;] &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;array&lt;/span&gt; (
-      &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;root&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;/home/shivanshu/webapps/drupal8&amp;#39;&lt;/span&gt;,
-      &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;uri&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;http://drupal8.localhost&amp;#39;&lt;/span&gt;,
+
+    #Example aliases file at https://github.com/drush-ops/drush/blob/master/examples/example.aliases.drushrc.php
+    &lt;?php
+    $aliases[&#34;d8&#34;] = array (
+      &#39;root&#39; =&gt; &#39;/home/shivanshu/webapps/drupal8&#39;,
+      &#39;uri&#39; =&gt; &#39;http://drupal8.localhost&#39;,
     );
 
-    &lt;span style=&#34;color: #996633&#34;&gt;$aliases&lt;/span&gt;[&lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;d7&amp;quot;&lt;/span&gt;] &lt;span style=&#34;color: #333333&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;array&lt;/span&gt; (
-      &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;root&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;/home/shivanshu/webapps/drupal7&amp;#39;&lt;/span&gt;,
-      &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;uri&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #333333&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;http://drupal7.localhost&amp;#39;&lt;/span&gt;,
+    $aliases[&#34;d7&#34;] = array (
+      &#39;root&#39; =&gt; &#39;/home/shivanshu/webapps/drupal7&#39;,
+      &#39;uri&#39; =&gt; &#39;http://drupal7.localhost&#39;,
     );
-    &lt;span style=&#34;color: #557799&#34;&gt;?&amp;gt;&lt;/span&gt;
-    
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;&lt;/li&gt;
+    ?&gt;
+    &lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Now, the drush commands can be run from any directory in the following manner
 &lt;code&gt;drush @d7 en [module-name]&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
@@ -899,7 +898,7 @@ This will download 7.x2.x version of coder to &lt;code&gt;.drush&lt;/code&gt; di
 &lt;li&gt;&lt;p&gt;To list all enabled modules, use &lt;code&gt;drush @d7 pm-list --type=Module --status=enabled&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;backing-up-and-restoring-site-using-drush:734dafb44d9f3d82108b3875e36fb833&#34;&gt;Backing up and Restoring site using Drush&lt;/h2&gt;
+&lt;h2 id=&#34;backing-up-and-restoring-site-using-drush&#34;&gt;Backing up and Restoring site using Drush&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;code&gt;drush archive-dump&lt;/code&gt; will backup the website in an archive&lt;/p&gt;&lt;/li&gt;
@@ -921,24 +920,24 @@ This will download 7.x2.x version of coder to &lt;code&gt;.drush&lt;/code&gt; di
 
 &lt;p&gt;First problem was to get a list of words. Someone has uploaded all the words from Magoosh GRE flashcard and Barron&amp;rsquo;s GRE on quizlet.com &lt;a href=&#34;http://quizlet.com/45492734/magoosh-gre-flashcards-basic-common-advanced-all-1000-flash-cards/&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;http://quizlet.com/8997815/barrons-800-essential-words-for-the-gre-flash-cards/&#34;&gt;here&lt;/a&gt;. Now it was just a matter of scraping them and a simple python script was apt for the task. I scraped all the words and their meanings in a text file named &lt;code&gt;words&lt;/code&gt;, each word separated by a &amp;lsquo;%&amp;rsquo;. This &amp;lsquo;%&amp;rsquo; has a special significance. It is useful in creating a random access file for strings which is used by the fortune program.&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;strfile words
-&lt;/pre&gt;&lt;/div&gt;
+
+strfile words
 
 
 &lt;p&gt;This generates a &lt;code&gt;words.dat&lt;/code&gt; file. I moved both - the &lt;code&gt;words.dat&lt;/code&gt; file and the &lt;code&gt;words&lt;/code&gt; file to the folder that contains the fortune database which in my case is &lt;code&gt;/usr/share/fortune&lt;/code&gt;. Now fortune also uses this file for selecting cookies. But I just want the words and not any other cookie. In &lt;code&gt;fortune&lt;/code&gt;, you can specify the name of the database from which you want it to randomly select a string. So, &lt;code&gt;fortune words&lt;/code&gt; did the task.&lt;/p&gt;
 
 &lt;p&gt;While exploring fortune, I also found that you can specify the probabilities with which it selects string from each database. This is helpful beacuse I want to to select words from Magoosh Basic and Magoosh Common list more frequently than Magoosh Advanced. For this, I need the words in separate files according to category. No probelm because I found the different lists on quizlet.com &lt;a href=&#34;http://quizlet.com/45473963/magoosh-gre-flashcards-basic-all-i-vii-flash-cards/&#34;&gt;here&lt;/a&gt;, &lt;a href=&#34;http://quizlet.com/45473977/magoosh-gre-flashcards-common-all-i-vi-flash-cards/&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;http://quizlet.com/45473953/magoosh-gre-flashcards-advanced-all-i-vii-flash-cards/&#34;&gt;here&lt;/a&gt;, scraped them into different files and followed the same procedure. The script used for scraping and the list of words is available in a github repository &lt;a href=&#34;https://github.com/shivanshuag/cowsay-gre&#34;&gt;here&lt;/a&gt;. So now my command is&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;fortune fortune 40% magoosh_basic 40% magoosh_common magoosh_adv
-&lt;/pre&gt;&lt;/div&gt;
+
+fortune fortune 40% magoosh_basic 40% magoosh_common magoosh_adv
 
 
 &lt;p&gt;This gives a word from Basic and Common list with a probability of 0.4 and from Advanced list with a probability of 0.2.&lt;/p&gt;
 
 &lt;p&gt;To make it more interesting, I piped the output to cowsay. In cowsay, you can specify different ASCII images as argument. There is a default set of images in the &lt;code&gt;/usr/share/cows&lt;/code&gt; folder.&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;fortune -c 40% magoosh_basic 40% magoosh_common magoosh_adv | cowthink -f &lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;$(&lt;/span&gt;find /usr/share/cows -type f | shuf -n 1&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+
+fortune -c 40% magoosh_basic 40% magoosh_common magoosh_adv | cowthink -f $(find /usr/share/cows -type f | shuf -n 1)
 
 
 &lt;p&gt;This command selects a random ASCII image from the set of images in &lt;code&gt;usr/share/cows&lt;/code&gt; folder for the cowsay application. I added this to my &lt;code&gt;.zshrc&lt;/code&gt; file. And the results were interesting!&lt;/p&gt;
@@ -1101,13 +1100,13 @@ _______________________________________
 
 &lt;p&gt;One look at a drupal 8 module is enough to make you realize that there have been some major changes in its architecture. If you observe closely, you will find ample use of OOP constructs, YAML files, and a directory structure totally different form its drupal 7 counterpart. There is enough mention about the big changes in drupal 8 on the web to scare anyone. With this series of posts, I aim to simplify this process of porting a module to drupal 8 for everyone - new to drupal or already experienced in drupal 7. I will also clarify some of the less documented things about drupal 8 which perplexed me while porting.&lt;/p&gt;
 
-&lt;h2 id=&#34;development-environment:d82a0605baa87e632de3976d42b6e284&#34;&gt;Development Environment&lt;/h2&gt;
+&lt;h2 id=&#34;development-environment&#34;&gt;Development Environment&lt;/h2&gt;
 
 &lt;p&gt;First step is to set up the development environment for the project. I prefer &lt;a href=&#34;http://www.jetbrains.com/phpstorm/&#34;&gt;phpstorm&lt;/a&gt; IDE, even though it is not free, due to its excellent drupal support. The following link explains how to set up phpstorm for drupal module development -&lt;a href=&#34;https://drupal.org/node/1962108&#34;&gt;https://drupal.org/node/1962108&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Currently, drupal 8 support is avaliable in &lt;a href=&#34;http://confluence.jetbrains.com/display/PhpStorm/PhpStorm+Early+Access+Program&#34;&gt;phpstorm-eap&lt;/a&gt;. The IDE is awesome enough to not only point out the syntax errors, but even mark the functions you are using that have been deprecated or don&amp;rsquo;t exist drupal 8.&lt;/p&gt;
 
-&lt;h2 id=&#34;oop-namespaces-and-yaml-files:d82a0605baa87e632de3976d42b6e284&#34;&gt;OOP, Namespaces and YAML files&lt;/h2&gt;
+&lt;h2 id=&#34;oop-namespaces-and-yaml-files&#34;&gt;OOP, Namespaces and YAML files&lt;/h2&gt;
 
 &lt;p&gt;I feel that the best way of learning on how to make a d8 module is by looking at the existing d8 module in drupal core. They make up for the lack of documentation in many places.&lt;/p&gt;
 
@@ -1122,7 +1121,7 @@ Some other useful points to be noted from the above blog post are&lt;/p&gt;
 &lt;li&gt;use of Controllers and routing by YAML files which was earlier implemented by &lt;code&gt;hook_menu&lt;/code&gt;. More on routing at &lt;a href=&#34;https://drupal.org/developing/api/8/routing&#34;&gt;https://drupal.org/developing/api/8/routing&lt;/a&gt;. If you don&amp;rsquo;t know about drupal hooks, look it up in the drupal documentation.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;configuration-management:d82a0605baa87e632de3976d42b6e284&#34;&gt;Configuration Management&lt;/h2&gt;
+&lt;h2 id=&#34;configuration-management&#34;&gt;Configuration Management&lt;/h2&gt;
 
 &lt;p&gt;One of the bigger changes in Drupal 8 is the Configuration Management Initiative which completely replaces the Drupal 7 variables. One of the reasons for this is to be able to store configuration in files rather than database which helps in easier import-export of the configuration.&lt;/p&gt;
 
@@ -1135,7 +1134,7 @@ Some other useful points to be noted from the above blog post are&lt;/p&gt;
 &lt;li&gt;Apart from configuration, there are other type of informations also like state information and configuration entities. More on this at - &lt;a href=&#34;https://drupal.org/node/2120523&#34;&gt;https://drupal.org/node/2120523&lt;/a&gt;. Many of the d7 variables have been moved to state. The next link explains on how to find these varibles and convert them. &lt;a href=&#34;https://drupal.org/node/2120523&#34;&gt;https://drupal.org/node/1787318&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;key-takeaways:d82a0605baa87e632de3976d42b6e284&#34;&gt;Key Takeaways&lt;/h3&gt;
+&lt;h3 id=&#34;key-takeaways&#34;&gt;Key Takeaways&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;config keys are just like variables&lt;/li&gt;
@@ -1145,7 +1144,7 @@ Some other useful points to be noted from the above blog post are&lt;/p&gt;
 &lt;li&gt;If a key has not been set earlier in the code and its default value is not defined in &lt;code&gt;hook_install()&lt;/code&gt; or &lt;code&gt;.settings.yml&lt;/code&gt; file, get function on the key returns NULL&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;install-file:d82a0605baa87e632de3976d42b6e284&#34;&gt;.install file&lt;/h2&gt;
+&lt;h2 id=&#34;install-file&#34;&gt;.install file&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;hook_enable&lt;/code&gt; and &lt;code&gt;hook_disable&lt;/code&gt; have been deprecated. &lt;a href=&#34;https://drupal.org/node/2193013&#34;&gt;https://drupal.org/node/2193013&lt;/a&gt;. To port to d8, all the tasks that were being performed in  &lt;code&gt;hook_enable&lt;/code&gt; are to be performed in &lt;code&gt;hook_install&lt;/code&gt;. Same with &lt;code&gt;hook_disable&lt;/code&gt; and &lt;code&gt;hook_uninstall&lt;/code&gt;.
 If you have not developed a drupal 7 module before, the difference between disable-enable and install-uninstall can be confounding. Disabling a module leaves its configuration untouched, along with any data like variables it may have created while uninstalling deletes all the data. Due to removal of disabled state in d8, some of the tasks performed in &lt;code&gt;hook_enable&lt;/code&gt; may become unecessary.&lt;/p&gt;
@@ -1182,7 +1181,7 @@ If you have not developed a drupal 7 module before, the difference between disab
 
 &lt;p&gt;I have been a linux user for more than two years now and the search for a perfect desktop environment is still on. I have tried many of the popular ones - Unity, Gnome 2 and 3, KDE, Cinnamon and MATE. Each of them have a different philosophy which is suitable for some type of users but all of them are either very heavy-weight or have a some very frustrating bugs. So, I decided to try a new window manager instead of a Desktop Environment and switched to &lt;a href=&#34;http://i3wm.org/&#34;&gt;i3&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;why-i-switched-to-i3:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Why I switched to i3&lt;/h2&gt;
+&lt;h2 id=&#34;why-i-switched-to-i3&#34;&gt;Why I switched to i3&lt;/h2&gt;
 
 &lt;p&gt;i3 is a very light-weight tiling window manager. Since quite some time I had started feeling all the  panels, the system menus, the starters, the status applets, desktop background, drag-drop functionality, border decoration and animations which Desktop environments provide to be useless. These functionalities consumed a lot of resources and slowed down my system. Moreover, more the functionalities, more are the bugs. I could do away with all those functionalities. I just needed a Window Manager. &lt;a href=&#34;http://adereth.github.io/blog/2013/10/02/why-you-should-try-a-tiling-window-manager/&#34;&gt;This&lt;/a&gt; blog post on using a tiling wm also motivated me.&lt;/p&gt;
 
@@ -1194,25 +1193,25 @@ If you have not developed a drupal 7 module before, the difference between disab
 
 &lt;p&gt;Following is a breif tutorial on things I found necessary to learn being a newbie to tiling wm.&lt;/p&gt;
 
-&lt;h2 id=&#34;installing-i3:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Installing i3&lt;/h2&gt;
+&lt;h2 id=&#34;installing-i3&#34;&gt;Installing i3&lt;/h2&gt;
 
 &lt;p&gt;For ubuntu,&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;quot;deb http://debian.sur5r.net/i3/ &lt;/span&gt;&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;$(&lt;/span&gt;lsb_release -c -s&lt;span style=&#34;color: #008800; font-weight: bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;background-color: #fff0f0&#34;&gt; universe&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; /etc/apt/sources.list
+
+echo &#34;deb http://debian.sur5r.net/i3/ $(lsb_release -c -s) universe&#34; &gt;&gt; /etc/apt/sources.list
 apt-get update
 apt-get --allow-unauthenticated install sur5r-keyring
 apt-get update
 apt-get install i3
-&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2 id=&#34;getting-used-to-i3:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Getting Used to i3&lt;/h2&gt;
+&lt;h2 id=&#34;getting-used-to-i3&#34;&gt;Getting Used to i3&lt;/h2&gt;
 
 &lt;p&gt;A good place to start is &lt;a href=&#34;http://build.i3wm.org/docs/userguide.html&#34;&gt;i3 User&amp;rsquo;s Guide&lt;/a&gt;. But it contains a lot of information which can be overwhelming at times.&lt;/p&gt;
 
 &lt;p&gt;When you first start i3, it asks if you want to use the default config(default config file is located in &lt;code&gt;/etc/i3&lt;/code&gt;) or create a new config in &lt;code&gt;~/.i3&lt;/code&gt;. I chose new config and it created a new config file. To edit the default config, this file needs to be updated. Then it asks for a mod key giving Alt key and Window key options. I preferred Alt Key.&lt;/p&gt;
 
-&lt;h3 id=&#34;some-indispensable-shortcuts:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Some Indispensable Shortcuts&lt;/h3&gt;
+&lt;h3 id=&#34;some-indispensable-shortcuts&#34;&gt;Some Indispensable Shortcuts&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Alt + Enter - open Terminal&lt;/li&gt;
@@ -1227,60 +1226,60 @@ apt-get install i3
 
 &lt;p&gt;These are default shortcuts and can be changed by updating the config file.&lt;/p&gt;
 
-&lt;h3 id=&#34;tabbed-layout:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Tabbed Layout&lt;/h3&gt;
+&lt;h3 id=&#34;tabbed-layout&#34;&gt;Tabbed Layout&lt;/h3&gt;
 
 &lt;p&gt;By default when you open a new window, the current window splits either horizontally or vertically to accommodate the new one. I prefer tabbed layout to horizontal/vertical or stacked layout. Use &lt;code&gt;Alt + W&lt;/code&gt; to switch to tabbed layout.&lt;/p&gt;
 
-&lt;h3 id=&#34;volume-control:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Volume Control&lt;/h3&gt;
+&lt;h3 id=&#34;volume-control&#34;&gt;Volume Control&lt;/h3&gt;
 
 &lt;p&gt;There is no volume control panel by default in i3. You can bind your own shortcuts to volume control. Modify your config to include the following&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;bindsym XF86AudioLowerVolume &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; /usr/bin/pactl set-sink-volume &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0&lt;/span&gt; -- &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;-5%&amp;#39;&lt;/span&gt;
-bindsym XF86AudioRaiseVolume &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; /usr/bin/pactl set-sink-volume &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;0&lt;/span&gt; -- &lt;span style=&#34;background-color: #fff0f0&#34;&gt;&amp;#39;+5%&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+
+bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume 0 -- &#39;-5%&#39;
+bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume 0 -- &#39;+5%&#39;
 
 
 &lt;p&gt;Here the XF86AudioLowerVolume and XF86AudioRaiseVolume are the multimedia keys on your keyboard for volume control. &lt;code&gt;bindsym&lt;/code&gt; is used to bind a key to a command. &lt;code&gt;exec /usr/bin/pactl set-sink-volume 0 -- &#39;-5%&#39;&lt;/code&gt; is to execute the &lt;code&gt;pactl&lt;/code&gt; command on keypress. &lt;code&gt;pactl&lt;/code&gt; command is for controlling a running pulseaudio server. So, above command only works when you have pulseaudio installed which is default in ubuntu.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;To reload the config file after making changes, use Alt + Shift + C&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;screen-lock:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Screen Lock&lt;/h3&gt;
+&lt;h3 id=&#34;screen-lock&#34;&gt;Screen Lock&lt;/h3&gt;
 
 &lt;p&gt;For screen lock, I use &lt;code&gt;gnome-screensaver&lt;/code&gt;. Gnome Screensaver locks the screen on  &lt;code&gt;gnome-screensaver-command -l&lt;/code&gt; command. I want my screen to lock automatically after 1 minute of inactivity. For this, I use &lt;code&gt;xautolock&lt;/code&gt;.&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; xautolock -time &lt;span style=&#34;color: #6600EE; font-weight: bold&#34;&gt;1&lt;/span&gt; -locker screenlock
-&lt;/pre&gt;&lt;/div&gt;
+
+exec xautolock -time 1 -locker screenlock
 
 
 &lt;p&gt;The above line in my config starts &lt;code&gt;xautolock&lt;/code&gt; which executes the screenlock script after 1 minute of inactivity. Screenlock script contains the &lt;code&gt;gnome-screensaver-command -l&lt;/code&gt; command.&lt;/p&gt;
 
 &lt;p&gt;I also  to bind &lt;code&gt;Alt + Ctrl + l&lt;/code&gt; shortcut to lock the screen.
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;bindsym Control+Mod1+l &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; gnome-screensaver-command -l
-&lt;/pre&gt;&lt;/div&gt;
+
+bindsym Control+Mod1+l exec gnome-screensaver-command -l
 &lt;/p&gt;
 
-&lt;h3 id=&#34;reboot-suspend-and-shutdown:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Reboot, Suspend and Shutdown&lt;/h3&gt;
+&lt;h3 id=&#34;reboot-suspend-and-shutdown&#34;&gt;Reboot, Suspend and Shutdown&lt;/h3&gt;
 
 &lt;p&gt;The commands for shutdown is &lt;code&gt;sudo shutdown -Ph now&lt;/code&gt;, for reboot is &lt;code&gt;sudo reboot&lt;/code&gt; and for suspend is &lt;code&gt;sudo pm-suspend&lt;/code&gt;.
 Since all these commands require root access and hence password, it will not be possible for i3 to bind them to keys normally. We need to create a script for each of these commands and add a no-password entry for them in sudoers file. Run &lt;code&gt;sudo visudo&lt;/code&gt; and add the following lines at the end of the file. Adding them at the end is important.&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;shivanshu &lt;span style=&#34;color: #996633&#34;&gt;ALL&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=(&lt;/span&gt;ALL&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; NOPASSWD: /home/shivanshu/.i3/shutdown
-shivanshu &lt;span style=&#34;color: #996633&#34;&gt;ALL&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=(&lt;/span&gt;ALL&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; NOPASSWD: /home/shivanshu/.i3/reboot
-shivanshu &lt;span style=&#34;color: #996633&#34;&gt;ALL&lt;/span&gt;&lt;span style=&#34;color: #333333&#34;&gt;=(&lt;/span&gt;ALL&lt;span style=&#34;color: #333333&#34;&gt;)&lt;/span&gt; NOPASSWD: /home/shivanshu/.i3/suspend
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
+shivanshu ALL=(ALL) NOPASSWD: /home/shivanshu/.i3/shutdown
+shivanshu ALL=(ALL) NOPASSWD: /home/shivanshu/.i3/reboot
+shivanshu ALL=(ALL) NOPASSWD: /home/shivanshu/.i3/suspend
+
 
 &lt;p&gt;Here, shutdown, reboot and suspend are scripts which contain the corresponding commands. Then, we can bind these scripts to keyboard shortcuts in the config file&lt;/p&gt;
 
-&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;bindsym Control+Mod1+s &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; gnome-screensaver-command -l &lt;span style=&#34;color: #333333&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo /home/shivanshu/.i3/suspend
-bindsym Control+Mod1+x &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; sudo /home/shivanshu/shutdown
-bindsym Control+Mod1+r &lt;span style=&#34;color: #007020&#34;&gt;exec&lt;/span&gt; sudo /home/shivanshu/reboot
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/p&gt;
+
+bindsym Control+Mod1+s exec gnome-screensaver-command -l &amp;&amp; sudo /home/shivanshu/.i3/suspend
+bindsym Control+Mod1+x exec sudo /home/shivanshu/shutdown
+bindsym Control+Mod1+r exec sudo /home/shivanshu/reboot
+
 
 &lt;p&gt;Notice that I have also locked the screen before suspending the system so that it requires password on wakeup.&lt;/p&gt;
 
-&lt;h3 id=&#34;battery-low-warning:a425d0e5ba2e3e04b9c1aa69db283406&#34;&gt;Battery Low Warning&lt;/h3&gt;
+&lt;h3 id=&#34;battery-low-warning&#34;&gt;Battery Low Warning&lt;/h3&gt;
 
 &lt;p&gt;I want a warning when my battery is low. For this, I have used a script I found on archlinux forum&amp;rsquo;s i3 thread. This script uses i3-nagbar to give warnings and needs acpi installed. It also need root permissions to run, so add a no-password entry for it in the sudoers file. Then add it in the config file.&lt;/p&gt;
 

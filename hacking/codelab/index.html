@@ -62,7 +62,7 @@
         },
         "datePublished": "2015-10-07",
         "description": "",
-        "wordCount":  2010 
+        "wordCount":  1907 
     }
     </script>
     
@@ -103,7 +103,7 @@
             <a href="http://www.ninjaducks.in/categories/hacking/">Hacking</a>
         
         
-        &middot; 10 min read
+        &middot; 9 min read
         </span>
     </div>
     <h1 class="post-title">Codelab - HTML5 Canvas and Game development</h1>
@@ -126,13 +126,13 @@
 
     
 
-<h2 id="objective:4cc1e79f29e4e167992c218986e06770">Objective</h2>
+<h2 id="objective">Objective</h2>
 
 <p>This codelab will demonstrate how to build a game using HTML5 canvas. As an example, we will build a simple snake game.</p>
 
 <p>We will walk you through the process of building the in a series of incremental steps. After each step you should have a working (not necessarily useful) version of the game. Each step is described in the form of a tag in the git repository.</p>
 
-<h2 id="requirements:4cc1e79f29e4e167992c218986e06770">Requirements</h2>
+<h2 id="requirements">Requirements</h2>
 
 <p>The requirements for this codelab are:</p>
 
@@ -142,13 +142,13 @@
 <li>Basic knowledge in git will be helpful.</li>
 </ul>
 
-<h2 id="why-html5:4cc1e79f29e4e167992c218986e06770">Why HTML5?</h2>
+<h2 id="why-html5">Why HTML5?</h2>
 
 <p>The most obvious advantage for creating a HTML5 game is that it is cross platform. The same codebase can be packaged to run on browsers, Andorid, iOS, Windows Phone or any other modern device.</p>
 
 <p>Another advantage the pervasiveness of javascript. It is everywhere and very easy to get started with. Most people are already familiar with Javascript and that all that is needed to develop a HTML5 game. The development process is fairly easy. No waiting for compilation, updates and debugging in real-time, and once the game is done, you can push out the update immediately.</p>
 
-<h2 id="step-0-getting-the-code:4cc1e79f29e4e167992c218986e06770">Step 0: Getting the Code</h2>
+<h2 id="step-0-getting-the-code">Step 0: Getting the Code</h2>
 
 <p>You can get the code from <a href="https://github.com/shivanshuag/codelab-snake">https://github.com/shivanshuag/codelab-snake</a>
 Clone the repository using <code>git clone https://github.com/shivanshuag/codelab-snake</code>.</p>
@@ -157,21 +157,21 @@ Clone the repository using <code>git clone https://github.com/shivanshuag/codela
 
 <p>To run the code, simply open the <code>index.html</code> file in the browser of your choice.</p>
 
-<h2 id="preliminaries:4cc1e79f29e4e167992c218986e06770">Preliminaries</h2>
+<h2 id="preliminaries">Preliminaries</h2>
 
-<h3 id="step-1-the-canvas-tag:4cc1e79f29e4e167992c218986e06770">Step 1: The Canvas Tag</h3>
+<h3 id="step-1-the-canvas-tag">Step 1: The Canvas Tag</h3>
 
 <p><code>git checkout step1</code></p>
 
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>&lt;<span style="color: #007700">body</span>&gt;
-&lt;<span style="color: #007700">canvas</span> <span style="color: #0000CC">id</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;myCanvas&quot;</span> <span style="color: #0000CC">width</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;578&quot;</span> <span style="color: #0000CC">height</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;200&quot;</span>&gt;&lt;/<span style="color: #007700">canvas</span>&gt;
-&lt;<span style="color: #007700">script</span>&gt;
-  <span style="color: #008800; font-weight: bold">var</span> canvas <span style="color: #333333">=</span> <span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&#39;myCanvas&#39;</span>);
-  <span style="color: #008800; font-weight: bold">var</span> context <span style="color: #333333">=</span> canvas.getContext(<span style="background-color: #fff0f0">&#39;2d&#39;</span>);
-  <span style="color: #888888">// do stuff here</span>
-&lt;/<span style="color: #007700">script</span>&gt;
-&lt;/<span style="color: #007700">body</span>&gt;
-</pre></div>
+
+<body>
+<canvas id="myCanvas" width="578" height="200"></canvas>
+<script>
+  var canvas = document.getElementById('myCanvas');
+  var context = canvas.getContext('2d');
+  // do stuff here
+</script>
+</body>
 
 
 <p>The canvas tag is similar to the <code>&lt;div&gt;</code>, <code>&lt;a&gt;</code>, or <code>&lt;table&gt;</code> tag, with the exception that its contents are rendered with JavaScript. The <code>width</code> and <code>height</code> attributes are used to specify the dimensions of the canvas.</p>
@@ -180,26 +180,26 @@ Clone the repository using <code>git clone https://github.com/shivanshuag/codela
 
 <p><code>canvas.getContext('2d')</code> gives the canvas context which is an object with properties and methods that you can use to render graphics inside the canvas element.  The context can be 2d or webgl (3d).</p>
 
-<h3 id="step-2-drawing-a-line:4cc1e79f29e4e167992c218986e06770">Step 2: Drawing A Line</h3>
+<h3 id="step-2-drawing-a-line">Step 2: Drawing A Line</h3>
 
 <p><code>git checkout step2</code></p>
 
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>&lt;<span style="color: #007700">body</span>&gt;
-&lt;<span style="color: #007700">canvas</span> <span style="color: #0000CC">id</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;myCanvas&quot;</span> <span style="color: #0000CC">width</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;578&quot;</span> <span style="color: #0000CC">height</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;200&quot;</span>&gt;&lt;/<span style="color: #007700">canvas</span>&gt;
-&lt;<span style="color: #007700">script</span>&gt;
-  <span style="color: #008800; font-weight: bold">var</span> canvas <span style="color: #333333">=</span> <span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&#39;myCanvas&#39;</span>);
-  <span style="color: #008800; font-weight: bold">var</span> context <span style="color: #333333">=</span> canvas.getContext(<span style="background-color: #fff0f0">&#39;2d&#39;</span>);
+
+<body>
+<canvas id="myCanvas" width="578" height="200"></canvas>
+<script>
+  var canvas = document.getElementById('myCanvas');
+  var context = canvas.getContext('2d');
 
   context.beginPath();
-  context.moveTo(<span style="color: #0000DD; font-weight: bold">100</span>, <span style="color: #0000DD; font-weight: bold">150</span>);
-  context.lineTo(<span style="color: #0000DD; font-weight: bold">450</span>, <span style="color: #0000DD; font-weight: bold">50</span>);
-  context.lineWidth <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">15</span>;
-  context.strokeStyle <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;#ff0000&#39;</span>;
-  context.lineCap <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;round&#39;</span>
+  context.moveTo(100, 150);
+  context.lineTo(450, 50);
+  context.lineWidth = 15;
+  context.strokeStyle = '#ff0000';
+  context.lineCap = 'round'
   context.stroke();
-&lt;/<span style="color: #007700">script</span>&gt;
-&lt;/<span style="color: #007700">body</span>&gt;
-</pre></div>
+</script>
+</body>
 
 
 <ul>
@@ -220,30 +220,30 @@ Clone the repository using <code>git clone https://github.com/shivanshuag/codela
 
 <p>All the properties of the line should be set before calling the stroke function.</p>
 
-<h3 id="step-3-arc:4cc1e79f29e4e167992c218986e06770">Step 3: Arc</h3>
+<h3 id="step-3-arc">Step 3: Arc</h3>
 
 <p><code>git checkout step3</code></p>
 
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>&lt;<span style="color: #007700">body</span>&gt;
-&lt;<span style="color: #007700">canvas</span> <span style="color: #0000CC">id</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;myCanvas&quot;</span> <span style="color: #0000CC">width</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;578&quot;</span> <span style="color: #0000CC">height</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;200&quot;</span>&gt;&lt;/<span style="color: #007700">canvas</span>&gt;
-&lt;<span style="color: #007700">script</span>&gt;
-  <span style="color: #008800; font-weight: bold">var</span> canvas <span style="color: #333333">=</span> <span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&#39;myCanvas&#39;</span>);
-  <span style="color: #008800; font-weight: bold">var</span> context <span style="color: #333333">=</span> canvas.getContext(<span style="background-color: #fff0f0">&#39;2d&#39;</span>);
 
-  <span style="color: #008800; font-weight: bold">var</span> x <span style="color: #333333">=</span> canvas.width <span style="color: #333333">/</span> <span style="color: #0000DD; font-weight: bold">2</span>;
-  <span style="color: #008800; font-weight: bold">var</span> y <span style="color: #333333">=</span> canvas.height <span style="color: #333333">/</span> <span style="color: #0000DD; font-weight: bold">2</span>;
-  <span style="color: #008800; font-weight: bold">var</span> radius <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">75</span>;
-  <span style="color: #008800; font-weight: bold">var</span> startAngle <span style="color: #333333">=</span> <span style="color: #6600EE; font-weight: bold">1.1</span> <span style="color: #333333">*</span> <span style="color: #007020">Math</span>.PI;
-  <span style="color: #008800; font-weight: bold">var</span> endAngle <span style="color: #333333">=</span> <span style="color: #6600EE; font-weight: bold">1.9</span> <span style="color: #333333">*</span> <span style="color: #007020">Math</span>.PI;
-  <span style="color: #008800; font-weight: bold">var</span> counterClockwise <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">false</span>;
+<body>
+<canvas id="myCanvas" width="578" height="200"></canvas>
+<script>
+  var canvas = document.getElementById('myCanvas');
+  var context = canvas.getContext('2d');
+
+  var x = canvas.width / 2;
+  var y = canvas.height / 2;
+  var radius = 75;
+  var startAngle = 1.1 * Math.PI;
+  var endAngle = 1.9 * Math.PI;
+  var counterClockwise = false;
   context.beginPath();
   context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
-  context.lineWidth <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">15</span>;
-  context.strokeStyle <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;black&#39;</span>;
+  context.lineWidth = 15;
+  context.strokeStyle = 'black';
   context.stroke();
-&lt;/<span style="color: #007700">script</span>&gt;
-&lt;/<span style="color: #007700">body</span>&gt;
-</pre></div>
+</script>
+</body>
 
 
 <ul>
@@ -252,32 +252,32 @@ Clone the repository using <code>git clone https://github.com/shivanshuag/codela
 <li>Arcs can be styled with the lineWidth, strokeStyle, and lineCap properties</li>
 </ul>
 
-<h4 id="bonus-points:4cc1e79f29e4e167992c218986e06770">Bonus Points</h4>
+<h4 id="bonus-points">Bonus Points</h4>
 
 <ul>
 <li>Explore how to make Quadratic Curve and Bezier Curves and paths in the canvas.</li>
 </ul>
 
-<h3 id="step-4-rectangle:4cc1e79f29e4e167992c218986e06770">Step 4: Rectangle</h3>
+<h3 id="step-4-rectangle">Step 4: Rectangle</h3>
 
 <p><code>git checkout step4</code></p>
 
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>&lt;<span style="color: #007700">body</span>&gt;
-&lt;<span style="color: #007700">canvas</span> <span style="color: #0000CC">id</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;myCanvas&quot;</span> <span style="color: #0000CC">width</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;578&quot;</span> <span style="color: #0000CC">height</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;200&quot;</span>&gt;&lt;/<span style="color: #007700">canvas</span>&gt;
-&lt;<span style="color: #007700">script</span>&gt;
-  <span style="color: #008800; font-weight: bold">var</span> canvas <span style="color: #333333">=</span> <span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&#39;myCanvas&#39;</span>);
-  <span style="color: #008800; font-weight: bold">var</span> context <span style="color: #333333">=</span> canvas.getContext(<span style="background-color: #fff0f0">&#39;2d&#39;</span>);
+
+<body>
+<canvas id="myCanvas" width="578" height="200"></canvas>
+<script>
+  var canvas = document.getElementById('myCanvas');
+  var context = canvas.getContext('2d');
 
   context.beginPath();
-  context.rect(<span style="color: #0000DD; font-weight: bold">188</span>, <span style="color: #0000DD; font-weight: bold">50</span>, <span style="color: #0000DD; font-weight: bold">200</span>, <span style="color: #0000DD; font-weight: bold">100</span>);
-  context.fillStyle <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;yellow&#39;</span>;
+  context.rect(188, 50, 200, 100);
+  context.fillStyle = 'yellow';
   context.fill();
-  context.lineWidth <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">7</span>;
-  context.strokeStyle <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;black&#39;</span>;
+  context.lineWidth = 7;
+  context.strokeStyle = 'black';
   context.stroke();
-&lt;/<span style="color: #007700">script</span>&gt;
-&lt;/<span style="color: #007700">body</span>&gt;
-</pre></div>
+</script>
+</body>
 
 
 <ul>
@@ -288,25 +288,25 @@ Clone the repository using <code>git clone https://github.com/shivanshuag/codela
 
 <p>When setting both the fill and stroke for a shape, make sure that you use fill() before stroke().Otherwise, the fill will overlap half of the stroke.</p>
 
-<h3 id="step-5-images:4cc1e79f29e4e167992c218986e06770">Step 5: Images</h3>
+<h3 id="step-5-images">Step 5: Images</h3>
 
 <p><code>git checkout step5</code></p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>&lt;<span style="color: #007700">body</span>&gt;
-&lt;<span style="color: #007700">canvas</span> <span style="color: #0000CC">id</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;myCanvas&quot;</span> <span style="color: #0000CC">width</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;578&quot;</span> <span style="color: #0000CC">height</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;200&quot;</span>&gt;&lt;/<span style="color: #007700">canvas</span>&gt;
-&lt;<span style="color: #007700">script</span>&gt;
-  <span style="color: #008800; font-weight: bold">var</span> canvas <span style="color: #333333">=</span> <span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&#39;myCanvas&#39;</span>);
-  <span style="color: #008800; font-weight: bold">var</span> context <span style="color: #333333">=</span> canvas.getContext(<span style="background-color: #fff0f0">&#39;2d&#39;</span>);
 
-  <span style="color: #008800; font-weight: bold">var</span> imageObj <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Image();
-  imageObj.onload <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>() {
-  	context.drawImage(imageObj, <span style="color: #0000DD; font-weight: bold">69</span>, <span style="color: #0000DD; font-weight: bold">50</span>);
+<body>
+<canvas id="myCanvas" width="578" height="200"></canvas>
+<script>
+  var canvas = document.getElementById('myCanvas');
+  var context = canvas.getContext('2d');
+
+  var imageObj = new Image();
+  imageObj.onload = function() {
+  	context.drawImage(imageObj, 69, 50);
   };
-  imageObj.src <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg&#39;</span>;
-&lt;/<span style="color: #007700">script</span>&gt;
-&lt;/<span style="color: #007700">body</span>&gt;
-</pre></div>
-</p>
+  imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg';
+</script>
+</body>
+
 
 <ul>
 <li><code>image.onload</code> is a function which is called when the image has been fetched from its source.</li>
@@ -314,28 +314,28 @@ Clone the repository using <code>git clone https://github.com/shivanshuag/codela
 <li>To change the size of the image, add two additional arguments to the drawImage() method, width and height. <code>context.drawImage(imageObj, x, y, width, height);</code></li>
 </ul>
 
-<h4 id="bonus-point:4cc1e79f29e4e167992c218986e06770">Bonus Point</h4>
+<h4 id="bonus-point">Bonus Point</h4>
 
 <ul>
 <li>Explore how to crop an image and then draw it on canvas.</li>
 </ul>
 
-<h3 id="step-6-text:4cc1e79f29e4e167992c218986e06770">Step 6: Text</h3>
+<h3 id="step-6-text">Step 6: Text</h3>
 
 <p><code>git checkout step6</code></p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>&lt;<span style="color: #007700">body</span>&gt;
-&lt;<span style="color: #007700">canvas</span> <span style="color: #0000CC">id</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;myCanvas&quot;</span> <span style="color: #0000CC">width</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;578&quot;</span> <span style="color: #0000CC">height</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;200&quot;</span>&gt;&lt;/<span style="color: #007700">canvas</span>&gt;
-&lt;<span style="color: #007700">script</span>&gt;
-  <span style="color: #008800; font-weight: bold">var</span> canvas <span style="color: #333333">=</span> <span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&#39;myCanvas&#39;</span>);
-  <span style="color: #008800; font-weight: bold">var</span> context <span style="color: #333333">=</span> canvas.getContext(<span style="background-color: #fff0f0">&#39;2d&#39;</span>);
 
-  context.font <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;italic 40pt Calibri&#39;</span>;
-  context.fillText(<span style="background-color: #fff0f0">&#39;Hello World!&#39;</span>, <span style="color: #0000DD; font-weight: bold">150</span>, <span style="color: #0000DD; font-weight: bold">100</span>);
-&lt;/<span style="color: #007700">script</span>&gt;
-&lt;/<span style="color: #007700">body</span>&gt;
-</pre></div>
-</p>
+<body>
+<canvas id="myCanvas" width="578" height="200"></canvas>
+<script>
+  var canvas = document.getElementById('myCanvas');
+  var context = canvas.getContext('2d');
+
+  context.font = 'italic 40pt Calibri';
+  context.fillText('Hello World!', 150, 100);
+</script>
+</body>
+
 
 <ul>
 <li>To change set the <code>fillStyle</code> abd <code>strokeStyle</code> in same ways as for shapes.</li>
@@ -343,95 +343,95 @@ Clone the repository using <code>git clone https://github.com/shivanshuag/codela
 <li>When it&rsquo;s set to start and the document direction is ltr (left to right), or when it&rsquo;s set to end and the document direction is rtl (right to left).</li>
 </ul>
 
-<h2 id="snake-game:4cc1e79f29e4e167992c218986e06770">Snake Game</h2>
+<h2 id="snake-game">Snake Game</h2>
 
 <p>Now we will create a game using the tools we just learnt.</p>
 
-<h3 id="step-7-creating-arena-for-the-snake:4cc1e79f29e4e167992c218986e06770">Step 7: Creating Arena for the Snake</h3>
+<h3 id="step-7-creating-arena-for-the-snake">Step 7: Creating Arena for the Snake</h3>
 
 <p><code>git checkout step7</code></p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>&lt;<span style="color: #007700">body</span>&gt;
-&lt;<span style="color: #007700">canvas</span> <span style="color: #0000CC">id</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;myCanvas&quot;</span> <span style="color: #0000CC">width</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;450&quot;</span> <span style="color: #0000CC">height</span><span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;450&quot;</span>&gt;&lt;/<span style="color: #007700">canvas</span>&gt;
-&lt;<span style="color: #007700">script</span>&gt;
-  <span style="color: #008800; font-weight: bold">var</span> canvas <span style="color: #333333">=</span> <span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&#39;myCanvas&#39;</span>);
-  <span style="color: #008800; font-weight: bold">var</span> context <span style="color: #333333">=</span> canvas.getContext(<span style="background-color: #fff0f0">&#39;2d&#39;</span>);
-  <span style="color: #008800; font-weight: bold">var</span> w <span style="color: #333333">=</span> canvas.width
-  <span style="color: #008800; font-weight: bold">var</span> h <span style="color: #333333">=</span> canvas.height
 
-  context.fillStyle<span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;white&quot;</span>;
-  context.fillRect(<span style="color: #0000DD; font-weight: bold">0</span> , <span style="color: #0000DD; font-weight: bold">0</span>, w, h);
-  context.strokeStyle <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;black&quot;</span>;
-  context.strokeRect(<span style="color: #0000DD; font-weight: bold">0</span>, <span style="color: #0000DD; font-weight: bold">0</span>, w, h);
-&lt;/<span style="color: #007700">script</span>&gt;
-&lt;/<span style="color: #007700">body</span>&gt;
-</pre></div>
-</p>
+<body>
+<canvas id="myCanvas" width="450" height="450"></canvas>
+<script>
+  var canvas = document.getElementById('myCanvas');
+  var context = canvas.getContext('2d');
+  var w = canvas.width
+  var h = canvas.height
+
+  context.fillStyle= "white";
+  context.fillRect(0 , 0, w, h);
+  context.strokeStyle = "black";
+  context.strokeRect(0, 0, w, h);
+</script>
+</body>
+
 
 <p>This will create a 450x450 canvas with a balck boundary.</p>
 
-<h3 id="step-8-creating-the-snake:4cc1e79f29e4e167992c218986e06770">Step 8: Creating the Snake</h3>
+<h3 id="step-8-creating-the-snake">Step 8: Creating the Snake</h3>
 
 <p><code>git checkout step8</code></p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">function</span> create_snake() {
-<span style="color: #008800; font-weight: bold">var</span> length <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">5</span>; <span style="color: #888888">//Length of the snake</span>
-snake_array <span style="color: #333333">=</span> []; <span style="color: #888888">//Empty array to start with</span>
-<span style="color: #008800; font-weight: bold">for</span>(<span style="color: #008800; font-weight: bold">var</span> i <span style="color: #333333">=</span> length<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>; i<span style="color: #333333">&gt;=</span><span style="color: #0000DD; font-weight: bold">0</span>; i<span style="color: #333333">--</span>) {
-  <span style="color: #888888">//This will create a horizontal snake starting from the top left</span>
-  snake_array.push({x<span style="color: #333333">:</span> i, y<span style="color: #333333">:</span><span style="color: #0000DD; font-weight: bold">0</span>});
+
+function create_snake() {
+var length = 5; //Length of the snake
+snake_array = []; //Empty array to start with
+for(var i = length-1; i>=0; i--) {
+  //This will create a horizontal snake starting from the top left
+  snake_array.push({x: i, y:0});
 }
 }
-create_snake();   <span style="color: #888888">// calling the create_snake function</span>
-</pre></div>
-</p>
+create_snake();   // calling the create_snake function
+
 
 <p>Here, each element in the array represents a cell of the snake. Initially, the snake is made up of 5 cells. In a later step, we will write logic to increase the length of the snake when it eats food.</p>
 
-<h3 id="step-9-painting-the-snake:4cc1e79f29e4e167992c218986e06770">Step 9: Painting the Snake</h3>
+<h3 id="step-9-painting-the-snake">Step 9: Painting the Snake</h3>
 
 <p><code>git checkout step9</code></p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">var</span> cw <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">10</span>;<span style="color: #888888">//cell width</span>
-<span style="color: #008800; font-weight: bold">function</span> paint() {
-  <span style="color: #008800; font-weight: bold">for</span>(<span style="color: #008800; font-weight: bold">var</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; i <span style="color: #333333">&lt;</span> snake_array.length; i<span style="color: #333333">++</span>) {
-    <span style="color: #008800; font-weight: bold">var</span> c <span style="color: #333333">=</span> snake_array[i];
-    context.fillStyle  <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;blue&quot;</span>;
-    <span style="color: #888888">//Lets paint 10px wide cells</span>
-    context.fillRect(c.x<span style="color: #333333">*</span>cw, c.y<span style="color: #333333">*</span>cw, cw, cw);
-    context.strokeStyle  <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;white&quot;</span>;
-    context.strokeRect(c.x<span style="color: #333333">*</span>cw, c.y<span style="color: #333333">*</span>cw, cw, cw);
+
+var cw = 10;//cell width
+function paint() {
+  for(var i = 0; i < snake_array.length; i++) {
+    var c = snake_array[i];
+    context.fillStyle  = "blue";
+    //Lets paint 10px wide cells
+    context.fillRect(c.x*cw, c.y*cw, cw, cw);
+    context.strokeStyle  = "white";
+    context.strokeRect(c.x*cw, c.y*cw, cw, cw);
   }
 }
 paint();
-</pre></div>
-</p>
+
 
 <p>In the earlier step, we just created a array containing the coordinates of all the cells of the snake. In this step, we are painting all the cells on the canvas.</p>
 
 <p><code>context.fillRect</code> fills a rectangle and <code>context.strokeRect</code> creates its boundary.</p>
 
-<h3 id="step-10-moving-the-snake:4cc1e79f29e4e167992c218986e06770">Step 10: Moving the snake</h3>
+<h3 id="step-10-moving-the-snake">Step 10: Moving the snake</h3>
 
 <p><code>git checkout step10</code></p>
 
 <p>In this step, we will create the Game Loop. Game Loop contains the statements which will be called in every frame of the game. These instructions will be responsible for updating the state of the game (like the position of the snake, handling input).</p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>game_loop <span style="color: #333333">=</span> setInterval(paint, <span style="color: #0000DD; font-weight: bold">60</span>);
 
-<span style="color: #888888">//Put the following lines inside the paint function</span>
-  <span style="color: #888888">//Pop out the tail cell and place it infront of the head cell</span>
-  <span style="color: #008800; font-weight: bold">var</span> nx <span style="color: #333333">=</span> snake_array[<span style="color: #0000DD; font-weight: bold">0</span>].x;
-  <span style="color: #008800; font-weight: bold">var</span> ny <span style="color: #333333">=</span> snake_array[<span style="color: #0000DD; font-weight: bold">0</span>].y;
-  <span style="color: #888888">//These were the position of the head cell.</span>
-  <span style="color: #888888">//We will increment it to get the new head position</span>
-  nx<span style="color: #333333">++</span>;
-  <span style="color: #008800; font-weight: bold">var</span> tail <span style="color: #333333">=</span> snake_array.pop(); <span style="color: #888888">//pops out the last cell</span>
-  tail.x <span style="color: #333333">=</span> nx;
-  tail.y <span style="color: #333333">=</span> ny;
-  snake_array.unshift(tail); <span style="color: #888888">//puts back the tail as the first cell</span>
-</pre></div>
-</p>
+game_loop = setInterval(paint, 60);
+
+//Put the following lines inside the paint function
+  //Pop out the tail cell and place it infront of the head cell
+  var nx = snake_array[0].x;
+  var ny = snake_array[0].y;
+  //These were the position of the head cell.
+  //We will increment it to get the new head position
+  nx++;
+  var tail = snake_array.pop(); //pops out the last cell
+  tail.x = nx;
+  tail.y = ny;
+  snake_array.unshift(tail); //puts back the tail as the first cell
+
 
 <p>Game loop is a javascript setInterval timer. It calls the <code>paint</code> function every 60 milliseconds.</p>
 
@@ -439,164 +439,166 @@ paint();
 
 <p>After every 60 ms, paint() function will create new rectangle but will not delete the previous rectangles. This will leave a trail of the movement of the snake. So, we will first paint the background of the canvas white inside the paint() function.</p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #888888">// Put the following lines at the start of the paint function</span>
-context.fillStyle<span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;white&quot;</span>;
-context.fillRect(<span style="color: #0000DD; font-weight: bold">0</span> , <span style="color: #0000DD; font-weight: bold">0</span>, w, h);
-context.strokeStyle <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;white&quot;</span>;
-context.strokeRect(<span style="color: #0000DD; font-weight: bold">0</span>, <span style="color: #0000DD; font-weight: bold">0</span>, w, h);
-</pre></div>
-</p>
 
-<h3 id="step-11-handling-user-input:4cc1e79f29e4e167992c218986e06770">Step 11: Handling User Input</h3>
+// Put the following lines at the start of the paint function
+context.fillStyle= "white";
+context.fillRect(0 , 0, w, h);
+context.strokeStyle = "white";
+context.strokeRect(0, 0, w, h);
+
+
+<h3 id="step-11-handling-user-input">Step 11: Handling User Input</h3>
 
 <p><code>git checkout step11</code></p>
 
 <p>First, we will add direction based movement to the snake. Instead of the line <code>nx++</code> in the code, add the following snippet.</p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">var</span> d <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;right&quot;</span>; <span style="color: #888888">//default direction. Add this line outside the paint function</span>
 
-<span style="color: #888888">//add the following lines in the paint function replacing &#39;nx++&#39;</span>
-<span style="color: #008800; font-weight: bold">if</span>(d <span style="color: #333333">==</span> <span style="background-color: #fff0f0">&quot;right&quot;</span>) nx<span style="color: #333333">++</span>;
-<span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span>(d <span style="color: #333333">==</span> <span style="background-color: #fff0f0">&quot;left&quot;</span>) nx<span style="color: #333333">--</span>;
-<span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span>(d <span style="color: #333333">==</span> <span style="background-color: #fff0f0">&quot;up&quot;</span>) ny<span style="color: #333333">--</span>;
-<span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span>(d <span style="color: #333333">==</span> <span style="background-color: #fff0f0">&quot;down&quot;</span>) ny<span style="color: #333333">++</span>;
-</pre></div>
-</p>
+var d = "right"; //default direction. Add this line outside the paint function
+
+//add the following lines in the paint function replacing 'nx++'
+if(d == "right") nx++;
+else if(d == "left") nx--;
+else if(d == "up") ny--;
+else if(d == "down") ny++;
+
+
 
 <p>Add a key listener and change the direction of the snake accordingly.</p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #007020">document</span>.onkeydown <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(e) {
-  <span style="color: #008800; font-weight: bold">var</span> key <span style="color: #333333">=</span> e.which;
-  <span style="color: #008800; font-weight: bold">if</span>(key <span style="color: #333333">==</span> <span style="background-color: #fff0f0">&quot;37&quot;</span> <span style="color: #333333">&amp;&amp;</span> d <span style="color: #333333">!=</span> <span style="background-color: #fff0f0">&quot;right&quot;</span>) d <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;left&quot;</span>;
-  <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span>(key <span style="color: #333333">==</span> <span style="background-color: #fff0f0">&quot;38&quot;</span> <span style="color: #333333">&amp;&amp;</span> d <span style="color: #333333">!=</span> <span style="background-color: #fff0f0">&quot;down&quot;</span>) d<span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;up&quot;</span>;
-  <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span>(key <span style="color: #333333">==</span> <span style="background-color: #fff0f0">&quot;39&quot;</span> <span style="color: #333333">&amp;&amp;</span> d <span style="color: #333333">!=</span> <span style="background-color: #fff0f0">&quot;left&quot;</span>) d<span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;right&quot;</span>;
-  <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span>(key <span style="color: #333333">==</span> <span style="background-color: #fff0f0">&quot;40&quot;</span> <span style="color: #333333">&amp;&amp;</span> d <span style="color: #333333">!=</span> <span style="background-color: #fff0f0">&quot;up&quot;</span>) d<span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;down&quot;</span>;
+
+document.onkeydown = function(e) {
+  var key = e.which;
+  if(key == "37" && d != "right") d = "left";
+  else if(key == "38" && d != "down") d= "up";
+  else if(key == "39" && d != "left") d= "right";
+  else if(key == "40" && d != "up") d= "down";
 };
-</pre></div>
-</p>
+
 
 <p><code>onkeydown</code> function is called when the user presses a key and <code>e.which</code> contains the keycode of the key which the user has pressed. Refer to <a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode">https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode</a> for a list of the keycodes.</p>
 
-<h3 id="step-12-creating-food:4cc1e79f29e4e167992c218986e06770">Step 12: Creating Food</h3>
+<h3 id="step-12-creating-food">Step 12: Creating Food</h3>
 
 <p><code>git checkout step12</code></p>
 
 <p>First, we will make a function to paint cells. This function can be used while painting the cells of the snake too.</p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">function</span> paint_cell(x,y) {
-  context.fillStyle <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;blue&quot;</span>;
-  context.fillRect(<span style="color: #333333">*</span>cw, <span style="color: #333333">*</span>cw, cw, cw);
-  context.strokeStyle <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;white&quot;</span>;
-  context.strokeRect(<span style="color: #333333">*</span>cw, <span style="color: #333333">*</span>cw, cw, cw);
+
+function paint_cell(x,y) {
+  context.fillStyle = "blue";
+  context.fillRect(*cw, *cw, cw, cw);
+  context.strokeStyle = "white";
+  context.strokeRect(*cw, *cw, cw, cw);
 }
-</pre></div>
-</p>
+
 
 <p>Then, we create a function which gives the coordinates of a random cell which is to be used as food.</p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">var</span> food;  <span style="color: #888888">// global variable which contains food</span>
-<span style="color: #008800; font-weight: bold">function</span> create_food() {
-  food <span style="color: #333333">=</span> {
-    x<span style="color: #333333">:</span> <span style="color: #007020">Math</span>.floor(<span style="color: #007020">Math</span>.random()<span style="color: #333333">*</span>(w<span style="color: #333333">-</span>cw)<span style="color: #333333">/</span>cw),
-    y<span style="color: #333333">:</span> <span style="color: #007020">Math</span>.floor(<span style="color: #007020">Math</span>.random()<span style="color: #333333">*</span>(h<span style="color: #333333">-</span>cw)<span style="color: #333333">/</span>cw),
+
+var food;  // global variable which contains food
+function create_food() {
+  food = {
+    x: Math.floor(Math.random()*(w-cw)/cw),
+    y: Math.floor(Math.random()*(h-cw)/cw),
   };
-  <span style="color: #888888">//This will create a cell with x and y between 0-44</span>
-  <span style="color: #888888">//Because there are 45(450/10) positions accross the rows and columns</span>
+  //This will create a cell with x and y between 0-44
+  //Because there are 45(450/10) positions accross the rows and columns
 }
 create_food();
 
-<span style="color: #888888">//Inside the paint function</span>
+//Inside the paint function
 paint_cell(food.x, food.y);
-</pre></div>
-</p>
+
 
 <p><code>Math.random()</code> gives a random value between 0 and 1.</p>
 
-<h3 id="step-13-eating-the-food:4cc1e79f29e4e167992c218986e06770">Step 13: Eating the Food</h3>
+<h3 id="step-13-eating-the-food">Step 13: Eating the Food</h3>
 
 <p><code>git checkout step13</code></p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #888888">//Inside the paint function</span>
-<span style="color: #888888">//If the new head position matches with that of the food,</span>
-<span style="color: #888888">//Create a new head instead of moving the tail</span>
-<span style="color: #008800; font-weight: bold">if</span>(nx <span style="color: #333333">==</span> food.x <span style="color: #333333">&amp;&amp;</span> ny <span style="color: #333333">==</span> food.y) {
-  <span style="color: #008800; font-weight: bold">var</span> tail <span style="color: #333333">=</span> {x<span style="color: #333333">:</span> nx, y<span style="color: #333333">:</span> ny};
-  <span style="color: #888888">//Create new food</span>
+
+//Inside the paint function
+//If the new head position matches with that of the food,
+//Create a new head instead of moving the tail
+if(nx == food.x && ny == food.y) {
+  var tail = {x: nx, y: ny};
+  //Create new food
   create_food();
 }
-<span style="color: #008800; font-weight: bold">else</span> {
-  <span style="color: #008800; font-weight: bold">var</span> tail <span style="color: #333333">=</span> snake_array.pop(); <span style="color: #888888">//pops out the last cell</span>
-  tail.x <span style="color: #333333">=</span> nx; tail.y <span style="color: #333333">=</span> ny;
+else {
+  var tail = snake_array.pop(); //pops out the last cell
+  tail.x = nx; tail.y = ny;
 }
-</pre></div>
-</p>
 
-<h3 id="step-14-game-over-condition:4cc1e79f29e4e167992c218986e06770">Step 14: Game Over Condition</h3>
+
+<h3 id="step-14-game-over-condition">Step 14: Game Over Condition</h3>
 
 <p><code>git checkout step14</code></p>
 
 <p>First create an init function which will restore the game state to the initial state. Move the code used to set the initial state of the game to the init function and call it when the page loads.</p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">var</span> game_loop; <span style="color: #888888">// Make gameloop a global variable similar to d, food and snake_array.</span>
 
-<span style="color: #008800; font-weight: bold">function</span> init() {
-  d <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;right&quot;</span>; <span style="color: #888888">//default direction</span>
+var game_loop; // Make gameloop a global variable similar to d, food and snake_array.
+
+function init() {
+  d = "right"; //default direction
   create_snake();
   create_food();
-  game_loop <span style="color: #333333">=</span> setInterval(paint, <span style="color: #0000DD; font-weight: bold">60</span>);
+  game_loop = setInterval(paint, 60);
 }
 
-init(); <span style="color: #888888">// call init when the script loads.</span>
-</pre></div>
-</p>
+init(); // call init when the script loads.
+
 
 <p>Add the following condition inside the paint function to detect collision with the boundaries.</p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">if</span>(nx<span style="color: #333333">==-</span><span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">||</span> nx<span style="color: #333333">==</span>w<span style="color: #333333">/</span>cw <span style="color: #333333">||</span> ny<span style="color: #333333">==-</span><span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">||</span> ny<span style="color: #333333">==</span>h<span style="color: #333333">/</span>cw) {
-  <span style="color: #888888">// clear the game loop</span>
+
+if(nx==-1 || nx==w/cw || ny==-1 || ny==h/cw) {
+  // clear the game loop
   clearInterval(game_loop);
   init();
-  <span style="color: #008800; font-weight: bold">return</span>;
+  return;
 }
-</pre></div>
-</p>
+
 
 <p><code>clearInterval</code> will clear the previous game_loop and the <code>init</code> function will create a new one.</p>
 
-<h3 id="step-15-checking-body-collision:4cc1e79f29e4e167992c218986e06770">Step 15: Checking Body Collision</h3>
+<h3 id="step-15-checking-body-collision">Step 15: Checking Body Collision</h3>
 
 <p><code>git checkout step15</code></p>
 
 <p>Create the <code>check_collision</code> function as follows.</p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">function</span> check_collision(x, y, array) {
-  <span style="color: #888888">//This function will check if the provided x/y coordinates exist</span>
-  <span style="color: #888888">//in an array of cells or not, excluding the head</span>
-  <span style="color: #008800; font-weight: bold">for</span>(<span style="color: #008800; font-weight: bold">var</span> i <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">1</span>; i <span style="color: #333333">&lt;</span> array.length; i<span style="color: #333333">++</span>) {
-    <span style="color: #008800; font-weight: bold">if</span>(array[i].x <span style="color: #333333">==</span> x <span style="color: #333333">&amp;&amp;</span> array[i].y <span style="color: #333333">==</span> y)
-      <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">true</span>;
+
+function check_collision(x, y, array) {
+  //This function will check if the provided x/y coordinates exist
+  //in an array of cells or not, excluding the head
+  for(var i = 1; i < array.length; i++) {
+    if(array[i].x == x && array[i].y == y)
+      return true;
   }
-  <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">false</span>;
+  return false;
 }
-</pre></div>
-</p>
+
+
 
 <p>Modify the collision condition as follows</p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-weight: bold">if</span>(nx<span style="color: #333333">==-</span><span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">||</span> nx<span style="color: #333333">==</span>w<span style="color: #333333">/</span>cw <span style="color: #333333">||</span> ny<span style="color: #333333">==-</span><span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #333333">||</span> ny<span style="color: #333333">==</span>h<span style="color: #333333">/</span>cw <span style="color: #333333">||</span> check_collision(nx, ny, snake_array)) {
-  <span style="color: #888888">// clear the game loop</span>
+
+if(nx==-1 || nx==w/cw || ny==-1 || ny==h/cw || check_collision(nx, ny, snake_array)) {
+  // clear the game loop
   clearInterval(game_loop);
   init();
-  <span style="color: #008800; font-weight: bold">return</span>;
+  return;
 }
-</pre></div>
-</p>
 
-<h3 id="step-16-implement-scoring:4cc1e79f29e4e167992c218986e06770">Step 16: Implement Scoring</h3>
+
+<h3 id="step-16-implement-scoring">Step 16: Implement Scoring</h3>
 
 <p>This is a DIY step!</p>
 
-<h2 id="where-to-go-from-here:4cc1e79f29e4e167992c218986e06770">Where to go From Here?</h2>
+<h2 id="where-to-go-from-here">Where to go From Here?</h2>
 
 <ul>
 <li>Explore some awesome <a href="https://html5gameengine.com/">Game Development libraries for Javascript canvas</a>.</li>

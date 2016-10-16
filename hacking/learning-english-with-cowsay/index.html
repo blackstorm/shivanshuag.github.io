@@ -124,24 +124,24 @@
 
 <p>First problem was to get a list of words. Someone has uploaded all the words from Magoosh GRE flashcard and Barron&rsquo;s GRE on quizlet.com <a href="http://quizlet.com/45492734/magoosh-gre-flashcards-basic-common-advanced-all-1000-flash-cards/">here</a> and <a href="http://quizlet.com/8997815/barrons-800-essential-words-for-the-gre-flash-cards/">here</a>. Now it was just a matter of scraping them and a simple python script was apt for the task. I scraped all the words and their meanings in a text file named <code>words</code>, each word separated by a &lsquo;%&rsquo;. This &lsquo;%&rsquo; has a special significance. It is useful in creating a random access file for strings which is used by the fortune program.</p>
 
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>strfile words
-</pre></div>
+
+strfile words
 
 
 <p>This generates a <code>words.dat</code> file. I moved both - the <code>words.dat</code> file and the <code>words</code> file to the folder that contains the fortune database which in my case is <code>/usr/share/fortune</code>. Now fortune also uses this file for selecting cookies. But I just want the words and not any other cookie. In <code>fortune</code>, you can specify the name of the database from which you want it to randomly select a string. So, <code>fortune words</code> did the task.</p>
 
 <p>While exploring fortune, I also found that you can specify the probabilities with which it selects string from each database. This is helpful beacuse I want to to select words from Magoosh Basic and Magoosh Common list more frequently than Magoosh Advanced. For this, I need the words in separate files according to category. No probelm because I found the different lists on quizlet.com <a href="http://quizlet.com/45473963/magoosh-gre-flashcards-basic-all-i-vii-flash-cards/">here</a>, <a href="http://quizlet.com/45473977/magoosh-gre-flashcards-common-all-i-vi-flash-cards/">here</a> and <a href="http://quizlet.com/45473953/magoosh-gre-flashcards-advanced-all-i-vii-flash-cards/">here</a>, scraped them into different files and followed the same procedure. The script used for scraping and the list of words is available in a github repository <a href="https://github.com/shivanshuag/cowsay-gre">here</a>. So now my command is</p>
 
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>fortune fortune 40% magoosh_basic 40% magoosh_common magoosh_adv
-</pre></div>
+
+fortune fortune 40% magoosh_basic 40% magoosh_common magoosh_adv
 
 
 <p>This gives a word from Basic and Common list with a probability of 0.4 and from Advanced list with a probability of 0.2.</p>
 
 <p>To make it more interesting, I piped the output to cowsay. In cowsay, you can specify different ASCII images as argument. There is a default set of images in the <code>/usr/share/cows</code> folder.</p>
 
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>fortune -c 40% magoosh_basic 40% magoosh_common magoosh_adv | cowthink -f <span style="color: #008800; font-weight: bold">$(</span>find /usr/share/cows -type f | shuf -n 1<span style="color: #008800; font-weight: bold">)</span>
-</pre></div>
+
+fortune -c 40% magoosh_basic 40% magoosh_common magoosh_adv | cowthink -f $(find /usr/share/cows -type f | shuf -n 1)
 
 
 <p>This command selects a random ASCII image from the set of images in <code>usr/share/cows</code> folder for the cowsay application. I added this to my <code>.zshrc</code> file. And the results were interesting!</p>

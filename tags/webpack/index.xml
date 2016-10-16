@@ -21,7 +21,7 @@
 
 &lt;p&gt;All this can get very confusing when trying to start a new angular project. I explored various solutions and found the following set up using webpack to bundle javascript, gulp for running tasks, npm for package management to be the best. The full code for this setup is present at [&lt;a href=&#34;https://github.com/shivanshuag/angular2-seed&#34;&gt;https://github.com/shivanshuag/angular2-seed&lt;/a&gt;] . This setup is built upon the &lt;a href=&#34;https://github.com/angular/angular2-seed&#34;&gt;angular2-seed&lt;/a&gt; app.&lt;/p&gt;
 
-&lt;h2 id=&#34;directory-structure:91f302deb060a036b41938a0215c3017&#34;&gt;Directory Structure&lt;/h2&gt;
+&lt;h2 id=&#34;directory-structure&#34;&gt;Directory Structure&lt;/h2&gt;
 
 &lt;p&gt;This is the directory structure I have. &lt;code&gt;app.ts&lt;/code&gt; bootstraps the angular app. &lt;code&gt;app/seed-app.ts&lt;/code&gt; has the main app component. Other components are inside the components directory with a separate directory for each component which contains its &lt;code&gt;html&lt;/code&gt; and &lt;code&gt;css&lt;/code&gt; files along with the typescript file. &lt;code&gt;vendor.ts&lt;/code&gt; imports all the third-party library the the app uses, which includes angular 2 in this case.&lt;/p&gt;
 
@@ -57,17 +57,17 @@
     └── vendor.ts
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;installing-packages:91f302deb060a036b41938a0215c3017&#34;&gt;Installing Packages&lt;/h2&gt;
+&lt;h2 id=&#34;installing-packages&#34;&gt;Installing Packages&lt;/h2&gt;
 
 &lt;p&gt;NPM is used for package mamagement. &lt;a href=&#34;https://github.com/shivanshuag/angular2-seed/blob/master/package.json&#34;&gt;&lt;code&gt;package.json&lt;/code&gt;&lt;/a&gt; contains all the required packages which include angular 2 and its dependecies, webpack , gulp, typescript etc.&lt;/p&gt;
 
-&lt;h2 id=&#34;typescript-and-webpack:91f302deb060a036b41938a0215c3017&#34;&gt;Typescript and Webpack&lt;/h2&gt;
+&lt;h2 id=&#34;typescript-and-webpack&#34;&gt;Typescript and Webpack&lt;/h2&gt;
 
 &lt;p&gt;Typescript compiler configuration is present in &lt;code&gt;tsconfig.json&lt;/code&gt;. It has &lt;code&gt;source maps&lt;/code&gt; enabled which helps in debugging. Webpack configuration is present in &lt;code&gt;webpack.config.json&lt;/code&gt;. It bundles all the third-party dependencies import in &lt;code&gt;vendor.ts&lt;/code&gt; into a file &lt;code&gt;vendor.bundle.js&lt;/code&gt;. All other code is bundles into a files named &lt;code&gt;bundle.js&lt;/code&gt;. &lt;code&gt;index.html&lt;/code&gt; just imports these two files.&lt;/p&gt;
 
 &lt;p&gt;For debugging, source maps are enabled in the bundles created for the development mode using gulp.&lt;/p&gt;
 
-&lt;h2 id=&#34;gulp-tasks:91f302deb060a036b41938a0215c3017&#34;&gt;Gulp Tasks&lt;/h2&gt;
+&lt;h2 id=&#34;gulp-tasks&#34;&gt;Gulp Tasks&lt;/h2&gt;
 
 &lt;p&gt;For the application to work, along with the transpiled javascript, the html and css files for each of the components should be placed at the path given as the &lt;code&gt;templateUrl&lt;/code&gt; or &lt;code&gt;styleUrl&lt;/code&gt; in the typescript file for the component. Gulp tasks are defined in &lt;code&gt;gulpfile.js&lt;/code&gt; for these things, and for running webpack.&lt;/p&gt;
 
@@ -93,7 +93,7 @@
 # Starts webpack-dev-server at port 8080 serving the app
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;issues:91f302deb060a036b41938a0215c3017&#34;&gt;Issues&lt;/h2&gt;
+&lt;h2 id=&#34;issues&#34;&gt;Issues&lt;/h2&gt;
 
 &lt;p&gt;Currently, all the CSS and HTML files of the application are served separately, there is no way to bundle them in a single file. This was possible in Angularjs as there were no components, and whole CSS of the app could be placed in a single file. In angular 2, doing this can cause css selector conflicts. For HTML in Angularjs, there was template-cache, which could pick all the templates from a single html file.&lt;/p&gt;
 

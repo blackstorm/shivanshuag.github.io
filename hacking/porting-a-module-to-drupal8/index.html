@@ -124,13 +124,13 @@
 
 <p>One look at a drupal 8 module is enough to make you realize that there have been some major changes in its architecture. If you observe closely, you will find ample use of OOP constructs, YAML files, and a directory structure totally different form its drupal 7 counterpart. There is enough mention about the big changes in drupal 8 on the web to scare anyone. With this series of posts, I aim to simplify this process of porting a module to drupal 8 for everyone - new to drupal or already experienced in drupal 7. I will also clarify some of the less documented things about drupal 8 which perplexed me while porting.</p>
 
-<h2 id="development-environment:d82a0605baa87e632de3976d42b6e284">Development Environment</h2>
+<h2 id="development-environment">Development Environment</h2>
 
 <p>First step is to set up the development environment for the project. I prefer <a href="http://www.jetbrains.com/phpstorm/">phpstorm</a> IDE, even though it is not free, due to its excellent drupal support. The following link explains how to set up phpstorm for drupal module development -<a href="https://drupal.org/node/1962108">https://drupal.org/node/1962108</a>.</p>
 
 <p>Currently, drupal 8 support is avaliable in <a href="http://confluence.jetbrains.com/display/PhpStorm/PhpStorm+Early+Access+Program">phpstorm-eap</a>. The IDE is awesome enough to not only point out the syntax errors, but even mark the functions you are using that have been deprecated or don&rsquo;t exist drupal 8.</p>
 
-<h2 id="oop-namespaces-and-yaml-files:d82a0605baa87e632de3976d42b6e284">OOP, Namespaces and YAML files</h2>
+<h2 id="oop-namespaces-and-yaml-files">OOP, Namespaces and YAML files</h2>
 
 <p>I feel that the best way of learning on how to make a d8 module is by looking at the existing d8 module in drupal core. They make up for the lack of documentation in many places.</p>
 
@@ -145,7 +145,7 @@ Some other useful points to be noted from the above blog post are</p>
 <li>use of Controllers and routing by YAML files which was earlier implemented by <code>hook_menu</code>. More on routing at <a href="https://drupal.org/developing/api/8/routing">https://drupal.org/developing/api/8/routing</a>. If you don&rsquo;t know about drupal hooks, look it up in the drupal documentation.</li>
 </ul>
 
-<h2 id="configuration-management:d82a0605baa87e632de3976d42b6e284">Configuration Management</h2>
+<h2 id="configuration-management">Configuration Management</h2>
 
 <p>One of the bigger changes in Drupal 8 is the Configuration Management Initiative which completely replaces the Drupal 7 variables. One of the reasons for this is to be able to store configuration in files rather than database which helps in easier import-export of the configuration.</p>
 
@@ -158,7 +158,7 @@ Some other useful points to be noted from the above blog post are</p>
 <li>Apart from configuration, there are other type of informations also like state information and configuration entities. More on this at - <a href="https://drupal.org/node/2120523">https://drupal.org/node/2120523</a>. Many of the d7 variables have been moved to state. The next link explains on how to find these varibles and convert them. <a href="https://drupal.org/node/2120523">https://drupal.org/node/1787318</a>.</li>
 </ul>
 
-<h3 id="key-takeaways:d82a0605baa87e632de3976d42b6e284">Key Takeaways</h3>
+<h3 id="key-takeaways">Key Takeaways</h3>
 
 <ul>
 <li>config keys are just like variables</li>
@@ -168,7 +168,7 @@ Some other useful points to be noted from the above blog post are</p>
 <li>If a key has not been set earlier in the code and its default value is not defined in <code>hook_install()</code> or <code>.settings.yml</code> file, get function on the key returns NULL</li>
 </ul>
 
-<h2 id="install-file:d82a0605baa87e632de3976d42b6e284">.install file</h2>
+<h2 id="install-file">.install file</h2>
 
 <p><code>hook_enable</code> and <code>hook_disable</code> have been deprecated. <a href="https://drupal.org/node/2193013">https://drupal.org/node/2193013</a>. To port to d8, all the tasks that were being performed in  <code>hook_enable</code> are to be performed in <code>hook_install</code>. Same with <code>hook_disable</code> and <code>hook_uninstall</code>.
 If you have not developed a drupal 7 module before, the difference between disable-enable and install-uninstall can be confounding. Disabling a module leaves its configuration untouched, along with any data like variables it may have created while uninstalling deletes all the data. Due to removal of disabled state in d8, some of the tasks performed in <code>hook_enable</code> may become unecessary.</p>

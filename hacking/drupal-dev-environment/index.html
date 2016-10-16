@@ -61,7 +61,7 @@
         },
         "datePublished": "2015-06-24",
         "description": "Setting up development environment for durpal module development",
-        "wordCount":  389 
+        "wordCount":  382 
     }
     </script>
     
@@ -127,46 +127,44 @@
 
 <p>Weeks before the coding period started, the first challenge was to set up a developemnt environment such that both me and my mentor can test the work I do in a consistent way. Following are some of the things I did and learned in the process.</p>
 
-<h2 id="installing-composer:734dafb44d9f3d82108b3875e36fb833">Installing Composer</h2>
+<h2 id="installing-composer">Installing Composer</h2>
 
 <p>Composer is a package manager for PHP. Pcakage manager for most of the linux distros have <code>composer</code> in their official repositories. So, intalling it is simple. In my case, I used
 <code>sudo pacman -S php-composer</code></p>
 
-<h2 id="installing-drush:734dafb44d9f3d82108b3875e36fb833">Installing drush</h2>
+<h2 id="installing-drush">Installing drush</h2>
 
 <p>Drush is a command line shell for Drupal. Drupal 8 requires version 7 of Drush. To install drush 7 from the latest HEAD using composer, run the following command
 <code>composer global require drush/drush:dev-master</code></p>
 
-<h2 id="install-drupal-7-36-via-drush:734dafb44d9f3d82108b3875e36fb833">Install drupal 7.36 via drush</h2>
+<h2 id="install-drupal-7-36-via-drush">Install drupal 7.36 via drush</h2>
 
 <ul>
 <li><p>Download drupal 7.36 using <code>drush dl drupal --drupal-project-rename=drupal7</code></p></li>
 
 <li><p>Install it by running the following command inside the <code>drupal7</code> director
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>  drush site-install standard <span style="color: #666666; font-weight: bold; background-color: #fff0f0">\</span>
-  --db-url<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;mysql://[username]:[password]@localhost/[database-name]&#39;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\</span>
-  --site-name<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;[site name]&#39;</span> --account-name<span style="color: #333333">=[</span>admin-username<span style="color: #333333">]</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\</span>
-  --account-pass<span style="color: #333333">=[</span>admin-password<span style="color: #333333">]</span>
-  
-</pre></div>
-</p></li>
+
+  drush site-install standard \
+  --db-url='mysql://[username]:[password]@localhost/[database-name]'\
+  --site-name='[site name]' --account-name=[admin-username]\
+  --account-pass=[admin-password]
+  </p></li>
 
 <li><p>Use <code>drush en [module-name]</code> command to install all the required modules</p></li>
 
 <li><p>Alternatively, use drush make with the following make file and then do a drush site-install</p>
 
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>  ;full documentation <span style="color: #008800; font-weight: bold">for</span> drush make file at http://www.drush.org/en/master/make/
-  <span style="color: #996633">core</span> <span style="color: #333333">=</span> 7.x
-  <span style="color: #996633">api</span> <span style="color: #333333">=</span> 2
-  projects<span style="color: #333333">[</span>drupal<span style="color: #333333">][</span>version<span style="color: #333333">]</span> <span style="color: #333333">=</span> 7.36
-  projects<span style="color: #333333">[]</span> <span style="color: #333333">=</span> views
-  projects<span style="color: #333333">[]</span> <span style="color: #333333">=</span> coder
-  
-</pre></div>
-</li>
+
+  ;full documentation for drush make file at http://www.drush.org/en/master/make/
+  core = 7.x
+  api = 2
+  projects[drupal][version] = 7.36
+  projects[] = views
+  projects[] = coder
+  </li>
 </ul>
 
-<h2 id="install-drupal-8-0-0-beta10-via-drush:734dafb44d9f3d82108b3875e36fb833">Install drupal-8.0.0-beta10 via drush</h2>
+<h2 id="install-drupal-8-0-0-beta10-via-drush">Install drupal-8.0.0-beta10 via drush</h2>
 
 <ul>
 <li><p>Download the specified version of drupal using <code>drush dl drupal-8.0.0-beta10 --drupal-project-rename=drupal8</code></p></li>
@@ -174,28 +172,27 @@
 <li><p>Install it in a manner similar to drupal 7</p></li>
 </ul>
 
-<h2 id="setting-up-drush-aliases:734dafb44d9f3d82108b3875e36fb833">Setting up drush aliases</h2>
+<h2 id="setting-up-drush-aliases">Setting up drush aliases</h2>
 
 <p>Drush aliases provide a way to run drush commands on a drupal site from any directory.</p>
 
 <ul>
 <li><p>In the .drush directory in the home folder, put a file named <code>[sitename].aliases.drushrc.php</code> with the following content</p>
 
-<p><div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>    #Example aliases file at https://github.com/drush-ops/drush/blob/master/examples/example.aliases.drushrc.php
-    <span style="color: #557799">&lt;?php</span>
-    <span style="color: #996633">$aliases</span>[<span style="background-color: #fff0f0">&quot;d8&quot;</span>] <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">array</span> (
-      <span style="background-color: #fff0f0">&#39;root&#39;</span> <span style="color: #333333">=&gt;</span> <span style="background-color: #fff0f0">&#39;/home/shivanshu/webapps/drupal8&#39;</span>,
-      <span style="background-color: #fff0f0">&#39;uri&#39;</span> <span style="color: #333333">=&gt;</span> <span style="background-color: #fff0f0">&#39;http://drupal8.localhost&#39;</span>,
+
+    #Example aliases file at https://github.com/drush-ops/drush/blob/master/examples/example.aliases.drushrc.php
+    <?php
+    $aliases["d8"] = array (
+      'root' => '/home/shivanshu/webapps/drupal8',
+      'uri' => 'http://drupal8.localhost',
     );
 
-    <span style="color: #996633">$aliases</span>[<span style="background-color: #fff0f0">&quot;d7&quot;</span>] <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">array</span> (
-      <span style="background-color: #fff0f0">&#39;root&#39;</span> <span style="color: #333333">=&gt;</span> <span style="background-color: #fff0f0">&#39;/home/shivanshu/webapps/drupal7&#39;</span>,
-      <span style="background-color: #fff0f0">&#39;uri&#39;</span> <span style="color: #333333">=&gt;</span> <span style="background-color: #fff0f0">&#39;http://drupal7.localhost&#39;</span>,
+    $aliases["d7"] = array (
+      'root' => '/home/shivanshu/webapps/drupal7',
+      'uri' => 'http://drupal7.localhost',
     );
-    <span style="color: #557799">?&gt;</span>
-    
-</pre></div>
-</p></li>
+    ?>
+    </li>
 
 <li><p>Now, the drush commands can be run from any directory in the following manner
 <code>drush @d7 en [module-name]</code></p></li>
@@ -203,7 +200,7 @@
 <li><p>To list all enabled modules, use <code>drush @d7 pm-list --type=Module --status=enabled</code></p></li>
 </ul>
 
-<h2 id="backing-up-and-restoring-site-using-drush:734dafb44d9f3d82108b3875e36fb833">Backing up and Restoring site using Drush</h2>
+<h2 id="backing-up-and-restoring-site-using-drush">Backing up and Restoring site using Drush</h2>
 
 <ul>
 <li><p><code>drush archive-dump</code> will backup the website in an archive</p></li>
